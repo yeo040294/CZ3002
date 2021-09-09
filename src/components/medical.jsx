@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
-class medicalassign extends Component {
+class Medical extends Component {
     render() {
         return (
             <div>
@@ -31,4 +31,4 @@ class medicalassign extends Component {
     }
 }
 
-export default medicalassign;
+export default Medical;

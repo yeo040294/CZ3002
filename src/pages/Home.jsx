@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { fetchPosts } from '../Redux/Actions/TwitterAction'
 import Navbar from '../components/share/Navbar'
 import Footer from '../components/share/Footer'
-import medicalassign from '../components/medicalassign'
+
 
 class Home extends Component {
     componentDidMount() {
@@ -15,13 +15,13 @@ class Home extends Component {
     render() {
         return (
             <div>
-                
+                <Navbar/> 
                 <MDBContainer>
-                <Navbar/>
-                    
+               
+                   
 
                     <MDBRow>
-
+                    <medicalassign/>
                         {this.props.twitter && this.props.twitter.map(x => {
                             return (
                                 <MDBCol lg="4">

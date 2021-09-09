@@ -64,9 +64,17 @@ class Navbar extends Component {
                   <MDBNavItem>
                     <MDBNavLink
                       onClick={this.closeCollapse('mainNavbarCollapse')}
-                      to='/advanced'
+                      to='/patientHome'
                     >
-                      <strong>Advanced</strong>
+                      <strong>patientHome</strong>
+                    </MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink
+                      onClick={this.closeCollapse('mainNavbarCollapse')}
+                      to='/patientGamepage'
+                    >
+                      <strong>patientGamepage</strong>
                     </MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>

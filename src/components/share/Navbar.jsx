@@ -56,6 +56,30 @@ class Navbar extends Component {
                   <MDBNavItem>
                     <MDBNavLink
                       onClick={this.closeCollapse('mainNavbarCollapse')}
+                      to='/patient'
+                    >
+                      <strong>Patient Home</strong>
+                    </MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink
+                      onClick={this.closeCollapse('mainNavbarCollapse')}
+                      to='/medical'
+                    >
+                      <strong>Medical Home</strong>
+                    </MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink
+                      onClick={this.closeCollapse('mainNavbarCollapse')}
+                      to='/admin'
+                    >
+                      <strong>Admin Home</strong>
+                    </MDBNavLink>
+                  </MDBNavItem>
+                  {/* <MDBNavItem>
+                    <MDBNavLink
+                      onClick={this.closeCollapse('mainNavbarCollapse')}
                       to='/medicalAssignlevel'
                     >
                       <strong>medicalAssignlevel</strong>
@@ -64,7 +88,7 @@ class Navbar extends Component {
                   <MDBNavItem>
                     <MDBNavLink
                       onClick={this.closeCollapse('mainNavbarCollapse')}
-                      to='/patientHome'
+                      to='/patient'
                     >
                       <strong>patientHome</strong>
                     </MDBNavLink>
@@ -76,7 +100,7 @@ class Navbar extends Component {
                     >
                       <strong>patientGamepage</strong>
                     </MDBNavLink>
-                  </MDBNavItem>
+                  </MDBNavItem> */}
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>

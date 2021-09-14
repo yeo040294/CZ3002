@@ -10,7 +10,8 @@ import Result from '../pages/Patient/Result';
 import adminHome from '../pages/Admin/Home';
 import medicalHome from '../pages/Medical/MedicalHome';
 import medicalView from '../pages/Medical/ViewPatientResults';
-
+import AccountCreation from '../pages/Admin/AccountCreation';
+import UploadQuestion from '../pages/Admin/UploadQuestion';
 
 class Routes extends React.Component {
   render() {
@@ -19,15 +20,17 @@ class Routes extends React.Component {
         <Route exact path='/' component={Home} />
         <Route path='/about' component={About} />
         {/* admin pages */}
-        <Route path='/admin' component={adminHome} />
+        <Route exact path='/admin' component={adminHome} />
+        <Route path='/admin/account' component={AccountCreation} />
+        <Route path='/admin/upload' component={UploadQuestion} />
         {/* patient pages */}
         <Route path='/patientGamepage' component={patientGamepage} />
-        <Route path='/patient' component={patientHome} />
+        <Route exact path='/patient' component={patientHome} />
         <Route path='/results' component={Result} />
         {/* medical pages */}
         <Route path='/:username/assign' component={medicalAssignlevel} />
         <Route path='/:username/view' component={medicalView} />
-        <Route path='/medical' component={medicalHome} />
+        <Route exact path='/medical' component={medicalHome} />
         <Route
           render={function () {
             return <h1>Not Found</h1>;

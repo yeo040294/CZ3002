@@ -4,6 +4,8 @@ import { MDBContainer, MDBRow, MDBCol } from "mdbreact"
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { fetchPosts } from '../Redux/Actions/TwitterAction'
+import Navbar from '../components/share/Navbar'
+import Footer from '../components/share/Footer'
 
 class Home extends Component {
     componentDidMount() {
@@ -36,7 +38,8 @@ class Home extends Component {
     render() {
       const {username, password} = this.state
         return (
-          <MDBContainer>    
+          <MDBContainer>  
+            <Navbar />  
             <h2>Flip flop mental rotational</h2>             
             <form onSubmit={this.handleSubmit}>
               <label htmlFor="username">Username</label>
@@ -59,35 +62,6 @@ class Home extends Component {
         )
     }
 }
-
-
-// const InputPage = () => {
-//   return (
-//     <div className="form-group">
-//       <label htmlFor="username">Username</label>
-//       <input
-//         type="text"
-//         className="form-control"
-//         value={this.state.username}
-//         onChange={this.handleUsernameChange}
-//       />
-//       <label htmlFor="password">Password</label>
-//       <input
-//         type="text"
-//         className="form-control"
-//         id="password"
-//       />
-//     <label htmlFor="userType">User type</label>
-//       <div>
-//         <select className="browser-default custom-select">
-//           <option value="1">Patient</option>
-//           <option value="2">Medical Staff</option>
-//           <option value="3">Administrator</option>
-//         </select>
-//       </div>
-//     </div>
-//   );
-// }
 
 Home.propTypes = {
     fetchPosts: PropTypes.func.isRequired

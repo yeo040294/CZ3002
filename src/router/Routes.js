@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import About from '../pages/About';
 import Home from '../pages/Home';
-import medicalAssignlevel from '../pages/Medical/medicalAssignlevel'
+
 import patientGamepage from '../pages/Patient/patientGamepage';
 import patientHome from '../pages/Patient/patientHome';
 import Result from '../pages/Patient/Result';
@@ -12,6 +12,7 @@ import medicalHome from '../pages/Medical/MedicalHome';
 import medicalView from '../pages/Medical/ViewPatientResults';
 import AccountCreation from '../pages/Admin/AccountCreation';
 import UploadQuestion from '../pages/Admin/UploadQuestion';
+import medicalAssign from '../pages/Medical/medicalAssign';
 
 class Routes extends React.Component {
   render() {
@@ -28,9 +29,10 @@ class Routes extends React.Component {
         <Route exact path='/patient' component={patientHome} />
         <Route path='/results' component={Result} />
         {/* medical pages */}
-        <Route path='/:username/assign' component={medicalAssignlevel} />
+        <Route exact path='/:username/assign' component={medicalAssign} />
         <Route path='/:username/view' component={medicalView} />
         <Route exact path='/medical' component={medicalHome} />
+        
         <Route
           render={function () {
             return <h1>Not Found</h1>;

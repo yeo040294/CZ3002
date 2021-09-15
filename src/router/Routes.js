@@ -16,8 +16,9 @@ class Routes extends React.Component {
         <Route exact path='/' component={Home} />
         <Route path='/about' component={About} />
         <Route path='/medicalAssignlevel' component = {medicalAssignlevel} />
-        <Route path='/patientGamepage' component = {patientGamepage} />
         <Route path='/patientHome' component = {patientHome} />
+        <Route path='/patientGamepage' component = {patientGamepage} />
+        
         <Route
           render={function () {
             return <h1>Not Found</h1>;

@@ -1,0 +1,19 @@
+h2 {
+    color: black;
+    padding: 50px;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#box {
+    margin-top: 50px;
+    padding: 25px;
+}
+
+#btnSub {
+    padding: 15px;
+}
+
+form {
+    padding: 50px;
+}

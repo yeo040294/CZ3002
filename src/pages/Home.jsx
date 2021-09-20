@@ -6,8 +6,10 @@ import PropTypes from 'prop-types'
 import { fetchPosts } from '../Redux/Actions/TwitterAction'
 import Navbar from '../components/share/Navbar'
 import Footer from '../components/share/Footer'
+import { useHistory } from 'react-router-dom'
 
 class Home extends Component {
+
     componentDidMount() {
         this.props.fetchPosts();
     }
@@ -16,7 +18,7 @@ class Home extends Component {
     
       this.state = {
          username: '',
-         passwprd: ''
+         password: ''
       }
     }
 
@@ -31,9 +33,23 @@ class Home extends Component {
       })
     }
     handleSubmit = event => {
+      let history = useHistory()
       console.log(this.state.username)
       console.log(this.state.password)
-      event.preventDefault()
+      // event.preventDefault()
+      // fetch('https://34.87.71.156:8000/backend/user/login',{
+      //   method:'GET',
+      //   headers: {"Content-Type":"application/json",
+      //   "Access-Control-Allow-Origin": "*"
+      // },
+      //   body:{
+      //     username: this.state.username,
+      //     password: this.state.password
+      //   }
+      // }).then((data) => {
+      //   console.log(data);
+      //   // history.push('/'+ response.userType + '/' + response.userID)
+      // })
     }
     render() {
       const {username, password} = this.state

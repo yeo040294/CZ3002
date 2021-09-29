@@ -47,7 +47,6 @@ export default class ViewPatientResults extends Component {
                     <ResultTable results={this.state.results}/>
 
                 </MDBContainer>
-                <Footer />;
             </div>
         )
     }

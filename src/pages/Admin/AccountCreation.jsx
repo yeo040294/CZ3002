@@ -24,7 +24,6 @@ export default class AccountCreation extends Component {
                     <hr />
                     <AccountForm onSubmit={this.onSubmit}/>
                     </MDBContainer>
-                <Footer />
             </div>
         )
     }

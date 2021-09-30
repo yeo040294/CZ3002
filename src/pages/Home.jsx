@@ -4,7 +4,7 @@ import Navbar from '../components/share/Navbar'
 import { useHistory, Redirect } from 'react-router-dom'
 import React, {useState} from 'react';
 
-function Home1() {
+function Home() {
     let history = useHistory()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -38,7 +38,7 @@ function Home1() {
             history.push('/admin/' + result.userid)
           }
         })
-        .catch(error => console.log('error', error));
+        .catch(e => console.log(e));
     }
     
     return (
@@ -55,14 +55,15 @@ function Home1() {
               />
               <label htmlFor="password">Password</label>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
               />
+              <br></br>
             <input type="submit" value="Submit" />
             </form>
         </MDBContainer>
     )
 }
-export default Home1;
+export default Home;

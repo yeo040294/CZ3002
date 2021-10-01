@@ -3,9 +3,12 @@ import { MDBContainer} from "mdbreact"
 import Navbar from '../components/share/Navbar'
 import { useHistory, Redirect } from 'react-router-dom'
 import React, {useState} from 'react';
+import {useDispatch} from 'react-redux'
+import {logIn} from '../Redux/Actions/LoginAction'
 
 function Home() {
     let history = useHistory()
+    const dispatch = useDispatch();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -28,6 +31,7 @@ function Home() {
       fetch("http://34.87.71.156:8000/backend/user/login", requestOptions)
         .then(response => response.json())
         .then(result => {
+          dispatch(logIn(result.userid))
           if (result.role == 0) {
             history.push('/patient/' + result.userid)
           }
@@ -38,7 +42,11 @@ function Home() {
             history.push('/admin/' + result.userid)
           }
         })
-        .catch(e => console.log(e));
+        .catch(e => {
+          alert('Wrong username or password')
+          console.log(e)
+        });
+            
     }
     
     return (

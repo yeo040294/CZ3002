@@ -4,7 +4,7 @@ import Navbar from '../../components/Patient/Navbar';
 import ResultTable from '../../components/Patient/PatientResult/ResultTable';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchResults,test } from '../../Redux/Actions/QuestionAction';
+import { fetchResults,logIn } from '../../Redux/Actions/QuestionAction';
 import Cookies from 'js-cookie';
 
 //Cookies.get("user")
@@ -77,4 +77,4 @@ const mapStateToProps = (state, ownProps) => ({
     results: state.quest.results,
 });
 
-export default connect(mapStateToProps, { fetchResults,test })(Result)
+export default connect(mapStateToProps, { fetchResults })(Result)

@@ -4,7 +4,7 @@ import Navbar from '../components/share/Navbar'
 import { useHistory, Redirect } from 'react-router-dom'
 import React, {useState} from 'react';
 
-function Home1() {
+function Home() {
     let history = useHistory()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -65,4 +65,4 @@ function Home1() {
         </MDBContainer>
     )
 }
-export default Home1;
+export default Home;

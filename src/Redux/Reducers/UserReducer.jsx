@@ -1,5 +1,6 @@
 const initState = {
-    data: []
+    data: [],
+    status:[]
 };
 
 const UserReducer = (state = initState, action) => {
@@ -12,7 +13,7 @@ const UserReducer = (state = initState, action) => {
         case 'CREATE_ACC':
             return {
                 ...state,
-                data: action.payload
+                status: action.payload
             }
         default:
             return state;

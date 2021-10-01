@@ -17,11 +17,11 @@ const patientList = ({ data, assign, view }) => {
                 <MDBTableBody>
                     {data && data.map(x => {
                         return (
-                            <tr key={x.username}>
+                            <tr key={x.uuid}>
                                 <td>{x.username}</td>
-                                <td>{x.name}</td>
-                                <td><MDBBtn size="sm" color="blue" onClick={() => assign(x.username)} > Assign </MDBBtn></td> 
-                                <td><MDBBtn size="sm" color="blue" onClick={() => view(x.username)} > View Results </MDBBtn></td> 
+                                <td>{x.displayname === null ? "null" : x.displayname}</td>
+                                <td><MDBBtn size="sm" color="blue" onClick={() => assign(x.username,x.uuid)} > Assign </MDBBtn></td> 
+                                <td><MDBBtn size="sm" color="blue" onClick={() => view(x.username,x.uuid)} > View Results </MDBBtn></td> 
                             </tr>
                         )
                     })}

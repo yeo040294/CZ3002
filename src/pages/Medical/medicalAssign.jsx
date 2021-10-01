@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Navbar from '../../components/share/Navbar'
-import Footer from '../../components/share/Footer'
+import Navbar from '../../components/Medical/Navbar'
 import Medical from '../../components/Medical/medical'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 

@@ -14,7 +14,7 @@ const AccountForm = ({onSubmit}) => {
         <div>
             <MDBInput value={name} label="Name" icon="address-card" onChange={e => setName(e.target.value)} />
             <MDBInput value={username}label="Username" icon="user-circle" onChange={e => setUsername(e.target.value)}/>
-            <MDBInput value={password} label="Password" icon="unlock-alt" onChange={e => setPassword(e.target.value)} />
+            <MDBInput type="password" value={password} label="Password" icon="unlock-alt" onChange={e => setPassword(e.target.value)} />
             <MDBRow>
                 User Account Type:
                 <MDBDropdown size="sm">

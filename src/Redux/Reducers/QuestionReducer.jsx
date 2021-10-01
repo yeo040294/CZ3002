@@ -3,14 +3,9 @@ const initState = {
     results: []
 };
 
-const TwitterReducers = (state = initState, action) => {
+const QuestionReducer = (state = initState, action) => {
     switch (action.type) {
         case 'FETCH_RESULTS':
-            return {
-                ...state,
-                results: action.payload
-            }
-        case 'TEST':
             return {
                 ...state,
                 results: action.payload
@@ -19,4 +14,4 @@ const TwitterReducers = (state = initState, action) => {
             return state;
     }
 }
-export default TwitterReducers;
+export default QuestionReducer;

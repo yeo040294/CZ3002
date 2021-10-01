@@ -3,7 +3,7 @@ import { MDBContainer} from "mdbreact"
 import Navbar from '../components/share/Navbar'
 import { useHistory, Redirect } from 'react-router-dom'
 import React, {useState} from 'react';
-
+import Cookies from 'js-cookie';
 function Home() {
     let history = useHistory()
     const [username, setUsername] = useState('')
@@ -28,14 +28,16 @@ function Home() {
       fetch("http://34.87.71.156:8000/backend/user/login", requestOptions)
         .then(response => response.json())
         .then(result => {
+          Cookies.set('userid',result.userid, {path: '/'})
+          Cookies.set('sessionid',result.sessionid, {path: '/'})
           if (result.role == 0) {
-            history.push('/patient/' + result.userid)
+            history.push('/patient')
           }
           else if (result.role == 1){
-            history.push('/medical/' + result.userid)
+            history.push('/medical')
           }
           else if (result.role == 2){
-            history.push('/admin/' + result.userid)
+            history.push('/admin')
           }
         })
         .catch(e => console.log(e));

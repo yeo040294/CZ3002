@@ -47,7 +47,6 @@ class MedicalHome extends Component {
 
                 <PatientList data={this.state.patient} assign = {this.assign} view = {this.view}/>
                 </MDBContainer>
-                <Footer/>;
             </div>
         )
     }

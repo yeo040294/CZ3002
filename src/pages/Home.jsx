@@ -38,7 +38,7 @@ function Home() {
             history.push('/admin/' + result.userid)
           }
         })
-        .catch(error => console.log('error', error));
+        .catch(e => console.log(e));
     }
     
     return (
@@ -55,11 +55,12 @@ function Home() {
               />
               <label htmlFor="password">Password</label>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
               />
+              <br></br>
             <input type="submit" value="Submit" />
             </form>
         </MDBContainer>

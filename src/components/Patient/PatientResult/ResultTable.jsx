@@ -1,10 +1,14 @@
 import React from 'react';
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdbreact';
 
+
 const ResultTable = ({results}) => {
+
+
     return (
         <div>
-            <MDBTable striped scrollY>
+            {/* scrollY */}
+            <MDBTable striped >
                 <MDBTableHead>
                     <tr>
                         <th>Assignment Name</th>

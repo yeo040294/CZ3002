@@ -50,6 +50,6 @@ AccountCreation.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    data: state.quest.results,
+    data: state.user.status,
 });
 export default connect(mapStateToProps, { createAcc })(AccountCreation)

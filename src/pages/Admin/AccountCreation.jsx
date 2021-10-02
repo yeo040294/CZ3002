@@ -1,18 +1,38 @@
 import { MDBContainer } from 'mdbreact';
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import AccountForm from '../../components/Admin/AccountForm';
 import Navbar from '../../components/Admin/Navbar';
-import Footer from '../../components/share/Footer';
+import PropTypes from 'prop-types';
+import { createAcc } from '../../Redux/Actions/UsersAction';
+import Cookies from 'js-cookie'
 
-export default class AccountCreation extends Component {
+class AccountCreation extends Component {
     state = {
         name: '',
         username: '',
         password: '',
         usertype: ''
     }
-    onSubmit = (name,username,password, usertype) => {
-        console.log(name,username,password, usertype.includes('Select') ? "": usertype)
+    onSubmit = (name, username, password, usertype) => {
+        if ([name, username, password].some((x) => x === '') || usertype.includes("Select")) { alert("Please ensure that there are no empty inputs.") }
+        else {
+            let userrole = usertype == "Patient" ? "0" : usertype == "Medical" ? "1" : "2"
+            let sessionID = Cookies.get('sessionid')
+            let form = {
+                sessionid: sessionID,
+                displayname: name,
+                username: username,
+                password: password,
+                role: userrole
+            }
+            this.props.createAcc(form);
+            //need to add validation & response from server (success/user exists?)
+        }
+    }
+    componentDidUpdate(prevProps){
+        if(this.props.result.status == 'success')
+            this.props.history.push('/admin')
     }
 
     render() {
@@ -22,10 +42,18 @@ export default class AccountCreation extends Component {
                 <MDBContainer>
                     <h3>Account Creation</h3>
                     <hr />
-                    <AccountForm onSubmit={this.onSubmit}/>
-                    </MDBContainer>
-                <Footer />
+                    <AccountForm onSubmit={this.onSubmit} />
+                </MDBContainer>
             </div>
         )
     }
 }
+
+AccountCreation.propTypes = {
+    createAcc: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = (state, ownProps) => ({
+    result: state.user.data,
+});
+export default connect(mapStateToProps, { createAcc })(AccountCreation)

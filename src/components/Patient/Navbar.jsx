@@ -39,7 +39,7 @@ class Navbar extends Component {
                             <MDBNavItem>
                                 <MDBNavLink
                                     exact
-                                    to='/patientGamepage'
+                                    to='/patient'
                                     onClick={this.closeCollapse('mainNavbarCollapse')}
                                 >
                                     <strong>Game</strong>

@@ -12,7 +12,6 @@ export default class UploadQuestion extends Component {
                 <h3>Question Upload & Creation</h3>
                 <hr />
                 </MDBContainer>
-                <Footer />
             </div>
 
         )

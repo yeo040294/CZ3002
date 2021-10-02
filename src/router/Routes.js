@@ -27,10 +27,10 @@ class Routes extends React.Component {
         {/* patient pages */}
         <Route path='/patientGamepage' component={patientGamepage} />
         <Route exact path='/patient' component={patientHome} />
-        <Route path='/results' component={Result} />
+        <Route path='/results'  component={Result} />
         {/* medical pages */}
-        <Route exact path='/:username/assign' component={medicalAssign} />
-        <Route path='/:username/view' component={medicalView} />
+        <Route exact path='/assign' component={medicalAssign} />
+        <Route path='/:username/:uid/view' component={medicalView} />
         <Route exact path='/medical' component={medicalHome} />
         
         <Route

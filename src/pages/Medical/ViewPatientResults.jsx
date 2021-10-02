@@ -1,40 +1,27 @@
 import React, { Component } from 'react';
 import { MDBContainer } from 'mdbreact';
 import Navbar from '../../components/Medical/Navbar';
-import Footer from '../../components/share/Footer';
 import ResultTable from '../../components/Patient/PatientResult/ResultTable';
+import PropTypes from 'prop-types';
+import Cookies from 'js-cookie';
+import { connect } from 'react-redux';
+import {fetchResults} from '../../Redux/Actions/QuestionAction';
 
-export default class ViewPatientResults extends Component {
+class ViewPatientResults extends Component {
     state = {
         username: '',
-        results:[
-            {
-                id: 1,
-                difficulty: "Easy",
-                score: "1",
-                date: '',
-                duration: '30 min'
-            },
-            {
-                id: 2,
-                difficulty: "Medium",
-                score: "10",
-                date: '',
-                duration: '20 min'
-            },
-            {
-                id: 3,
-                difficulty: "Hard",
-                score: "2",
-                date: '',
-                duration: '45 min'
-            },
-        ]
+        userid: ''
     }
     componentDidMount() {
         this.setState({
-            username: this.props.history.location.pathname.split('/view')[0].replace('/', '')
+            username: this.props.history.location.pathname.split('/')[1],
+            userid:this.props.history.location.pathname.split('/')[2]
         })
+    }
+    componentDidUpdate(prevProps,prevState,snapShot){
+        if (this.state.userid !== prevState.userid){
+            this.props.fetchResults(this.state.userid, Cookies.get('sessionid'))
+        }
     }
     render() {
         return (
@@ -43,12 +30,20 @@ export default class ViewPatientResults extends Component {
                 <MDBContainer>
 
                     <h3>Patient: {this.state.username}</h3>
-                    <hr/>
-                    <ResultTable results={this.state.results}/>
+                    <hr />
+                    {this.props.data && <ResultTable results={this.props.data.results} />}
 
                 </MDBContainer>
-                <Footer />;
             </div>
         )
     }
 }
+
+ViewPatientResults.propTypes = {
+    fetchResults: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = (state, ownProps) => ({
+    data: state.quest.results,
+});
+export default connect(mapStateToProps, { fetchResults })(ViewPatientResults)

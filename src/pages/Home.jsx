@@ -24,8 +24,8 @@ function Home() {
         body: JSON.stringify(data),
         redirect: 'follow'
       };
-      
-      fetch("http://34.87.71.156:8000/backend/user/login", requestOptions)
+
+      fetch("http://35.247.159.11:8000/backend/user/login", requestOptions)
         .then(response => response.json())
         .then(result => {
           Cookies.set('userid',result.userid, {path: '/'})

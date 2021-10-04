@@ -24,12 +24,13 @@ function Home() {
         body: JSON.stringify(data),
         redirect: 'follow'
       };
-      
-      fetch("http://34.87.71.156:8000/backend/user/login", requestOptions)
+
+      fetch("http://35.247.159.114:8000/backend/user/login", requestOptions)
         .then(response => response.json())
         .then(result => {
           Cookies.set('userid',result.userid, {path: '/'})
           Cookies.set('sessionid',result.sessionid, {path: '/'})
+          Cookies.set('role',result.role, {path: '/'})
           if (result.role == 0) {
             history.push('/patient')
           }
@@ -67,7 +68,7 @@ function Home() {
                 onChange={e => setPassword(e.target.value)}
               />
               <br></br>
-            <input type="submit" value="Submit" />
+            <input type="submit" className="btn blue" value="Submit" />
             </form>
         </MDBContainer>
     )

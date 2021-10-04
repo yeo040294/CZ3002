@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import AccountForm from '../../components/Admin/AccountForm';
 import Navbar from '../../components/Admin/Navbar';
 import PropTypes from 'prop-types';
-import {createAcc} from '../../Redux/Actions/UsersAction';
+import { createAcc } from '../../Redux/Actions/UsersAction';
 import Cookies from 'js-cookie'
 
 class AccountCreation extends Component {
@@ -14,21 +14,25 @@ class AccountCreation extends Component {
         password: '',
         usertype: ''
     }
-    onSubmit = (name,username,password, usertype) => {
-        if ([name,username,password].some((x)=> x==='') || usertype.includes("Select")) {alert("Please ensure that there are no empty inputs.")}
+    onSubmit = (name, username, password, usertype) => {
+        if ([name, username, password].some((x) => x === '') || usertype.includes("Select")) { alert("Please ensure that there are no empty inputs.") }
         else {
             let userrole = usertype == "Patient" ? "0" : usertype == "Medical" ? "1" : "2"
+            let sessionID = Cookies.get('sessionid')
             let form = {
-                sessionid: Cookies.get('sessionid'),
+                sessionid: sessionID,
                 displayname: name,
                 username: username,
                 password: password,
-                role:userrole
+                role: userrole
             }
-            //console.log(Cookies.get('sessionid'))
             this.props.createAcc(form);
             //need to add validation & response from server (success/user exists?)
         }
+    }
+    componentDidUpdate(prevProps){
+        if(this.props.result.status == 'success')
+            this.props.history.push('/admin')
     }
 
     render() {
@@ -38,8 +42,8 @@ class AccountCreation extends Component {
                 <MDBContainer>
                     <h3>Account Creation</h3>
                     <hr />
-                    <AccountForm onSubmit={this.onSubmit}/>
-                    </MDBContainer>
+                    <AccountForm onSubmit={this.onSubmit} />
+                </MDBContainer>
             </div>
         )
     }
@@ -50,6 +54,6 @@ AccountCreation.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    data: state.quest.results,
+    result: state.user.data,
 });
 export default connect(mapStateToProps, { createAcc })(AccountCreation)

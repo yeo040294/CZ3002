@@ -1,4 +1,4 @@
-const server = "34.87.71.156:8000";
+const server = "35.247.159.114:8000";
 
 export const fetchAllUser = (role,sessionid) => dispatch => {
     fetch("http://"+ server + `/backend/user/multi/get?sessionid=${sessionid}&role=${role}`)
@@ -19,9 +19,10 @@ export const createAcc = (postData) => dispatch => {
         body: JSON.stringify(postData)
     })
         .then(res => res.json())
-        .then(data => dispatch({
-            type: 'CREATE_ACC',
-            payload: data
+        .then(data => {
+            dispatch({
+                type: 'CREATE_ACC',
+                payload: data
+            })
         })
-        );
 }

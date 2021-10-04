@@ -1,4 +1,4 @@
-const server = "34.87.71.156:8000";
+const server = "35.247.159.114:8000";
 
 export const fetchResults = (userid,sessionid) => dispatch => {
     fetch("http://"+ server + `/backend/question/result/multi/get?sessionid=${sessionid}&userid=${userid}`)

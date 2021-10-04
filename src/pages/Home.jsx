@@ -24,7 +24,7 @@ function Home() {
         body: JSON.stringify(data),
         redirect: 'follow'
       };
-
+      
       fetch("http://35.247.159.114:8000/backend/user/login", requestOptions)
         .then(response => response.json())
         .then(result => {

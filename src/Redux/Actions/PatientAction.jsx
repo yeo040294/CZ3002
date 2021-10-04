@@ -1,4 +1,4 @@
-const server = "35.247.159.11:8000";
+const server = "35.247.159.114:8000";
 
 export const fetchDifficulty = (sessionID, userID) => dispatch => {
     let params = "?sessionid=" + sessionID + "&userid=" + userID

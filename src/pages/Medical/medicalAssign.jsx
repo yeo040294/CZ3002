@@ -3,15 +3,15 @@ import Navbar from '../../components/Medical/Navbar'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { assignPatient } from '../../Redux/Actions/PatientAction';
+import { assignPatient, assignDifficulty } from '../../Redux/Actions/PatientAction';
 import Cookies from 'js-cookie'
 
 class medicalAssign extends Component {
     state = {
         username: '',
         name: '',
-        difficulty: 'easy',
-        questionType: 'Automatic',
+        difficulty: 'Easy',
+        questionType: 'automatic'
     }
     checkValidUser = () => {
         // You don't need to put parameters in the link, that makes your life harder. You can just called cookies.get() from anywhere to and validate the role
@@ -29,15 +29,38 @@ class medicalAssign extends Component {
             [e.target.id] : e.target.value
         })
     }
-    AssignPatient = () => {
-        let sessionid = Cookies.get('sessionid')
-        let userid = Cookies.get('userid')
-        const form = {
-            sessionid,
-            userid,
-            ...this.state
+    onClickHandler = event => {
+        const value = event.target.innerHTML;
+        this.setState({ value })
+      }
+
+    handleDifficultyChange = (event) => {
+        this.setState({
+          difficulty: event.target.value
+        })
+      }
+
+    handleQuestionTypeChange = (event) => {
+        this.setState({
+          questionType: event.target.value
+        })
+    }
+
+    AssignPatient = (username,uid) => {
+        // let sessionid = Cookies.get('sessionid')
+        // let userid = Cookies.get('userid')
+        // const form = {
+        //     sessionid,
+        //     userid,
+        //     ...this.state
+        // }
+        this.props.assignDifficulty(this.state.difficulty)
+        if (this.state.questionType == "automatic"){
+            this.props.history.push("/"+ username + `/${uid}`  + "/assign/auto")            
         }
-        this.props.assignPatient(form)
+        else {
+            this.props.history.push("/"+ username + `/${uid}`  + "/assign/manual")  
+        }
     }
     componentDidUpdate(prevProps){
         if(this.props.result.status == 'success')
@@ -58,26 +81,36 @@ class medicalAssign extends Component {
                                 <MDBInput label="Name" id="name" onChange={this.textChange} icon="user-tie" group type="email" validate error="wrong"
                                     success="right" />
                                 <h5>Difficulty</h5>
-                                <MDBDropdown>
-                                    <MDBDropdownToggle caret color="primary">
-                                        Easy
+                                {/* <MDBDropdown>
+                                    <MDBDropdownToggle caret color="primary" >
+                                        {this.state.difficulty}
                                     </MDBDropdownToggle>
                                     <MDBDropdownMenu basic >
-                                        <MDBDropdownItem>easy</MDBDropdownItem>
-                                        <MDBDropdownItem>medium</MDBDropdownItem>
-                                        <MDBDropdownItem>hard</MDBDropdownItem>
+                                        <MDBDropdownItem active={this.state.difficulty === "easy"} onClick={this.onClickHandler}>Easy</MDBDropdownItem>
+                                        <MDBDropdownItem active={this.state.difficulty === "medium"} onClick={this.onClickHandler}>Medium</MDBDropdownItem>
+                                        <MDBDropdownItem active={this.state.difficulty === "hard"} onClick={this.onClickHandler}>Hard</MDBDropdownItem>
                                     </MDBDropdownMenu>
-                                </MDBDropdown>
+                                </MDBDropdown> */}
+                                <select className="browser-default custom-select" value={this.state.difficulty} onChange={this.handleDifficultyChange}>
+                                    <option value="Eady" >Easy</option>
+                                    <option value="Medium" >Medium</option>
+                                    <option value="Hard">Hard</option>
+                                </select>
                                 <h5>Select Question Type</h5>
-                                <MDBDropdown>
-                                    <MDBDropdownToggle caret color="primary">
-                                        Automatic
+                                {/* <MDBDropdown>
+                                    <MDBDropdownToggle caret color="primary" >
+                                        {this.state.questionType}
                                     </MDBDropdownToggle>
-                                    <MDBDropdownMenu basic >
-                                        <MDBDropdownItem>Automatic</MDBDropdownItem>
-                                        <MDBDropdownItem>Manual</MDBDropdownItem>
+                                    <MDBDropdownMenu basic  >
+                                        <MDBDropdownItem > Automatic</MDBDropdownItem>
+                                        <MDBDropdownItem value="manual" onChange={this.handleQuestionTypeChange}>Manual</MDBDropdownItem>
                                     </MDBDropdownMenu>
-                                </MDBDropdown>
+                                </MDBDropdown> */}
+                                <select className="browser-default custom-select" value={this.state.questionType} onChange={this.handleQuestionTypeChange}>
+                                    <option value="Automatic" >Automatic</option>
+                                    <option value="Manual" >Manual</option>
+
+                                </select>
                                 <br />
                                 <MDBBtn onClick={this.AssignPatient} color="primary">Confirm</MDBBtn>
                                 <MDBBtn color="primary">Back</MDBBtn>
@@ -93,10 +126,10 @@ class medicalAssign extends Component {
 }
 
 medicalAssign.propTypes = {
-    assignPatient: PropTypes.func.isRequired,
+    assignDifficulty: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => ({
     result: state.patient.display,
 });
-export default connect(mapStateToProps, { assignPatient })(medicalAssign)
+export default connect(mapStateToProps, { assignDifficulty })(medicalAssign)

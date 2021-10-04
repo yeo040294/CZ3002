@@ -22,6 +22,13 @@ export const fetchPatientResult = (sessionID, userID) => dispatch => {
         );
 }
 
+export const assignDifficulty = (data) => dispatch => {
+    dispatch({
+        type: 'ASSIGN_DIFFICULTY',
+        payload: data
+    })   
+}
+
 export const assignPatient = (postData) => dispatch => {
     fetch("http://"+ server + '/backend/question/assign/create', {
         method: 'POST',

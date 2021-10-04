@@ -1,5 +1,6 @@
 const initState = {
     display: [],
+    difficulty: 0
 };
 
 const PatientReducers = (state = initState, action) => {
@@ -13,6 +14,11 @@ const PatientReducers = (state = initState, action) => {
             return {
                 ...state,
                 display: action.payload
+            }
+        case 'ASSIGN_DIFFICULTY':
+            return {
+                ...state,
+                difficulty: action.payload
             }
         case 'CREATE_LEVELS':
             return {

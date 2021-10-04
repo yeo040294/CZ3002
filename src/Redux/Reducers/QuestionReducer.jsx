@@ -10,6 +10,16 @@ const QuestionReducer = (state = initState, action) => {
                 ...state,
                 results: action.payload
             }
+        case 'CREATE_QUESTIONS':
+            return {
+                ...state,
+                question: action.payload
+                }
+        case 'UPDATE_QUESTIONS':
+            return {
+                ...state,
+                question: action.payload
+                }   
         default:
             return state;
     }

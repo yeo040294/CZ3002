@@ -13,6 +13,7 @@ import medicalView from '../pages/Medical/ViewPatientResults';
 import AccountCreation from '../pages/Admin/AccountCreation';
 import UploadQuestion from '../pages/Admin/UploadQuestion';
 import medicalAssign from '../pages/Medical/medicalAssign';
+import QuestionCreation from '../pages/Admin/QuestionCreation';
 
 class Routes extends React.Component {
   render() {
@@ -32,6 +33,7 @@ class Routes extends React.Component {
         <Route exact path='/assign' component={medicalAssign} />
         <Route path='/:username/:uid/view' component={medicalView} />
         <Route exact path='/medical' component={medicalHome} />
+        <Route exact path='/QuestionCreation' component={QuestionCreation} />
         
         <Route
           render={function () {

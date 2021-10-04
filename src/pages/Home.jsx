@@ -6,7 +6,6 @@ import React, {useState} from 'react';
 import Cookies from 'js-cookie';
 function Home() {
     let history = useHistory()
-    const dispatch = useDispatch();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 

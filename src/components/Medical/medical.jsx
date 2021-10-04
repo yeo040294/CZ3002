@@ -17,26 +17,26 @@ class Medical extends Component {
                                         success="right" />
                                     <h5>Difficulty</h5>
                                         <MDBDropdown>
-        <MDBDropdownToggle caret color="primary">
-          Easy
-        </MDBDropdownToggle>
-        <MDBDropdownMenu  basic >
-          <MDBDropdownItem>easy</MDBDropdownItem>
-          <MDBDropdownItem>medium</MDBDropdownItem>
-          <MDBDropdownItem>hard</MDBDropdownItem>
-        </MDBDropdownMenu>
-      </MDBDropdown>
-      <h5>Select Question Type</h5>
-                                        <MDBDropdown>
-        <MDBDropdownToggle caret color="primary">
-          Automatic
-        </MDBDropdownToggle>
-        <MDBDropdownMenu  basic >
-          <MDBDropdownItem>Automatic</MDBDropdownItem>
-          <MDBDropdownItem>Manual</MDBDropdownItem>
-        </MDBDropdownMenu>
-      </MDBDropdown>
-      <br/>
+                                    <MDBDropdownToggle caret color="primary">
+                                        Easy
+                                    </MDBDropdownToggle>
+                                        <MDBDropdownMenu  basic >
+                                        <MDBDropdownItem>easy</MDBDropdownItem>
+                                        <MDBDropdownItem>medium</MDBDropdownItem>
+                                        <MDBDropdownItem>hard</MDBDropdownItem>
+                                        </MDBDropdownMenu>
+                                    </MDBDropdown>
+                                    <h5>Select Question Type</h5>
+                                    <MDBDropdown>
+                                    <MDBDropdownToggle caret color="primary">
+                                    Automatic
+                                    </MDBDropdownToggle>
+                                    <MDBDropdownMenu  basic >
+                                    <MDBDropdownItem>Automatic</MDBDropdownItem>
+                                    <MDBDropdownItem>Manual</MDBDropdownItem>
+                                    </MDBDropdownMenu>
+                                    </MDBDropdown>
+                                    <br/>
                                     <MDBBtn color="primary">Confirm</MDBBtn>
                                     <MDBBtn color="primary">Back</MDBBtn>
                                 </div>

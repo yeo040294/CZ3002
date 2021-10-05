@@ -1,3 +1,5 @@
+import { QuestionList } from "../../components/Medical/QuestionList";
+
 const server = "35.247.159.114:8000";
 
 export const fetchDifficulty = (sessionID, userID) => dispatch => {
@@ -22,20 +24,38 @@ export const fetchPatientResult = (sessionID, userID) => dispatch => {
         );
 }
 
-export const assignDifficulty = (data) => dispatch => {
+export const assignUserid = (userid) => dispatch => {
+    dispatch({
+        type: 'ASSIGN_USERID',
+        userid: userid
+    })
+}
+export const assignDifficulty = (difficulty) => dispatch => {
     dispatch({
         type: 'ASSIGN_DIFFICULTY',
-        payload: data
+        difficulty: difficulty
     })   
 }
-
-export const assignPatient = (postData) => dispatch => {
-    fetch("http://"+ server + '/backend/question/assign/create', {
+export const assignQuestionList = (questionList) => dispatch => {
+    dispatch({
+        type: 'ASSIGN_QUESTIONLIST',
+        payload: questionList
+    })   
+}
+export const assignPatient = (uuid, questionList, sessionID, difficulty) => dispatch => {
+    let params = "?sessionid=" + sessionID
+    let data = {
+        sessionid: sessionID,
+        userid: uuid,
+        questions: questionList,
+        difficulty: difficulty
+    }
+    fetch("http://"+ server + '/backend/question/assign/create' + params, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(postData)
+        body: JSON.stringify(data)
     })
         .then(res => res.json())
         .then(data => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDBTable, MDBTableHead, MDBTableBody,MDBBtn } from 'mdbreact';
 
-export const QuestionList = ({ data, confirm }) => {
+export const QuestionList = ({ data, submit }) => {
     let questionList = [];
 
     return (
@@ -9,10 +9,10 @@ export const QuestionList = ({ data, confirm }) => {
             <MDBTable >
                 <MDBTableHead>
                     <tr>
+                        <th>Select</th>
                         <th>Question number</th>                        
                         <th>Question image 1</th>
-                        <th>Question image 2</th>
-                        <th>Select</th>
+                        <th>Question image 2</th>                        
                     </tr>
                 </MDBTableHead>
                 <MDBTableBody>
@@ -21,20 +21,20 @@ export const QuestionList = ({ data, confirm }) => {
                         let img_src2 = "data:image/jpeg;base64," + x.qnimg2;  
                         return (                            
                             <tr key={x.quimg1}>
-                                <td>{x.questionid}</td>
-                                <td><img src={img_src1}/></td> 
-                                <td><img src={img_src2}/></td> 
                                 <td><input
                                     type="checkbox"
                                     className="form-check-input"
                                     id="rowcheck{user.id}"
                                     onChange={(e) => questionList.push(x.questionid)}
-                                    /></td>
+                                    /></td>                              
+                                <td>{x.questionid}</td>
+                                <td><img src={img_src1}/></td> 
+                                <td><img src={img_src2}/></td> 
+
                             </tr>
                         )
                     })}
-
-                    <button type="submit"> Submit </button>
+                    <MDBBtn size="sm" color="blue" onClick={() => submit(questionList)} > Assign </MDBBtn>
                 </MDBTableBody>
             </MDBTable>
         </div>

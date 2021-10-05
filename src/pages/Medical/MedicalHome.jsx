@@ -8,6 +8,7 @@ import Navbar from '../../components/Medical/Navbar';
 import Footer from '../../components/share/Footer'
 import PatientList from '../../components/Medical/PatientList';
 import Cookies from 'js-cookie';
+import { assignUserid } from '../../Redux/Actions/PatientAction';
 
 
 class MedicalHome extends Component {
@@ -15,6 +16,7 @@ class MedicalHome extends Component {
         this.props.fetchAllUser(0,Cookies.get("sessionid")); //0 for patient, 1 for medical, 2 for admin
     }
     assign = (username,uid) => {
+        this.props.assignUserid(uid)
         this.props.history.push("/"+ username + `/${uid}`  + "/assign");
     }
 
@@ -43,4 +45,4 @@ const mapStateToProps = state => ({
     data: state.user.data
 });
 
-export default connect(mapStateToProps, { fetchAllUser }) (MedicalHome);
+export default connect(mapStateToProps, { fetchAllUser, assignUserid}) (MedicalHome);

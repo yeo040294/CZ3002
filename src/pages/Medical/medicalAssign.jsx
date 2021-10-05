@@ -9,19 +9,15 @@ import Cookies from 'js-cookie'
 class medicalAssign extends Component {
     state = {
         username: '',
-        name: '',
+        userid: '',
         difficulty: 'Easy',
-        questionType: 'automatic'
+        questionType: 'Automatic'
     }
     checkValidUser = () => {
         // You don't need to put parameters in the link, that makes your life harder. You can just called cookies.get() from anywhere to and validate the role
         let role = Cookies.get('role')
         if(role != 1)
             this.props.history.push('/')
-    }
-
-    componentDidMount(){
-        this.checkValidUser()
     }
 
     textChange = (e) =>{
@@ -46,7 +42,7 @@ class medicalAssign extends Component {
         })
     }
 
-    AssignPatient = (username,uid) => {
+    AssignPatient = (username,userid) => {
         // let sessionid = Cookies.get('sessionid')
         // let userid = Cookies.get('userid')
         // const form = {
@@ -55,11 +51,11 @@ class medicalAssign extends Component {
         //     ...this.state
         // }
         this.props.assignDifficulty(this.state.difficulty)
-        if (this.state.questionType == "automatic"){
-            this.props.history.push("/"+ username + `/${uid}`  + "/assign/auto")            
+        if (this.state.questionType == "Automatic"){
+            this.props.history.push("/"+ username + "/" + userid  + "/assign/auto")            
         }
         else {
-            this.props.history.push("/"+ username + `/${uid}`  + "/assign/manual")  
+            this.props.history.push("/"+ username +  "/" + userid  + "/assign/manual")  
         }
     }
     componentDidUpdate(prevProps){
@@ -76,41 +72,13 @@ class medicalAssign extends Component {
                         <form>
                             <p className="h3 text-center mb-4">Assign Task for Patient</p>
                             <div className="grey-text">
-                                <MDBInput label="Username" onChange={this.textChange} id="username" icon="user" group type="text" validate error="wrong"
-                                    success="right" />
-                                <MDBInput label="Name" id="name" onChange={this.textChange} icon="user-tie" group type="email" validate error="wrong"
-                                    success="right" />
                                 <h5>Difficulty</h5>
-                                {/* <MDBDropdown>
-                                    <MDBDropdownToggle caret color="primary" >
-                                        {this.state.difficulty}
-                                    </MDBDropdownToggle>
-                                    <MDBDropdownMenu basic >
-                                        <MDBDropdownItem active={this.state.difficulty === "easy"} onClick={this.onClickHandler}>Easy</MDBDropdownItem>
-                                        <MDBDropdownItem active={this.state.difficulty === "medium"} onClick={this.onClickHandler}>Medium</MDBDropdownItem>
-                                        <MDBDropdownItem active={this.state.difficulty === "hard"} onClick={this.onClickHandler}>Hard</MDBDropdownItem>
-                                    </MDBDropdownMenu>
-                                </MDBDropdown> */}
                                 <select className="browser-default custom-select" value={this.state.difficulty} onChange={this.handleDifficultyChange}>
                                     <option value="Eady" >Easy</option>
                                     <option value="Medium" >Medium</option>
                                     <option value="Hard">Hard</option>
                                 </select>
-                                <h5>Select Question Type</h5>
-                                {/* <MDBDropdown>
-                                    <MDBDropdownToggle caret color="primary" >
-                                        {this.state.questionType}
-                                    </MDBDropdownToggle>
-                                    <MDBDropdownMenu basic  >
-                                        <MDBDropdownItem > Automatic</MDBDropdownItem>
-                                        <MDBDropdownItem value="manual" onChange={this.handleQuestionTypeChange}>Manual</MDBDropdownItem>
-                                    </MDBDropdownMenu>
-                                </MDBDropdown> */}
-                                <select className="browser-default custom-select" value={this.state.questionType} onChange={this.handleQuestionTypeChange}>
-                                    <option value="Automatic" >Automatic</option>
-                                    <option value="Manual" >Manual</option>
-
-                                </select>
+                                <br />
                                 <br />
                                 <MDBBtn onClick={this.AssignPatient} color="primary">Confirm</MDBBtn>
                                 <MDBBtn color="primary">Back</MDBBtn>

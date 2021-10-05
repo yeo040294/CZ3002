@@ -1,6 +1,8 @@
 const initState = {
     display: [],
-    difficulty: 0
+    uuid: '',
+    difficulty: 0,
+    questions: null
 };
 
 const PatientReducers = (state = initState, action) => {
@@ -15,15 +17,30 @@ const PatientReducers = (state = initState, action) => {
                 ...state,
                 display: action.payload
             }
+        case 'ASSIGN_USERID':
+            return {
+                ...state,
+                uuid: action.userid
+            }
         case 'ASSIGN_DIFFICULTY':
             return {
                 ...state,
-                difficulty: action.payload
+                difficulty: action.difficulty
             }
+        case 'ASSIGN_QUESTIONLIST':
+            return {
+                ...state,
+                questions: action.payload
+            }
+        case 'ASSIGN_DIFFICULTY':
+            return {
+                ...state,
+                difficulty: action.difficulty
+            }       
         case 'CREATE_LEVELS':
             return {
                 ...state,
-                display: action.payload
+                questions: action.payload
             }
         default:
             return state;

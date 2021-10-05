@@ -14,8 +14,9 @@ import AccountCreation from '../pages/Admin/AccountCreation';
 import UploadQuestion from '../pages/Admin/UploadQuestion';
 import medicalAssign from '../pages/Medical/medicalAssign';
 import medicalAssignAuto from '../pages/Medical/medicalAssignAuto';
-import medicalAssignManual from '../pages/Medical/medicalAssignManual';
 import QuestionCreation from '../pages/Admin/QuestionCreation';
+import AssignResult from '../pages/Medical/AssignResult';
+
 
 class Routes extends React.Component {
   render() {
@@ -36,9 +37,9 @@ class Routes extends React.Component {
         <Route path='/:username/:uid/view' component={medicalView} />
         <Route exact path='/medical' component={medicalHome} />
         <Route exact path='/:username/:uid/assign/auto' component={medicalAssignAuto} />
-        <Route exact path='/:username/:uid/assign/manual' component={medicalAssignManual} />
         <Route exact path='/QuestionCreation' component={QuestionCreation} />
-        
+        <Route exact path='/medical/assign/result' component={AssignResult} />
+
         <Route
           render={function () {
             return <h1>Not Found</h1>;

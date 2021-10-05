@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import About from '../pages/About';
 import Home from '../pages/Home';
 
 import patientGamepage from '../pages/Patient/patientGamepage';
@@ -16,6 +15,8 @@ import medicalAssign from '../pages/Medical/medicalAssign';
 import medicalAssignAuto from '../pages/Medical/medicalAssignAuto';
 import QuestionCreation from '../pages/Admin/QuestionCreation';
 import AssignResult from '../pages/Medical/AssignResult';
+import Logout from '../pages/Logout';
+import Profile from '../pages/Profile';
 
 
 class Routes extends React.Component {
@@ -23,7 +24,8 @@ class Routes extends React.Component {
     return (
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/about' component={About} />
+        <Route path='/logout' component={Logout} />
+        <Route path='/profile' component={Profile} />
         {/* admin pages */}
         <Route exact path='/admin' component={adminHome} />
         <Route path='/admin/account' component={AccountCreation} />

@@ -1,76 +1,93 @@
-
-import { MDBContainer} from "mdbreact"
+import React, { Component } from 'react'
+import Card from '../components/Card'
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact"
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { logIn } from '../Redux/Actions/UsersAction'
 import Navbar from '../components/share/Navbar'
+import Footer from '../components/share/Footer'
 import { useHistory, Redirect } from 'react-router-dom'
-import React, {useState} from 'react';
-import Cookies from 'js-cookie';
-function Home() {
-    let history = useHistory()
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+import Cookies from 'js-cookie'
 
-    function handleSubmit(event) {
-      event.preventDefault()
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "text/plain");
-      
-      let data = {
-        "username": username,
-        "password": password
+class Home extends Component {
+    constructor(props) {
+      super(props)   
+      this.state = {
+         username: '',
+         password: '',    
       }
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: JSON.stringify(data),
-        redirect: 'follow'
-      };
-      
-      fetch("http://35.247.159.114:8000/backend/user/login", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-          Cookies.set('userid',result.userid, {path: '/'})
-          Cookies.set('sessionid',result.sessionid, {path: '/'})
-          Cookies.set('role',result.role, {path: '/'})
-          if (result.role == 0) {
-            history.push('/patient')
-          }
-          else if (result.role == 1){
-            history.push('/medical')
-          }
-          else if (result.role == 2){
-            history.push('/admin')
-          }
-        })
-        .catch(e => {
-          alert('Wrong username or password')
-          console.log(e)
-        });
-            
     }
     
-    return (
-        <MDBContainer>  
+    componentDidMount() {
+      let role = Cookies.get('role')
+      let sessionid = Cookies.get('sessionid')
+      if (sessionid) {
+          if (role == 0) {
+            this.props.history.push('/patient')
+          }
+          else if (role == 1){
+            this.props.history.push('/medical')
+          }
+          else if (role == 2){
+            this.props.history.push('/admin')
+          }
+        }
+      }
+
+    handleUsernameChange = (event) => {
+      this.setState({
+        username: event.target.value
+      })
+    }
+    handlePasswordChange = (event) => {
+      this.setState({
+        password: event.target.value
+      })
+    }
+    handleSubmit = (event) => {   
+      event.preventDefault()
+      this.props.logIn(this.state.username, this.state.password)   
+      let role = Cookies.get('role')
+      if (role == 0) {
+        this.props.history.push('/patient')
+      }
+      else if (role == 1){
+        this.props.history.push('/medical')
+      }
+      else if (role == 2){
+        this.props.history.push('/admin')
+      }
+    }
+
+    render() {
+      const {username, password} = this.state
+        return (
+          <MDBContainer>  
             <Navbar />  
             <h2>Flip flop mental rotational</h2>             
-            <form onSubmit={handleSubmit}>
+            <form onClick={this.handleSubmit}>
               <label htmlFor="username">Username</label>
               <input
                 type="text"
                 className="form-control"
                 value={username}
-                onChange={e => setUsername(e.target.value)}
+                onChange={this.handleUsernameChange}
               />
               <label htmlFor="password">Password</label>
               <input
-                type="password"
+                type="text"
                 className="form-control"
                 value={password}
-                onChange={e => setPassword(e.target.value)}
+                onChange={this.handlePasswordChange}
               />
-              <br></br>
-            <input type="submit" className="btn blue" value="Submit" />
+            <input type="submit" value="Submit" />
             </form>
-        </MDBContainer>
-    )
+          </MDBContainer>
+        )
+    }
 }
-export default Home;
+const mapStateToProps = (state, ownProps) => ({
+  data: state.quest.results,
+});
+
+export default connect(mapStateToProps, { logIn }) (Home);

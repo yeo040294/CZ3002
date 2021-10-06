@@ -3,28 +3,43 @@ import Navbar from '../../components/share/Navbar'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact'; 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchPatientResult } from '../../Redux/Actions/PatientAction';
+import { fetchQuestion } from '../../Redux/Actions/QuestionAction';
+import { startGame } from '../../Redux/Actions/PatientAction';
+
 import Cookies from 'js-cookie'
+import GameList from '../../components/Patient/GameList';
 
 class patientGamepage extends Component {
+    state = {
+        questionList: [],
+    }
     componentDidMount(){
-        this.RetrieveData()
+        this.setState({
+            questionList: this.props.questionList
+        })
     }
-    RetrieveData = () => {
-        let sessionid = Cookies.get('sessionid')
-        let userid = Cookies.get('userid')
-        this.props.fetchPatientResult(sessionid,userid)
-    }
+
     render() {
-        let result = this.props.result.results
-        console.log(result)
+        console.log(this.props.question)
+        console.log(this.props.questionList)
         return (
             <div>
                 <MDBContainer>
                 <Navbar/>
-                <p  className="h2 font-weight-bold">Thank you for your participation</p>
+                <p  className="h2 font-weight-bold">Welcome to the game!</p>
                 <br/>
-                <p  className="h2 font-weight-bold">Your result is : </p>
+                {this.state.questionList.map(questionid => {
+                    return (
+                        <div>  Question number  {questionid} 
+                        {this.props.question === [] ?  <p>Loading question </p> : <GameList questionid={questionid} question={this.props.question}/>}
+                        </div>
+                    )
+                })}
+
+
+                
+            <MDBBtn onClick={() => this.props.history.push("/patientResultpage")}> Submit </MDBBtn>
+
             </MDBContainer>
             </div>
 
@@ -32,10 +47,11 @@ class patientGamepage extends Component {
     }
 }
 patientGamepage.propTypes = {
-    fetchPatientResult: PropTypes.func.isRequired,
+    fetchQuestion: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    result: state.patient.display,
+    questionList: state.patient.questionList,
+    question: state.quest.questionDetail,
 });
-export default connect(mapStateToProps, { fetchPatientResult })(patientGamepage)
+export default connect(mapStateToProps, { fetchQuestion, startGame })(patientGamepage)

@@ -78,7 +78,6 @@ class Home extends Component {
                       <label htmlFor="username">Username</label>
                       <input
                         type="text"
-                        id="defaultFormCardNameEx"
                         className="form-control"
                         value={username}
                         onChange={this.handleUsernameChange}
@@ -92,9 +91,7 @@ class Home extends Component {
                         onChange={this.handlePasswordChange}
                       />
                     <div className="text-center mt-4">
-                      <MDBBtn className="mb-3" type="submit">
-                        Log In
-                      </MDBBtn>
+                      <MDBBtn className="mb-3" type="submit" value="Submit></MDBBtn>
                     </div>
                     </form>
                   </MDBCardBody>

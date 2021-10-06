@@ -2,7 +2,8 @@ const initState = {
     display: [],
     uuid: '',
     difficulty: 0,
-    questions: null
+    questions: null,
+    questionList: []
 };
 
 const PatientReducers = (state = initState, action) => {
@@ -41,6 +42,16 @@ const PatientReducers = (state = initState, action) => {
             return {
                 ...state,
                 questions: action.payload
+            }
+        case 'START_GAME':
+            return {
+                ...state,
+                display: action.payload
+            }
+        case 'ADD_QUESTIONLIST':
+            return {
+                ...state,
+                questionList: action.payload
             }
         default:
             return state;

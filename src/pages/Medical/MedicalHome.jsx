@@ -31,7 +31,7 @@ class MedicalHome extends Component {
                 <MDBContainer>
                     Medical home page (with patient list)
 
-                {this.props.data && <PatientList data={this.props.data.users} assign = {this.assign} view = {this.view}/>}
+                {this.props.data && <PatientList data={this.props.data.users[0].username} assign = {this.assign} view = {this.view}/>}
                 </MDBContainer>
             </div>
         )

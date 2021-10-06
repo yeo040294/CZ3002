@@ -52,6 +52,15 @@ export const updateQuestion = (postData) => dispatch => {
             })
         })
 }
+
+export const fetchQuestion = (sessionid, questionid) => dispatch => {
+    fetch("http://"+ server + `/backend/question/multi/get?sessionid=${sessionid}&questionid=${questionid}`)
+        .then(res => res.json())
+        .then(data => dispatch({
+            type: 'FETCH_QUESTION',
+            payload: data
+        }))
+}
 // export const fetchResults = (postData) => dispatch => {
 //     fetch("http://"+ server + '/backend/question/result/multi/get', {
 //         method: 'POST',

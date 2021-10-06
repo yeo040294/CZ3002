@@ -19,6 +19,16 @@ const UserReducer = (state = initState, action) => {
                 ...state,
                 data: action.payload
             }
+        case 'CHANGE_DISPLAYNAME':
+            return {
+                ...state,
+                data: action.payload
+            }
+        case 'CHANGE_PASSWORD':
+            return {
+                ...state,
+                data: action.payload
+            }
         default:
             return state;
     }

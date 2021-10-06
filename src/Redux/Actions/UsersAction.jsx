@@ -57,3 +57,46 @@ export const createAcc = (postData) => dispatch => {
             })
         })
 }
+
+export const changeDisplayname = (sessionid, displayname) => dispatch => {
+    let data = {
+        "sessionid": sessionid,
+        "displayname": displayname
+      }
+    fetch("http://"+ server + '/backend/user/update/displayname', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: 'CHANGE_DISPLAYNAME',
+                payload: data
+            })
+        })
+    }
+
+export const changePassword = (sessionid, oldpassword, newpassword) => dispatch => {
+    let data = {
+        "sessionid": sessionid,
+        "oldpassword": oldpassword,
+        "newpassword": newpassword
+        }
+    fetch("http://"+ server + '/backend/user/update/displayname', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: 'CHANGE_PASSWORD',
+                payload: data
+            })
+        })
+    }

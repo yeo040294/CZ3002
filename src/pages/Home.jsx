@@ -75,7 +75,7 @@ class Home extends Component {
               />
               <label htmlFor="password">Password</label>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 value={password}
                 onChange={this.handlePasswordChange}

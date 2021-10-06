@@ -1,4 +1,5 @@
 const server = "35.247.159.114:8000";
+import Cookies from 'js-cookie'
 
 export const logIn = (username, password) => dispatch => {
     var myHeaders = new Headers();
@@ -22,6 +23,14 @@ export const logIn = (username, password) => dispatch => {
     })
 }
 
+export const fetchUserInfo = (sessionid, userid) => dispatch => {
+    fetch("http://"+ server + `/backend/user/get?sessionid=${sessionid}&userid=${userid}`)
+        .then(res => res.json())
+        .then(data => dispatch({
+            type: 'FETCH_USER',
+            payload: data
+        }))
+}
 export const fetchAllUser = (role,sessionid) => dispatch => {
     fetch("http://"+ server + `/backend/user/multi/get?sessionid=${sessionid}&role=${role}`)
         .then(res => res.json())

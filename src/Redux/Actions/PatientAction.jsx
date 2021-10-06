@@ -65,3 +65,31 @@ export const assignPatient = (uuid, questionList, sessionID, difficulty) => disp
             })
         })
 }
+
+export const startGame = (sessionID, assignmentID) => dispatch => {
+    let params = "?sessionid=" + sessionID
+    let data = {
+        sessionid: sessionID,
+        assignmentid: assignmentID
+    }
+    fetch("http://"+ server + '/backend/question/assign/start' + params, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: 'START_GAME',
+                payload: data
+            })
+        })}
+
+export const addQuestionList = (questionList) => dispatch => {
+    dispatch({
+        type: 'ADD_QUESTIONLIST',
+        payload: questionList
+    })   
+}

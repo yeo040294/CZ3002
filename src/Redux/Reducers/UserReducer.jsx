@@ -4,6 +4,11 @@ const initState = {
 
 const UserReducer = (state = initState, action) => {
     switch (action.type) {
+        case 'FETCH_USER':
+            return {
+                ...state,
+                data: action.payload
+            }
         case 'FETCH_ALL':
             return {
                 ...state,

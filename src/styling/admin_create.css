@@ -1,0 +1,49 @@
+.header {
+    position: absolute;
+    width: 334px;
+    height: 56px;
+    left: 534px;
+    top: 100px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 56px;
+    text-align: center;
+    
+    color: #1FB4CA;
+
+}
+
+.content {
+    margin-bottom: 5%;
+}
+
+.content-row1 {
+    margin-left: 1%;
+}
+
+.content-dropDown {
+    margin-left:5%;
+}
+
+p {
+    margin-top: 2%;
+}
+
+.content-btn {
+    margin-top: 5%;
+    margin-left: 55%;
+    margin-bottom: 5%;
+}
+
+.btnSubmit {
+    background-color: #1FB4CA;
+    color: white;
+}
+
+.btnClear {
+    background-color: #ED5C5F;
+    color: white;
+}

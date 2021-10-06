@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { MDBInputGroup, MDBInput, MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBRow, MDBBtn } from 'mdbreact';
-
+import '../../styling/admin_create.css';
+// import '../../styling/index.css';
 
 const AccountForm = ({onSubmit}) => {
     const [name, setName] = useState('');
@@ -15,10 +16,10 @@ const AccountForm = ({onSubmit}) => {
             <MDBInput value={name} label="Name" icon="address-card" onChange={e => setName(e.target.value)} />
             <MDBInput value={username}label="Username" icon="user-circle" onChange={e => setUsername(e.target.value)}/>
             <MDBInput type="password" value={password} label="Password" icon="unlock-alt" onChange={e => setPassword(e.target.value)} />
-            <MDBRow>
-                User Account Type:
-                <MDBDropdown size="sm">
-                    <MDBDropdownToggle value={usertype} caret color="primary">
+            <MDBRow className="content-row1">
+                <p>User Account Type:</p>
+                <MDBDropdown className="content-dropDown" size="sm">
+                    <MDBDropdownToggle value={usertype} caret color="white">
                         {usertype}
                     </MDBDropdownToggle>
                     <MDBDropdownMenu basic onClick={ e => setUsertype(e.target.value)}>
@@ -27,8 +28,14 @@ const AccountForm = ({onSubmit}) => {
                         <MDBDropdownItem value={'Medical'}>Medical</MDBDropdownItem>
                     </MDBDropdownMenu>
                 </MDBDropdown>
-                <MDBBtn outline color="success" size="sm" onClick={() => onSubmit(name, username,password,usertype)} >Submit</MDBBtn>
-                <MDBBtn outline color="danger" size="sm" onClick={() => {setName(''); setUsername('');setPassword(''); setUsertype('Select User Type')}} >Clear</MDBBtn>
+            </MDBRow>
+            <MDBRow className="content-btn">
+                <div>
+                    <MDBBtn  color="#1FB4CA" className="btnSubmit" size="sm" onClick={() => onSubmit(name, username,password,usertype)} >Submit</MDBBtn>
+                </div>
+                <div>
+                    <MDBBtn className="btnClear" color="#ED5C5F" size="sm" onClick={() => {setName(''); setUsername('');setPassword(''); setUsertype('Select User Type')}} >Clear</MDBBtn>
+                </div>
             </MDBRow>
         </div>
     )

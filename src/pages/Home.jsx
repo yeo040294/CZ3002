@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import Card from '../components/Card'
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact"
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBIcon } from 'mdbreact'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { logIn } from '../Redux/Actions/UsersAction'
 import Navbar from '../components/share/Navbar'
-import Footer from '../components/share/Footer'
+// import Footer from '../components/share/Footer'
 import { useHistory, Redirect } from 'react-router-dom'
 import Cookies from 'js-cookie'
+
+import '../styling/home.css';
+import '../styling/index.css';
 
 class Home extends Component {
     constructor(props) {
@@ -62,26 +65,39 @@ class Home extends Component {
     render() {
       const {username, password} = this.state
         return (
-          <MDBContainer>  
-            <Navbar />  
-            <h2>Flip flop mental rotational</h2>             
-            <form onClick={this.handleSubmit}>
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                className="form-control"
-                value={username}
-                onChange={this.handleUsernameChange}
-              />
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                value={password}
-                onChange={this.handlePasswordChange}
-              />
-            <input type="submit" value="Submit" />
-            </form>
+          <MDBContainer className="bg">  
+            {/* <Navbar />   */}
+            <MDBRow>
+              <MDBCol  className="lForm" md="6">
+                <MDBCard>
+                  <MDBCardBody className="mx-4">
+                    <h2 className="h4 text-center py-4">Flip Flop</h2>    
+                    <p className="title">Login</p>
+                    {/* <hr></hr> */}
+                    <form onClick={this.handleSubmit}>
+                      <label htmlFor="username">Username</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={username}
+                        onChange={this.handleUsernameChange}
+                      />
+                      <label className="pwd" htmlFor="password">Password</label>
+                      <input
+                        type="text"
+                        id="defaultFormCardNameEx"
+                        className="form-control"
+                        value={password}
+                        onChange={this.handlePasswordChange}
+                      />
+                    <div className="text-center mt-4">
+                      <MDBBtn className="mb-3" type="submit" value="Submit></MDBBtn>
+                    </div>
+                    </form>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+            </MDBRow>
           </MDBContainer>
         )
     }

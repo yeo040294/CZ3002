@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { MDBNavbar, MDBNavbarBrand, MDBDropdown, MDBIcon, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBFooter, MDBNavLink } from 'mdbreact';
+import '../../styling/index.css'
 
 class Navbar extends Component {
     state = {
@@ -28,10 +29,10 @@ class Navbar extends Component {
         );
         return (
             <div>
-                <MDBNavbar color='indigo' dark expand='md' fixed='top' scrolling>
+                <MDBNavbar light expand='md' fixed='top' scrolling>
                     <MDBNavbarBrand href='/' className='py-0 font-weight-bold'>
                     </MDBNavbarBrand>
-                    <MDBNavbarToggler
+                    <MDBNavbarToggler className="toggler"
                         onClick={this.toggleCollapse('mainNavbarCollapse')}
                     />
                     <MDBCollapse id='mainNavbarCollapse' isOpen={collapseID} navbar>

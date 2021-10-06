@@ -28,7 +28,7 @@ class Navbar extends Component {
     );
     return (
       <div>
-        <MDBNavbar color='indigo' dark expand='md' fixed='top' scrolling>
+        <MDBNavbar light expand='md' fixed='top' scrolling>
           <MDBNavbarBrand href='/' className='py-0 font-weight-bold'>
           </MDBNavbarBrand>
           <MDBNavbarToggler

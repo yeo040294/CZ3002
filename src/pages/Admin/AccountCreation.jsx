@@ -1,4 +1,4 @@
-import { MDBContainer } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBIcon } from 'mdbreact'
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import AccountForm from '../../components/Admin/AccountForm';
@@ -6,6 +6,8 @@ import Navbar from '../../components/Admin/Navbar';
 import PropTypes from 'prop-types';
 import { createAcc } from '../../Redux/Actions/UsersAction';
 import Cookies from 'js-cookie'
+import '../../styling/index.css';
+import '../../styling/admin_create.css';
 
 class AccountCreation extends Component {
     state = {
@@ -39,10 +41,17 @@ class AccountCreation extends Component {
         return (
             <div>
                 <Navbar />
-                <MDBContainer>
-                    <h3>Account Creation</h3>
-                    <hr />
-                    <AccountForm onSubmit={this.onSubmit} />
+                <MDBContainer className="content">
+                    <MDBRow>
+                        <MDBCol  className="lForm" md="6">
+                            <MDBCard>
+                            <MDBCardBody className="mx-4">
+                                <h2 className="h4 text-center py-4">Account Creation</h2>    
+                                <AccountForm onSubmit={this.onSubmit} />
+                            </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
                 </MDBContainer>
             </div>
         )

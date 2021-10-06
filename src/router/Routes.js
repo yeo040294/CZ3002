@@ -31,7 +31,7 @@ class Routes extends React.Component {
         {/* admin pages */}
         <Route exact path='/admin' component={adminHome} />
         <Route path='/admin/account' component={AccountCreation} />
-        <Route path='/admin/upload' component={UploadQuestion} />
+        <Route path='/admin/upload' component={QuestionCreation} />
         {/* patient pages */}
         <Route path='/patientGamepage' component={patientGamepage} />
         <Route path='/patientReadypage' component={patientReadypage} />

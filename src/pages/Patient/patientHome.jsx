@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchDifficulty } from '../../Redux/Actions/PatientAction';
 import Cookies from 'js-cookie'
+import '../../styling/index.css'
+import '../../styling/home.css'
+
 
 
 class patientHome extends Component {
@@ -22,32 +25,49 @@ class patientHome extends Component {
         return (
             <div>
                 <Navbar />
-                <MDBContainer>
-                    <p className="h2 font-weight-bold">The doctor has assign you a game</p>
-                    <p className="h4 font-weight-bold">DIFFICULTY : </p>
-                    {assignments && assignments.map(x => {
-                        return (
-                            <MDBContainer>
-                                <MDBRow>
-                                    <MDBCol size="3">
-                                        <MDBCard style={{ width: "22rem", marginTop: "1rem" }}>
-                                            <MDBCardHeader color="blue lighten-1">Assignment No. {x.assignmentid}</MDBCardHeader>
-                                            <MDBCardBody>
-                                                <MDBCardTitle>{x.questions}</MDBCardTitle>
-                                                <MDBCardText>
-                                                    With supporting text below as a natural lead-in to additional
-                                                    content.
-                                                </MDBCardText>
-                                            </MDBCardBody>
-                                        </MDBCard>
-                                    </MDBCol>
-                                </MDBRow>
-                            </MDBContainer>
-                        )
-                    })}
-                    <MDBBtn color="primary">
-                        PLAY GAME
-                    </MDBBtn>
+                <div className="header">
+                    <p>Home</p>
+                </div>
+                {/* <br></br> */}
+                <MDBContainer fluid>
+                    <div className="body">
+                    <MDBRow>
+                        <MDBCol  className="content" md="8">
+                            <MDBCard>
+                                <MDBCardBody>
+                                <p className="h2 font-weight-bold">The doctor has assign you a game</p>
+                                <br></br>
+                                <p className="h4 font-weight-bold">DIFFICULTY : </p>
+                                {assignments && assignments.map(x => {
+                                    return (
+                                        <MDBContainer>
+                                            <MDBRow>
+                                                <MDBCol size="3">
+                                                    <MDBCard style={{ width: "22rem", marginTop: "1rem" }}>
+                                                        <MDBCardHeader color="blue lighten-1">Assignment No. {x.assignmentid}</MDBCardHeader>
+                                                        <MDBCardBody>
+                                                            <MDBCardTitle>{x.questions}</MDBCardTitle>
+                                                            <MDBCardText>
+                                                                With supporting text below as a natural lead-in to additional
+                                                                content.
+                                                            </MDBCardText>
+                                                        </MDBCardBody>
+                                                    </MDBCard>
+                                                </MDBCol>
+                                            </MDBRow>
+                                        </MDBContainer>
+                                    )
+                                })}
+                                <div className="text-center mt-4">
+                                    <MDBBtn className="mb-3">
+                                        Play Game
+                                    </MDBBtn>
+                                </div>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
+                    </div>
                 </MDBContainer>
             </div>
         )

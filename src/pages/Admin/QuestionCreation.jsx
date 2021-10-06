@@ -29,6 +29,7 @@ class QuestionCreation extends Component {
     pictureload2 = (pic2) => {
         this.setState({ image2: pic2 });
     }
+    
     onSubmit = (difficultylevel, image1, image2, identical) => {
         
         let sessionID = Cookies.get('sessionid')

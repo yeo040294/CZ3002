@@ -5,6 +5,7 @@ import { ReactComponent as Logo } from './assets/logo.svg';
 import Routes from './router/Routes';
 import Store from './Redux/Store/Store';
 import { Provider } from 'react-redux';
+import '../src/styling/index.css';
 
 class App extends Component {
   state = {
@@ -40,11 +41,11 @@ class App extends Component {
               <br />
               <Routes />
               <br/>
-            <MDBFooter color='indigo'>
-              <p className='footer-copyright mb-0 py-3 text-center'>
+            <MDBFooter color="#F7FEFF;">
+              <div className='footer-copyright mb-0 py-3 text-center'>
                 &copy; {new Date().getFullYear()} Copyright:
               <a href='https://www.MDBootstrap.com'> MDBootstrap.com </a>
-              </p>
+              </div>
             </MDBFooter>
           </div>
         </Router>

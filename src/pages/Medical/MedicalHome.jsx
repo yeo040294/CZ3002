@@ -33,7 +33,7 @@ class MedicalHome extends Component {
                 <MDBContainer>
                     Medical home page (with patient list)
 
-                    {result.length && <PatientList data={result} assign={this.assign} view={this.view} />}
+                    {result !== undefined && <PatientList data={result} assign={this.assign} view={this.view} />}
                 </MDBContainer>
             </div>
         )

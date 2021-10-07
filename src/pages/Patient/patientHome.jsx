@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { fetchDifficulty, startGame, addQuestionList } from '../../Redux/Actions/PatientAction';
 import { fetchQuestion } from '../../Redux/Actions/QuestionAction';
 import Cookies from 'js-cookie'
-
 import '../../styling/index.css'
 import '../../styling/home.css'
 import AssignmentList from '../../components/Patient/AssignmentList'
@@ -40,8 +39,8 @@ class patientHome extends Component {
             <div>
                 <Navbar />
                 <div className="header">
-                <p>Home</p>
-            </div>
+                    <p>Home</p>
+                </div>
             {/* <br></br> */}
             <MDBContainer fluid>
                 <div className="body">

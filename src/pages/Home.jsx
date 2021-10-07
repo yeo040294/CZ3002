@@ -8,7 +8,7 @@ import Navbar from '../components/share/Navbar'
 // import Footer from '../components/share/Footer'
 import { useHistory, Redirect } from 'react-router-dom'
 import Cookies from 'js-cookie'
-
+import flipfloplogo from '../assets/FlipFlopLogo.png'
 import '../styling/home.css';
 import '../styling/index.css';
 
@@ -67,11 +67,15 @@ class Home extends Component {
         return (
           <MDBContainer className="bg">  
             {/* <Navbar />   */}
+            <div className="logo">
+                <img src={flipfloplogo} className="img-logo" alt="img_logo"/>
+            </div>
             <MDBRow>
               <MDBCol  className="lForm" md="6">
                 <MDBCard>
                   <MDBCardBody className="mx-4">
-                    <h2 className="h4 text-center py-4">Flip Flop</h2>    
+                    
+                    {/* <h2 className="h4 text-center py-4">Flip Flop</h2>     */}
                     <p className="title">Login</p>
                     {/* <hr></hr> */}
                     <form onClick={this.handleSubmit}>
@@ -90,7 +94,7 @@ class Home extends Component {
                         onChange={this.handlePasswordChange}
                       />
                     <div className="text-center mt-4">
-                      <MDBBtn className="mb-3" type="submit" value="Submit></MDBBtn>
+                      <MDBBtn className="mb-3" type="submit" value="Submit">Log In</MDBBtn>
                     </div>
                     </form>
                   </MDBCardBody>

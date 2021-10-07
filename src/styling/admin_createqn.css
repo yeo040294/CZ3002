@@ -1,0 +1,66 @@
+/*Create Question/Question Creation*/
+
+.content-qnc {
+    padding-top: 5%;
+}
+
+.form-qn {
+    float: center;
+    margin: 0 auto;
+}
+
+.content {
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
+.content-pic {
+    width: 100%;
+    margin-left: 2%;
+}
+
+.content-first {
+    /* margin-left: 1%; */
+    /* background-color: #ED5C5F; */
+    position: relative;
+    padding-left: 5%;
+}
+
+h6 {
+    margin-left: 2%;
+}
+
+.content-second {
+    /* margin-left: 1%; */
+    /* background-color: #ED5C5F; */
+    position: relative;
+    padding-left: 5%;
+}
+
+.content-third {
+    margin-top: 5%;
+    position: relative;
+    padding-left: 4.5%;
+    /* background-color: #1FB4CA; */
+}
+
+.content-btn {
+    margin-left: 50%;
+    padding-bottom: 5%;
+    /* background-color: #1FB4CA; */
+    width: 100%;
+}
+
+.btnCreate {
+    background-color: #1FB4CA;
+    color: white;
+    margin-left: 100%;
+}
+
+.content-dropDown1 {
+    margin-right: 10%;
+}
+
+body {
+    overflow: scrollable;
+}

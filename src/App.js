@@ -41,12 +41,12 @@ class App extends Component {
               <br />
               <Routes />
               <br/>
-            <MDBFooter color="#F7FEFF;">
+            {/* <MDBFooter color="#F7FEFF;">
               <div className='footer-copyright mb-0 py-3 text-center'>
                 &copy; {new Date().getFullYear()} Copyright:
               <a href='https://www.MDBootstrap.com'> MDBootstrap.com </a>
               </div>
-            </MDBFooter>
+            </MDBFooter> */}
           </div>
         </Router>
       </Provider>

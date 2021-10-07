@@ -68,7 +68,6 @@ medicalAssignAuto.propTypes = {
 
 const mapStateToProps = state => ({
     data: state.quest.questions,
-    patient: state.patient.display,
     difficulty: state.patient.difficulty,
     uuid: state.patient.uuid
 });

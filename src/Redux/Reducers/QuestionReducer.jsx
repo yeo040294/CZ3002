@@ -1,6 +1,7 @@
 const initState = {
     questions: [],
-    results: []
+    results: [],
+    questionDetail: []
 };
 
 const QuestionReducer = (state = initState, action) => {
@@ -25,6 +26,11 @@ const QuestionReducer = (state = initState, action) => {
                 ...state,
                 question: action.payload
                 }   
+        case 'FETCH_QUESTION':
+            return {
+                ...state,
+                questionDetail: action.payload
+            }
         default:
             return state;
     }

@@ -1,1 +1,11 @@
 node_modules
+.eslintcache
+src/components/Admin/AccountForm.jsx
+src/components/Admin/CreateQues.jsx
+src/components/share/PicUpload.jsx
+src/pages/Admin/AccountCreation.jsx
+src/pages/Admin/QuestionCreation.jsx
+src/pages/Home.jsx
+src/styling/admin_create.css
+src/styling/admin_createqn.css
+src/styling/index.css

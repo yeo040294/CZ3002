@@ -66,7 +66,7 @@ class Home extends Component {
       const {username, password} = this.state
         return (
           <MDBContainer className="bg">  
-            {/* <Navbar />   */}
+            <Navbar />  
             <MDBRow>
               <MDBCol  className="lForm" md="6">
                 <MDBCard>
@@ -91,7 +91,7 @@ class Home extends Component {
                         onChange={this.handlePasswordChange}
                       />
                     <div className="text-center mt-4">
-                      <MDBBtn className="mb-3" type="submit" value="Submit></MDBBtn>
+                      <MDBBtn className="mb-3" type="submit" value="Submit">Log In</MDBBtn>
                     </div>
                     </form>
                   </MDBCardBody>

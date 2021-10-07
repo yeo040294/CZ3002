@@ -31,10 +31,10 @@ const AccountForm = ({onSubmit}) => {
             </MDBRow>
             <MDBRow className="content-btn">
                 <div>
-                    <MDBBtn  color="#1FB4CA" className="btnSubmit" size="sm" onClick={() => onSubmit(name, username,password,usertype)} >Submit</MDBBtn>
+                    <MDBBtn  color="#1FB4CA" className="btnSubmit" onClick={() => onSubmit(name, username,password,usertype)} >Submit</MDBBtn>
                 </div>
                 <div>
-                    <MDBBtn className="btnClear" color="#ED5C5F" size="sm" onClick={() => {setName(''); setUsername('');setPassword(''); setUsertype('Select User Type')}} >Clear</MDBBtn>
+                    <MDBBtn className="btnClear" color="#ED5C5F" onClick={() => {setName(''); setUsername('');setPassword(''); setUsertype('Select User Type')}} >Clear</MDBBtn>
                 </div>
             </MDBRow>
         </div>

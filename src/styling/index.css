@@ -41,11 +41,18 @@
 
 /* FOOTER */
 .footer-copyright {
-	position: absolute;
+	position:sticky;
 	bottom: 0;
 	width: 100%
 }
 
 .footer {
 	background: #F7FEFF;
+}
+
+/*Picture Upload*/
+
+.upload {
+    width: 50%;
+	height: 50%;
 }

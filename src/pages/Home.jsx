@@ -50,18 +50,22 @@ class Home extends Component {
     handleSubmit = (event) => {   
       event.preventDefault()
       this.props.logIn(this.state.username, this.state.password)   
-      let role = Cookies.get('role')
-      if (role == 0) {
-        this.props.history.push('/patient')
-      }
-      else if (role == 1){
-        this.props.history.push('/medical')
-      }
-      else if (role == 2){
-        this.props.history.push('/admin')
-      }
-    }
 
+    }
+    componentDidUpdate(prevProps){
+      if(this.props.result.status == 'success'){
+          let role = Cookies.get('role')
+          if (role == 0) {
+            this.props.history.push('/patient')
+          }
+          else if (role == 1){
+            this.props.history.push('/medical')
+          }
+          else if (role == 2){
+            this.props.history.push('/admin')
+          }
+        } 
+      }
     render() {
       const {username, password} = this.state
         return (
@@ -72,7 +76,7 @@ class Home extends Component {
                 <MDBCard>
                   <MDBCardBody className="mx-4">
                     <h2 className="h4 text-center py-4">Flip Flop</h2>    
-                    <p className="title">Login</p>
+                    <p className="title">Login </p>
                     {/* <hr></hr> */}
                     <form onClick={this.handleSubmit}>
                       <label htmlFor="username">Username</label>
@@ -84,14 +88,14 @@ class Home extends Component {
                       />
                       <label className="pwd" htmlFor="password">Password</label>
                       <input
-                        type="text"
+                        type="password"
                         id="defaultFormCardNameEx"
                         className="form-control"
                         value={password}
                         onChange={this.handlePasswordChange}
                       />
                     <div className="text-center mt-4">
-                      <MDBBtn className="mb-3" type="submit" value="Submit"></MDBBtn>
+                    <input type="submit" className="btn blue" value="Submit" />
                     </div>
                     </form>
                   </MDBCardBody>
@@ -103,7 +107,7 @@ class Home extends Component {
     }
 }
 const mapStateToProps = (state, ownProps) => ({
-  data: state.quest.results,
+  result: state.user.data
 });
 
 export default connect(mapStateToProps, { logIn }) (Home);

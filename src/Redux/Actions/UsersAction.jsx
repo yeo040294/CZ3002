@@ -19,7 +19,11 @@ export const logIn = (username, password) => dispatch => {
         .then(result => {
           Cookies.set('userid',result.userid, {path: '/'})
           Cookies.set('sessionid',result.sessionid, {path: '/'})
-          Cookies.set('role',result.role, {path: '/'})            
+          Cookies.set('role',result.role, {path: '/'})
+          dispatch({
+              type: 'LOG_IN',
+              payload: result
+          })            
     })
 }
 

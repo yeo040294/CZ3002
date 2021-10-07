@@ -20,7 +20,6 @@ class patientGamepage extends Component {
             <div>
                 <MDBContainer>
                 <Navbar/>
-                <p  className="h2 font-weight-bold">Welcome to the game!</p>
                 <App questionData = {this.props.question.questions} questionList={this.props.questionList}
                     sessionid={sessionid} assignmentid={assignment.assignmentid} anstoken={assignment.anstoken} />
                 <br/>

@@ -38,6 +38,8 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestions, activeQuestion, onS
 
     return(
         <div className="card">
+            <p  className="h2 font-weight-bold">Welcome to the game!</p>
+
             <h2> Question number {activeQuestion+1}</h2>
             <img src={img_src1}/>
             <img src={img_src2}/>

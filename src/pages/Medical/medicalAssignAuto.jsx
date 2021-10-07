@@ -39,8 +39,9 @@ class medicalAssignAuto extends Component {
         let len = this.props.data.questions.length
         while (questionList.length < len/2) {
             let questionNumber = Math.floor(Math.random() * len);
-            if (!questionList.includes(questionNumber)) {
-                questionList.push(questionNumber)
+            let questionString = questionNumber.toString()
+            if (!questionList.includes(questionString) && questionString !== "0") {
+                questionList.push(questionString)
             }
         }
         this.props.assignQuestionList(questionList)

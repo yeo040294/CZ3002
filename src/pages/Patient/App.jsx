@@ -6,8 +6,8 @@ const App = ({questionData, questionList, sessionid, assignmentid, anstoken}) =>
     const [step, setStep] = useState(2)
     const [activeQuestion, setActiveQuestion] = useState(0)
     const [answers, setAnswers] = useState([])
-    const [result, setResult] = useState(0)
-    console.log(answers)
+    const [result, setResult] = useState('')
+    // console.log(result)
 
     if (step == 3) {
         let data = {
@@ -26,7 +26,11 @@ const App = ({questionData, questionList, sessionid, assignmentid, anstoken}) =>
           fetch("http://35.247.159.114:8000/backend/question/assign/complete", requestOptions)
           .then(res => res.json())
           .then(data => {
-              setResult(data.result)
+              if (data.status === "Success"){
+                  console.log(data.score)
+                  setResult(data.score)
+              }
+              console.log(data) 
             }
           )
     }

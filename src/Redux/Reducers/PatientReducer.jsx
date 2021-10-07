@@ -2,9 +2,10 @@ const initState = {
     display: [],
     uuid: '',
     difficulty: 0,
-    questions: null,
+    questions: [],
     questionList: [],
-    assignment: []
+    assignment: [],
+    questionDisplay: []
 };
 
 const PatientReducers = (state = initState, action) => {
@@ -32,7 +33,7 @@ const PatientReducers = (state = initState, action) => {
         case 'ASSIGN_QUESTIONLIST':
             return {
                 ...state,
-                questions: action.payload
+                questionDisplay: action.payload
             }
         case 'ASSIGN_DIFFICULTY':
             return {

@@ -35,7 +35,7 @@ class patientHome extends Component {
         questionList.map(questionid => {
             this.props.fetchQuestion(sessionid, questionid)
         })
-        setTimeout(() => this.props.history.push('/patientGamepage'), 5000)
+        setTimeout(() => this.props.history.push('/patientGamepage'), 3000)
         this.setState({
             isLoading: true
         })

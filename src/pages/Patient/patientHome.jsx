@@ -44,6 +44,7 @@ class patientHome extends Component {
 
     render() {
         let assignments = this.props.difficulty.assignments
+        console.log(assignments)
         if (this.state.isLoading) {
             return ( 
                 <div>
@@ -54,21 +55,37 @@ class patientHome extends Component {
                 </div>
             )
         }
-        else {
-        return (
-            <div>
+        else if (assignments === undefined){
+            return (
+                <div>
                 <Navbar />
-                <div className="header">
-                    <p>Home</p>
-                </div>
-                {/* <br></br> */}
                 <MDBContainer fluid>
                     <div className="body">
                     <MDBRow>
                         <MDBCol  className="content" md="8">
                             <MDBCard>
                                 <MDBCardBody>
-                                <p className="h2 font-weight-bold">The doctor has assign you a game</p>
+                                <p className="h2 font-weight-bold">There is no assignment for you</p>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
+                    </div>
+                </MDBContainer>
+                </div>
+            )
+        }
+        else {
+        return (
+            <div>
+                <Navbar />
+                <MDBContainer fluid>
+                    <div className="body">
+                    <MDBRow>
+                        <MDBCol  className="content" md="8">
+                            <MDBCard>
+                                <MDBCardBody>
+                                <p className="h2 font-weight-bold">The doctor has assigned you the following assignments</p>
                                 <br></br>
                                 <p className="h4 font-weight-bold">ASSIGNMENT LIST :</p>
                                 {assignments && assignments.map(assignment => {

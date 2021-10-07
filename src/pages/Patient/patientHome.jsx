@@ -51,7 +51,7 @@ class patientHome extends Component {
                                 <p className="h2 font-weight-bold">The doctor has assign you a game</p>
                                 <br></br>
                                 <p className="h4 font-weight-bold">ASSIGNMENT LIST :</p>
-                                {assignments && assignments.map(x => {
+                                {assignments && assignments.map(assignment => {
                                     return (
                                       <AssignmentList assignment={assignment} submit = {this.handleSubmit}/>
 //                                         <MDBContainer>

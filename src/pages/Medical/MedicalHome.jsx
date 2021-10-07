@@ -13,32 +13,27 @@ import { assignUserid } from '../../Redux/Actions/PatientAction';
 
 class MedicalHome extends Component {
     componentDidMount() {
-        this.props.fetchAllUser(0,Cookies.get("sessionid")); //0 for patient, 1 for medical, 2 for admin
+        this.props.fetchAllUser(0, Cookies.get("sessionid")); //0 for patient, 1 for medical, 2 for admin
     }
-    assign = (username,uid) => {
+    assign = (username, uid) => {
         this.props.assignUserid(uid)
-        this.props.history.push("/"+ username + `/${uid}`  + "/assign");
+        this.props.history.push("/" + username + `/${uid}` + "/assign");
     }
 
-    view = (username,uid) => {
-        this.props.history.push("/"+ username + `/${uid}` + "/view");
+    view = (username, uid) => {
+        this.props.history.push("/" + username + `/${uid}` + "/view");
     }
-
-    ComponentDidUpdate(prevProps,prevState,snapShot) {
-        if (prevProps != this.props) {
-            console.log(this.props)
-            }
-        } 
 
     render() {
-        // console.log(this.props.data)
+        let result = this.props.display.users
+        console.log(result)
         return (
             <div>
-                <Navbar/> 
+                <Navbar />
                 <MDBContainer>
                     Medical home page (with patient list)
 
-                {this.props.display.length && <PatientList data={this.props.display.users[0].username} assign = {this.assign} view = {this.view}/>}
+                    {result.length && <PatientList data={result} assign={this.assign} view={this.view} />}
                 </MDBContainer>
             </div>
         )
@@ -49,7 +44,8 @@ MedicalHome.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    display: state.user.data
+    display: state.user.data,
+    uuid: state.patient.uuid
 });
 
-export default connect(mapStateToProps, { fetchAllUser, assignUserid}) (MedicalHome);
+export default connect(mapStateToProps, { fetchAllUser, assignUserid })(MedicalHome);

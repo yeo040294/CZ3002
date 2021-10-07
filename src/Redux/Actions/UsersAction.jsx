@@ -34,10 +34,11 @@ export const fetchUserInfo = (sessionid, userid) => dispatch => {
 export const fetchAllUser = (role,sessionid) => dispatch => {
     fetch("http://"+ server + `/backend/user/multi/get?sessionid=${sessionid}&role=${role}`)
         .then(res => res.json())
-        .then(data => dispatch({
+        .then(data => {
+            dispatch({
             type: 'FETCH_ALL',
             payload: data
-        })
+        })}
         );
 }
 

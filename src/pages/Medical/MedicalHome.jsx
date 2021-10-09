@@ -24,14 +24,21 @@ class MedicalHome extends Component {
         this.props.history.push("/"+ username + `/${uid}` + "/view");
     }
 
+    ComponentDidUpdate(prevProps,prevState,snapShot) {
+        if (prevProps != this.props) {
+            console.log(this.props)
+            }
+        } 
+
     render() {
+        // console.log(this.props.data)
         return (
             <div>
                 <Navbar/> 
                 <MDBContainer>
                     Medical home page (with patient list)
 
-                {this.props.data && <PatientList data={this.props.data.users[0].username} assign = {this.assign} view = {this.view}/>}
+                {this.props.display.length && <PatientList data={this.props.display.users[0].username} assign = {this.assign} view = {this.view}/>}
                 </MDBContainer>
             </div>
         )
@@ -42,7 +49,7 @@ MedicalHome.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    data: state.user.data
+    display: state.user.data
 });
 
 export default connect(mapStateToProps, { fetchAllUser, assignUserid}) (MedicalHome);

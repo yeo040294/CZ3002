@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from '../../components/Admin/Navbar'
+import Footer from '../../components/share/Footer';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBFormInline, MDBCard, MDBCardBody } from 'mdbreact';
 import Cookies from 'js-cookie';
 import CreateQues from '../../components/Admin/CreateQues';
@@ -52,20 +53,23 @@ class QuestionCreation extends Component {
     }
     render() {
         return (
-            <div>
+            <div id="container">
                 <Navbar />
-                <MDBContainer className="content">
-                    <MDBRow>
-                        <MDBCol className="lForm" md="7">
-                            <MDBCard>
-                                <MDBCardBody>
-                                    <p className="h3 text-center py-4">Upload Question</p>
-                                    <CreateQues onSubmit={this.onSubmit} pictureload1={this.pictureload1} pictureload2={this.pictureload2} />
-                                </MDBCardBody>
-                            </MDBCard>
-                        </MDBCol>
-                    </MDBRow>
-                </MDBContainer>
+                <div id="body">
+                    <MDBContainer fluid>
+                        <MDBRow>
+                            <MDBCol className="lForm" md="8">
+                                <MDBCard>
+                                    <MDBCardBody>
+                                        <p className="h3 text-center py-4">Upload Question</p>
+                                        <CreateQues onSubmit={this.onSubmit} pictureload1={this.pictureload1} pictureload2={this.pictureload2} />
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
+                </div>
+                <Footer />
             </div>
             
         )

@@ -10,6 +10,7 @@ import Cookies from 'js-cookie'
 import '../../styling/index.css'
 import '../../styling/home.css'
 import AssignmentList from '../../components/Patient/AssignmentList'
+import '../../styling/footer.css';
 
 class patientHome extends Component {
     componentDidMount() {
@@ -36,7 +37,8 @@ class patientHome extends Component {
     render() {
         let assignments = this.props.difficulty.assignments
         return (
-            <div>
+            <div className="page-container">
+            <div className="content-wrapper">
                 <Navbar />
                 <div className="header">
                     <p>Home</p>
@@ -46,11 +48,37 @@ class patientHome extends Component {
                 <div className="body">
                 <MDBRow>
                     <MDBCol  className="content" md="8">
-                        <MDBCard>
-                            <MDBCardBody>
+                        {/* <MDBCard>
+                            <MDBCardBody> */}
                             <p className="h2 font-weight-bold">The doctor has assign you a game</p>
                             <br></br>
                             <p className="h4 font-weight-bold">ASSIGNMENT LIST : </p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
+                            <p>Play</p>
                             {assignments && assignments.map(x => {
                                 return (
                                     <AssignmentList assignment={assignment} submit = {this.handleSubmit}/>
@@ -77,8 +105,8 @@ class patientHome extends Component {
                                     Play Game
                                 </MDBBtn>
                             </div>
-                            </MDBCardBody>
-                        </MDBCard>
+                            {/* </MDBCardBody>
+                        </MDBCard> */}
                     </MDBCol>
                 </MDBRow>
                 </div>
@@ -93,6 +121,8 @@ class patientHome extends Component {
                         )
                     })}
                 </MDBContainer> */}
+            </div>
+            {/* <Footer/> */}
             </div>
         )
     }

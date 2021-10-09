@@ -15,15 +15,24 @@
 }
 
 .content-pic {
-    width: 100%;
+    width: 80%;
     margin-left: 2%;
+    margin-top: -5%;
+}
+
+.content-pic-2 {
+    width: 80%;
+    margin-left: 3.5%;
+    margin-top: -5%;
 }
 
 .content-first {
-    /* margin-left: 1%; */
+    margin-left: 1%;
     /* background-color: #ED5C5F; */
     position: relative;
-    padding-left: 5%;
+    /* padding-left: 5%; */
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 h6 {
@@ -31,36 +40,68 @@ h6 {
 }
 
 .content-second {
-    /* margin-left: 1%; */
+    margin-left: 1%;
     /* background-color: #ED5C5F; */
     position: relative;
-    padding-left: 5%;
+    /* padding-left: 5%; */
 }
 
 .content-third {
     margin-top: 5%;
     position: relative;
-    padding-left: 4.5%;
+    margin-left: 1%;
+    /* padding-left: 4.5%; */
     /* background-color: #1FB4CA; */
 }
 
+.content-forth {
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
 .content-btn {
-    margin-left: 50%;
-    padding-bottom: 5%;
-    /* background-color: #1FB4CA; */
-    width: 100%;
+    /* margin-left: 55%; */
+    /* padding-bottom: 5%; */
+    margin-top: -5%;
+    margin-right: 2%;
+    /* background-color: black; */
+    /* width: 100%; */
 }
 
 .btnCreate {
     background-color: #1FB4CA;
     color: white;
     margin-left: 100%;
+    margin-left: 55%;
+    /* padding-bottom: 5%; */
 }
 
 .content-dropDown1 {
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-top: -1.5%;
 }
 
-body {
-    overflow: scrollable;
+.content-dropDown2 {
+    margin-left: 2%;
+    margin-top: -1.5%;
 }
+
+.mb-3:hover {
+    /* background-color: #1FB4CA; */
+    color: white;
+}
+
+.containerBtn {
+    padding-left: 40%;
+    /* background-color: blue; */
+}
+
+/* body {
+    overflow: scrollable;
+} */
+
+#body {
+    padding:10px;
+    padding-bottom: 20vh;   /* Height of the footer */
+    margin-bottom: -5%;
+ }

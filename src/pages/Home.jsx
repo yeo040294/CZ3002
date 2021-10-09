@@ -8,9 +8,9 @@ import Navbar from '../components/share/Navbar'
 // import Footer from '../components/share/Footer'
 import { useHistory, Redirect } from 'react-router-dom'
 import Cookies from 'js-cookie'
-import flipfloplogo from '../assets/FlipFlopLogo.png'
+import flipfloplogo from '../assets/FlipFlopLogo_2.png'
 import '../styling/home.css';
-import '../styling/index.css';
+// import '../styling/index.css';
 
 class Home extends Component {
     constructor(props) {
@@ -66,18 +66,16 @@ class Home extends Component {
       const {username, password} = this.state
         return (
           <MDBContainer className="bg">  
-            {/* <Navbar />   */}
+            <Navbar />  
             <div className="logo">
                 <img src={flipfloplogo} className="img-logo" alt="img_logo"/>
             </div>
             <MDBRow>
               <MDBCol  className="lForm" md="6">
-                <MDBCard>
-                  <MDBCardBody className="mx-4">
-                    
-                    {/* <h2 className="h4 text-center py-4">Flip Flop</h2>     */}
-                    <p className="title">Login</p>
-                    {/* <hr></hr> */}
+                {/* <MDBCard>
+                  <MDBCardBody className="mx-4"> */}
+                  <h4 className="title">Sign in </h4>
+                  <p>Sign in to start image rotation!</p>
                     <form onClick={this.handleSubmit}>
                       <label htmlFor="username">Username</label>
                       <input
@@ -93,12 +91,12 @@ class Home extends Component {
                         value={password}
                         onChange={this.handlePasswordChange}
                       />
-                    <div className="text-center mt-4">
-                      <MDBBtn className="mb-3" type="submit" value="Submit">Log In</MDBBtn>
+                    <div className="text-center mb-3">
+                      <MDBBtn className="btn-block z-depth-1a" type="submit" value="Submit" gradient="blue" rounded>Log In</MDBBtn>
                     </div>
                     </form>
-                  </MDBCardBody>
-                </MDBCard>
+                  {/* </MDBCardBody>
+                </MDBCard> */}
               </MDBCol>
             </MDBRow>
           </MDBContainer>

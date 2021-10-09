@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact'; 
 import Navbar from './Navbar'
+import '../../styling/patient_game.css';
 
 
 const Question = ({ data, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep}) => {
@@ -39,27 +41,42 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestions, activeQuestion, onS
 
     return(
         <div className="card">
-            <Navbar />
-            <p  className="h2 font-weight-bold">Welcome to the game!</p>
-
-            <h2> Question number {activeQuestion+1}</h2>
-            <img src={img_src1}/>
-            <img src={img_src2}/>
-            <p>Are the two shapes identical? </p>
-
-            <div className="control" ref={radiosWrapper}>
-                <label type="radio" name="answer">
-                <input type="radio" name="answer" value="1" onChange={changeHandler} />
-                Yes
-                </label>
-                <label type="radio" name="answer">
-                <input type="radio" name="answer" value="0" onChange={changeHandler} />
-                No
-                </label>
-            </div>
-          {error && <div className="has-text-danger"> {error} </div>}
-          <button className="button is-link is-medium mt-4" onClick={nextClickHandler}> Next </button>
-
+            {/* <p  className="h2 font-weight-bold">Welcome to the game!</p> */}
+            <MDBRow id="first-content">
+                <h2> Question number {activeQuestion+1}</h2>
+            </MDBRow>
+            <MDBRow id="second-content">
+                <MDBCol md="5" className="left-img">
+                    <img src={img_src1}/>
+                </MDBCol>
+                <MDBCol md="5" className="right-img">
+                    <img src={img_src2}/>
+                </MDBCol>
+            </MDBRow>
+            <MDBRow id="third-content">
+                <p>Are the two shapes identical? </p>
+            </MDBRow>
+            <MDBRow id="forth-content">
+                <div className="control" ref={radiosWrapper}>
+                    <label type="radio" name="answer">
+                    <input type="radio" name="answer" value="1" onChange={changeHandler} />
+                    Yes
+                    </label>
+                    <label type="radio" name="answer">
+                    <input type="radio" name="answer" value="0" onChange={changeHandler} />
+                    No
+                    </label>
+                </div>
+            </MDBRow>
+            <MDBRow id="error-content">
+                {error && <div className="has-text-danger"> {error} </div>}
+            </MDBRow>
+            <MDBRow id="fifth-content">
+                {/* <button className="button is-link is-medium mt-4" onClick={nextClickHandler}> Next </button> */}
+                <div className="text-center mt-4">
+                    <MDBBtn color="#1FB4CA" className="mb-3 btnSubmit" onClick={nextClickHandler} >Next</MDBBtn>
+                </div>
+            </MDBRow>
         </div>
     )
 }

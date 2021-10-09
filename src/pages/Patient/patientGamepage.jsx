@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Navbar from '../../components/share/Navbar'
+import Navbar from '../../components/Patient/Navbar'
+import Footer from '../../components/share/Footer'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact'; 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -8,6 +9,7 @@ import { startGame } from '../../Redux/Actions/PatientAction';
 import App from './App'
 import Cookies from 'js-cookie'
 import GameList from '../../components/Patient/GameList';
+import '../../styling/patient_game.css';
 
 class patientGamepage extends Component {
     render() {
@@ -17,12 +19,22 @@ class patientGamepage extends Component {
         let sessionid = Cookies.get('sessionid')
         let assignment = this.props.assignments[0]
         return (
-            <div>
-                <MDBContainer>
-                <App questionData = {this.props.question.questions} questionList={this.props.questionList}
-                    sessionid={sessionid} assignmentid={assignment.assignmentid} anstoken={assignment.anstoken} />
-                <br/>
-            </MDBContainer>
+            <div id="container">
+            <Navbar />
+                <div id="header">
+                    <MDBCol md="12" className="game-header">
+                        <p class="h1">Welcome to the game!</p>
+                    </MDBCol>
+                </div>
+                <div id="body">
+                    <MDBContainer fluid>
+                    <App questionData = {this.props.question.questions} questionList={this.props.questionList}
+                        sessionid={sessionid} assignmentid={assignment.assignmentid} anstoken={assignment.anstoken} />
+                    <br/>
+                    </MDBContainer>
+                </div>
+                <hr/>
+                <Footer />
             </div>
 
         )

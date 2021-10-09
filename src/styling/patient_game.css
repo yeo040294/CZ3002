@@ -1,0 +1,40 @@
+#body {
+    padding:10px;
+    padding-bottom: 20vh;   /* Height of the footer */
+    height: 80%;
+    background-color: #F7FEFF;
+ }
+
+ #container {
+    min-height:100%;
+    position: relative;
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+ }
+
+ #header {
+    width: 100%;
+    height: 20vh;
+    /* align-self: center; */
+    width: auto;
+ }
+
+ .game-header {
+     margin-top: 2%;
+     /* background-color: black; */
+     width: auto;
+ }
+
+ #first-content {
+     margin-top: 2%;
+     margin-bottom: 2%;
+     margin-left: 2%;
+ }
+
+ #second-content {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    background-color: aqua;
+}

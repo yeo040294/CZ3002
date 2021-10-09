@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdbreact';
+import '../../../styling/patient_home.css'
 
 
 const ResultTable = ({results}) => {
@@ -7,8 +8,8 @@ const ResultTable = ({results}) => {
     return (
         <div>
             {/* scrollY */}
-            <MDBTable striped >
-                <MDBTableHead>
+            <MDBTable hover>
+                <MDBTableHead className="table-head" color="#00acc1 cyan darken-1" textWhite>
                     <tr>
                         <th>Assignment ID</th>
                         <th>Difficulty Level</th>

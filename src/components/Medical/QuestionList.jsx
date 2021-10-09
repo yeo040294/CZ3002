@@ -25,7 +25,7 @@ export const QuestionList = ({ data, submit }) => {
                                     type="checkbox"
                                     className="form-check-input"
                                     id="rowcheck{user.id}"
-                                    onChange={(e) => questionList.push(x.questionid)}
+                                    onChange={(e) => questionList.push(x.questionid.toString())}
                                     /></td>                              
                                 <td>{x.questionid}</td>
                                 <td><img src={img_src1}/></td> 

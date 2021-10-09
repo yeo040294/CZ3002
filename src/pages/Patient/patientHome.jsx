@@ -10,6 +10,7 @@ import Cookies from 'js-cookie'
 import '../../styling/index.css'
 import '../../styling/home.css'
 import AssignmentList from '../../components/Patient/AssignmentList'
+import '../../styling/footer.css';
 
 class patientHome extends Component {
     constructor(props) {
@@ -77,7 +78,8 @@ class patientHome extends Component {
         }
         else {
         return (
-            <div>
+            <div className="page-container">
+            <div className="content-wrapper">
                 <Navbar />
                 <MDBContainer fluid>
                     <div className="body">

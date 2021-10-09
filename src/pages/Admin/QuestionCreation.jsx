@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import Navbar from '../../components/Medical/Navbar'
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBFormInline } from 'mdbreact';
+import Navbar from '../../components/Admin/Navbar'
+import Footer from '../../components/share/Footer';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBFormInline, MDBCard, MDBCardBody } from 'mdbreact';
 import Cookies from 'js-cookie';
 import CreateQues from '../../components/Admin/CreateQues';
 import { updateQuestion, createQuestion } from '../../Redux/Actions/QuestionAction';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import '../../styling/admin_create.css';
+import '../../styling/index.css';
 
 
 
@@ -50,12 +53,25 @@ class QuestionCreation extends Component {
     }
     render() {
         return (
-            <div>
-                <MDBContainer>
-
-                    <CreateQues onSubmit={this.onSubmit} pictureload1={this.pictureload1} pictureload2={this.pictureload2} />
-                </MDBContainer>
+            <div id="container">
+                <Navbar />
+                <div id="body">
+                    <MDBContainer fluid>
+                        <MDBRow>
+                            <MDBCol className="lForm" md="8">
+                                <MDBCard>
+                                    <MDBCardBody>
+                                        <p className="h3 text-center py-4">Upload Question</p>
+                                        <CreateQues onSubmit={this.onSubmit} pictureload1={this.pictureload1} pictureload2={this.pictureload2} />
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
+                </div>
+                <Footer />
             </div>
+            
         )
     }
 }

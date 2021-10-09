@@ -8,13 +8,6 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.flyout {
-	display:flex;
-	flex-direction: column;
-	min-height:100vh;
-	justify-content: space-between;
-}
-
 .home-feature-box .fa {
 	font-size:6rem;
 }
@@ -39,13 +32,13 @@
 	float:right;
 }
 
-/* FOOTER */
-.footer-copyright {
-	position: absolute;
-	bottom: 0;
-	width: 100%
+body { 
+	height:100vh; 
+	margin:0; 
+	overflow: auto;
+	display:flex; 
+	flex-direction:column; 
 }
 
-.footer {
-	background: #F7FEFF;
-}
+/*PIC UPLOAD*/
+

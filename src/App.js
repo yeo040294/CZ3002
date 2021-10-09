@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBFooter, MDBNavLink } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBFooter, MDBNavLink, MDBIcon} from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ReactComponent as Logo } from './assets/logo.svg';
 import Routes from './router/Routes';
 import Store from './Redux/Store/Store';
 import { Provider } from 'react-redux';
 import '../src/styling/index.css';
+import '../src/styling/footer.css';
+import Footer from './components/share/Footer';
+import FlipFlopLogo from '../src/assets/FlipFlopLogo.png';
 
 class App extends Component {
   state = {
@@ -37,16 +40,22 @@ class App extends Component {
     return (
       <Provider store={Store}>
         <Router>
-        <div className='flyout'>
+        <div className="flyout">
               <br />
               <Routes />
               <br/>
-            <MDBFooter color="#F7FEFF;">
-              <div className='footer-copyright mb-0 py-3 text-center'>
-                &copy; {new Date().getFullYear()} Copyright:
-              <a href='https://www.MDBootstrap.com'> MDBootstrap.com </a>
-              </div>
-            </MDBFooter>
+                {/* <div className="footer-row">
+                    <p className="content-phone">
+                      <img src={FlipFlopLogo} className="footer-img-logo" alt="img_logo"/>
+                      &nbsp;
+                      &nbsp;
+                      &nbsp;
+                      &nbsp;
+                      <MDBIcon icon="phone-alt" className="img-icon"/>   +65 6565 6565</p>
+                    <p className="col-sm">
+                      &copy; {new Date().getFullYear()} FLIP FLOP MENTAL ROTATION
+                    </p>
+                </div> */}
           </div>
         </Router>
       </Provider>

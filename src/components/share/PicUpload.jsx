@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { MDBInputGroup, MDBBtn } from 'mdbreact';
+import '../../styling/index.css'
 
 export default class PicUpload extends Component {
 
@@ -35,21 +36,25 @@ export default class PicUpload extends Component {
 
     render() {
         return (
-            <MDBInputGroup id='file'
-                inputs={
-                    <div className="custom-file">
-                        <input onChange={this.onChangeHandleFile}
-                            type="file"
-                            className="custom-file-input"
-                            id="inputGroupFile01"
-                        />
-                        <label className="custom-file-label" htmlFor="inputGroupFile01">
-                            Choose file
-                        </label>
-                    </div>
-                }
-                containerClassName="mb-3"
-            />
+            <div className="upload">
+                <MDBInputGroup id='file'
+                    inputs={
+                        <div className="custom-file">
+                            <input onChange={this.onChangeHandleFile}
+                                type="file"
+                                className="custom-file-input"
+                                id="inputGroupFile01"
+                            />
+                            <label className="custom-file-label" htmlFor="inputGroupFile01">
+                                Choose file
+                            </label>
+                        </div>
+                    }
+                    containerClassName="mb-3"
+                    size="sm"
+                />
+            </div>
+            
         )
     }
 }

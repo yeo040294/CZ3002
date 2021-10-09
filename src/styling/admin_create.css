@@ -16,8 +16,15 @@
 
 }
 
+#body {
+    padding:10px;
+    padding-bottom: 20vh;   /* Height of the footer */
+    margin-bottom: -5%;
+ }
+
 .content {
     margin-bottom: 5%;
+    overflow:auto;
 }
 
 .content-row1 {
@@ -33,9 +40,12 @@ p {
 }
 
 .content-btn {
-    margin-top: 5%;
-    margin-left: 55%;
+    padding-top: 5%;
+    padding-left: 55%;
     margin-bottom: 5%;
+    /* background-color: black; */
+    margin-right: 5%;
+    width: 100%;
 }
 
 .btnSubmit {
@@ -43,7 +53,16 @@ p {
     color: white;
 }
 
+.mb-3:hover {
+    /* background-color: #1FB4CA; */
+    color: white;
+}
+
 .btnClear {
     background-color: #ED5C5F;
     color: white;
+}
+
+body {
+    overflow: scrollable;
 }

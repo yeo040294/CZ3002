@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBFooter, MDBNavLink } from 'mdbreact';
+import '../../styling/nav.css';
+import Logo from '../../assets/FlipFlopLogo.png';
 
 class Navbar extends Component {
     state = {
@@ -28,8 +30,9 @@ class Navbar extends Component {
           );
         return (
             <div>
-            <MDBNavbar color='indigo' dark expand='md' fixed='top' scrolling>
+            <MDBNavbar className="nav" light expand='md' fixed='top' scrolling >
               <MDBNavbarBrand href='/' className='py-0 font-weight-bold'>
+                <img src={Logo} height="30" alt="" />
               </MDBNavbarBrand>
               <MDBNavbarToggler
                 onClick={this.toggleCollapse('mainNavbarCollapse')}

@@ -18,7 +18,7 @@ const AccountForm = ({onSubmit}) => {
             <MDBInput type="password" value={password} label="Password" icon="unlock-alt" onChange={e => setPassword(e.target.value)} />
             <MDBRow className="content-row1">
                 <p>User Account Type:</p>
-                <MDBDropdown className="content-dropDown" size="sm">
+                <MDBDropdown className="content-dropDown">
                     <MDBDropdownToggle value={usertype} caret color="white">
                         {usertype}
                     </MDBDropdownToggle>
@@ -30,11 +30,11 @@ const AccountForm = ({onSubmit}) => {
                 </MDBDropdown>
             </MDBRow>
             <MDBRow className="content-btn">
-                <div>
-                    <MDBBtn  color="#1FB4CA" className="btnSubmit" size="sm" onClick={() => onSubmit(name, username,password,usertype)} >Submit</MDBBtn>
+                <div className="text-center mt-4">
+                    <MDBBtn color="#1FB4CA" className="mb-3 btnSubmit" onClick={() => onSubmit(name, username,password,usertype)} >Submit</MDBBtn>
                 </div>
-                <div>
-                    <MDBBtn className="btnClear" color="#ED5C5F" size="sm" onClick={() => {setName(''); setUsername('');setPassword(''); setUsertype('Select User Type')}} >Clear</MDBBtn>
+                <div className="text-center mt-4">
+                    <MDBBtn className="mb-3 btnClear" color="#ED5C5F" onClick={() => {setName(''); setUsername('');setPassword(''); setUsertype('Select User Type')}} >Clear</MDBBtn>
                 </div>
             </MDBRow>
         </div>

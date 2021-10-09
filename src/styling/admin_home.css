@@ -1,14 +1,78 @@
-.btnUpload{
+.header {
+    /* position: relative;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-left: -39%; */
+
+    /* background-color: #ED5C5F; */
+
+    /* margin-bottom: -20%; */
+}
+
+.h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    /* font-size: 36px; */
+    line-height: 56px;
+    text-align: center;
+    margin: 0 auto;
+    
+    color: #1FB4CA;
+}
+
+.content-body {
+    margin-top: 10%;
+    /* background-color: #F7FEFF; */
+    height: 50vh;
+    /* margin-top: auto; */
+}
+
+.accountBody {
+
+}
+
+.questionBody {
+    
+}
+
+#body {
+    padding:10px;
+    padding-bottom: 20vh;   /* Height of the footer */
+ }
+
+.left-content {
+    position: absolute;
+    width: 50vh;
+    height: 55vh;
+    margin-left: 40%;
+    padding-top: 2%;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.right-content {
+    position: absolute;
+    width: 50vh;
+    height: 55vh;
+    margin-left: 14%;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.btnUpload, .btnAccount{
     background: #ED5C5F;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-left: 25%;
     color: white;
 }
 
-.btnAccount{
-    background: #ED5C5F;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-left: 25%;
+.btnUpload:hover, .btnAccount:hover {
     color: white;
 }
 
@@ -16,20 +80,49 @@
     /* background-color: #ED5C5F; */
     float: none;
     margin: 0 auto;
-    margin-top: 5%;
     /* margin-left: 10%;
     margin-right: 10%; */
+    max-height: max-content;
 }
 
 .content-wrapper {
     float: none;
     margin: 0 auto;
     height: 50%;
+    /* background-color: #1FB4CA; */
 }
 
 .top {
     height:50%;
     width: 50%;
     margin: 0 auto;
-    margin-top: 5%;
+    padding-top: 5%;
+}
+
+.body {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    left: 0px;
+    top: 322px;
+    
+    background: #F7FEFF;
+}
+
+.card-img-top {
+    width: 75%;
+    margin-top: 10%;
+    margin-left: 15%;
+}
+
+.left-btn {
+    margin-left: 32%;
+    margin-top: 36%;
+    width: 75%;
+}
+
+.right-btn {
+    margin-left: 5%;
+    margin-top: 36%;
+    width: 75%;
 }

@@ -8,9 +8,10 @@ import Navbar from '../components/share/Navbar'
 // import Footer from '../components/share/Footer'
 import { useHistory, Redirect } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import flipfloplogo from '../assets/FlipFlopLogo_2.png'
 import { LoginForm } from '../components/LoginForm'
 import '../styling/home.css';
-import '../styling/index.css';
+// import '../styling/index.css';
 
 class Home extends Component {    
     componentDidMount() {

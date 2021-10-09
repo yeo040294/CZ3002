@@ -19,7 +19,11 @@ export const logIn = (username, password) => dispatch => {
         .then(result => {
           Cookies.set('userid',result.userid, {path: '/'})
           Cookies.set('sessionid',result.sessionid, {path: '/'})
-          Cookies.set('role',result.role, {path: '/'})            
+          Cookies.set('role',result.role, {path: '/'})
+          dispatch({
+              type: 'LOG_IN',
+              payload: result
+          })            
     })
 }
 
@@ -34,10 +38,11 @@ export const fetchUserInfo = (sessionid, userid) => dispatch => {
 export const fetchAllUser = (role,sessionid) => dispatch => {
     fetch("http://"+ server + `/backend/user/multi/get?sessionid=${sessionid}&role=${role}`)
         .then(res => res.json())
-        .then(data => dispatch({
+        .then(data => {
+            dispatch({
             type: 'FETCH_ALL',
             payload: data
-        })
+        })}
         );
 }
 

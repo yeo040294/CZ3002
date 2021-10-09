@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import Navbar from './Navbar'
 
 
 const Question = ({ data, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep}) => {
@@ -38,6 +39,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestions, activeQuestion, onS
 
     return(
         <div className="card">
+            <Navbar />
             <p  className="h2 font-weight-bold">Welcome to the game!</p>
 
             <h2> Question number {activeQuestion+1}</h2>

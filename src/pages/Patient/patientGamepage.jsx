@@ -19,7 +19,6 @@ class patientGamepage extends Component {
         return (
             <div>
                 <MDBContainer>
-                <Navbar/>
                 <App questionData = {this.props.question.questions} questionList={this.props.questionList}
                     sessionid={sessionid} assignmentid={assignment.assignmentid} anstoken={assignment.anstoken} />
                 <br/>

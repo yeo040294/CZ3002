@@ -10,8 +10,15 @@ import Cookies from 'js-cookie'
 // import '../../styling/index.css'
 import '../../styling/home.css'
 import AssignmentList from '../../components/Patient/AssignmentList'
+import '../../styling/footer.css';
 
 class patientHome extends Component {
+    constructor(props) {
+        super(props)   
+        this.state = {
+            isLoading: false
+        }
+      }  
     componentDidMount() {
         this.RetrieveQuestion()
     }
@@ -29,62 +36,77 @@ class patientHome extends Component {
         questionList.map(questionid => {
             this.props.fetchQuestion(sessionid, questionid)
         })
-        setTimeout(() => this.props.history.push('/patientGamepage'), 10000)
+        setTimeout(() => this.props.history.push('/patientGamepage'), 3000)
+        this.setState({
+            isLoading: true
+        })
         
     }
 
     render() {
         let assignments = this.props.difficulty.assignments
-        return (
-            <div>
-                <Navbar />
-                <div className="header">
-                    <p>Home</p>
+        console.log(assignments)
+        if (this.state.isLoading) {
+            return ( 
+                <div>
+                    <div className="spinner-border" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                    <p> Please wait, we are fetching the questions for you </p>
                 </div>
-                {/* <br></br> */}
-                <MDBContainer>
-                    <div>
+            )
+        }
+        else if (assignments === undefined){
+            return (
+                <div>
+                <Navbar />
+                <MDBContainer fluid>
+                    <div className="body">
                     <MDBRow>
                         <MDBCol  className="content" md="8">
                             <MDBCard>
                                 <MDBCardBody>
-                                <p className="h2 font-weight-bold">The doctor has assign you a game</p>
-                                <br></br>
-                                <p className="h4 font-weight-bold">ASSIGNMENT LIST :</p>
-                                {assignments && assignments.map(assignment => {
-                                    return (
-                                      <AssignmentList assignment={assignment} submit = {this.handleSubmit}/>
-//                                         <MDBContainer>
-//                                             <MDBRow>
-//                                                 <MDBCol size="3">
-//                                                     <MDBCard style={{ width: "22rem", marginTop: "1rem" }}>
-//                                                         <MDBCardHeader color="blue lighten-1">Assignment No. {x.assignmentid}</MDBCardHeader>
-//                                                         <MDBCardBody>
-//                                                             <MDBCardTitle>{x.questions}</MDBCardTitle>
-//                                                             <MDBCardText>
-//                                                                 With supporting text below as a natural lead-in to additional
-//                                                                 content.
-//                                                             </MDBCardText>
-//                                                         </MDBCardBody>
-//                                                     </MDBCard>
-//                                                 </MDBCol>
-//                                             </MDBRow>
-//                                         </MDBContainer>
-                                    )
-                                })}
-                                <div className="text-center mt-4">
-                                    <MDBBtn className="mb-3">
-                                        Play Game
-                                    </MDBBtn>
-                                </div>
+                                <p className="h2 font-weight-bold">There is no assignment for you</p>
                                 </MDBCardBody>
                             </MDBCard>
                         </MDBCol>
                     </MDBRow>
                     </div>
                 </MDBContainer>
+                </div>
+                // <MDBContainer>
+                //     <div>
+            )
+        }
+        else {
+        return (
+            <div className="page-container">
+            <div className="content-wrapper">
+                <Navbar />
+                <MDBContainer fluid>
+                    <div className="body">
+                    <MDBRow>
+                        <MDBCol  className="content" md="8">
+                            <MDBCard>
+                                <MDBCardBody>
+                                <p className="h2 font-weight-bold">The doctor has assigned you the following assignments</p>
+                                <br></br>
+                                <p className="h4 font-weight-bold">ASSIGNMENT LIST :</p>
+                                {assignments && assignments.map(assignment => {
+                                    return (
+                                      <AssignmentList assignment={assignment} submit = {this.handleSubmit}/>
+                                    )
+                                })}
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
+                    </div>
+                </MDBContainer>
+            </div> 
             </div>
         )
+        }
     }
 }
 

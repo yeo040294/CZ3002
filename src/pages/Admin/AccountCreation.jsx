@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import AccountForm from '../../components/Admin/AccountForm';
 import Navbar from '../../components/Admin/Navbar';
+import Footer from '../../components/share/Footer';
 import PropTypes from 'prop-types';
 import { createAcc } from '../../Redux/Actions/UsersAction';
 import Cookies from 'js-cookie'
@@ -39,20 +40,23 @@ class AccountCreation extends Component {
 
     render() {
         return (
-            <div>
+            <div id="container">
                 <Navbar />
-                <MDBContainer className="content">
-                    <MDBRow>
-                        <MDBCol  className="lForm" md="6">
-                            <MDBCard>
-                            <MDBCardBody className="mx-4">
-                                <h2 className="h4 text-center py-4">Account Creation</h2>    
-                                <AccountForm onSubmit={this.onSubmit} />
-                            </MDBCardBody>
-                            </MDBCard>
-                        </MDBCol>
-                    </MDBRow>
-                </MDBContainer>
+                <div id="body">
+                    <MDBContainer fluid>
+                        <MDBRow>
+                            <MDBCol  className="lForm" md="6">
+                                <MDBCard>
+                                <MDBCardBody className="mx-4">
+                                    <h2 className="h4 text-center py-4">Account Creation</h2>    
+                                    <AccountForm onSubmit={this.onSubmit} />
+                                </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
+                </div>
+                <Footer />
             </div>
         )
     }

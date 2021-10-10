@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdow
 import Navbar from './Navbar';
 import PicUpload from '../share/PicUpload';
 import '../../styling/admin_create.css';
+import '../../styling/admin_createqn.css';
 import '../../styling/index.css';
 
 const CreateQues = ({ onSubmit }) => {
@@ -40,10 +41,16 @@ const CreateQues = ({ onSubmit }) => {
                                 <MDBDropdownItem value={'Hard'}> Hard</MDBDropdownItem>
                             </MDBDropdownMenu>
                         </MDBDropdown>
+                    {/* // </MDBCol>
+                    // <MDBCol md="4" className="db2">
+                    //     <h6>Identical:</h6>
+                    //     <MDBDropdown className="content-dropDown2" size="sm"> */}
                     </MDBCol>
-                    <MDBCol md="4" className="db2">
+                </MDBRow>
+                <MDBRow className="content-forth">
+                    {/* <MDBCol md="4" className="db2"> */}
                         <h6>Identical:</h6>
-                        <MDBDropdown className="content-dropDown2" size="sm">
+                        <MDBDropdown className="content-dropDown2">
                             <MDBDropdownToggle value={identical} caret color="white">
                                 {identical}
                             </MDBDropdownToggle>
@@ -52,15 +59,24 @@ const CreateQues = ({ onSubmit }) => {
                                 <MDBDropdownItem value={'No'}>No</MDBDropdownItem>
                             </MDBDropdownMenu>
                         </MDBDropdown>
-                      </MDBCol>
+            {/* //           </MDBCol>
+            //     </MDBRow>
+            //     <br />
+            //     <MDBRow className="content-btn">
+            //         <div>
+            //             <MDBBtn className="btnCreate" color="#1FB4CA" onClick={() => onSubmit(difficultylevel, picture1, picture2, identical)} >Submit</MDBBtn>
+            //         </div>
+            //     </MDBRow>
+            // </MDBCol> */}
+                      {/* </MDBCol> */}
                 </MDBRow>
-                <br />
+                {/* <br /> */}
                 <MDBRow className="content-btn">
-                    <div>
-                        <MDBBtn className="btnCreate" color="#1FB4CA" onClick={() => onSubmit(difficultylevel, picture1, picture2, identical)} >Submit</MDBBtn>
+                    <div className="text-center mt-4 containerBtn">
+                        <MDBBtn color="#1FB4CA" className="mb-3 btnCreate" onClick={() => onSubmit(difficultylevel, picture1, picture2, identical)} >Submit</MDBBtn>
                     </div>
                 </MDBRow>
-            </MDBCol>
+            {/* </MDBCol> */}
         </div>
     )
 

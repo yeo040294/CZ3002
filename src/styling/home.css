@@ -5,10 +5,7 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: Roboto;
-}
-
-hr {
-    border-top: 3px solid #ED5C5F;
+    background-color: #F7FEFF;
 }
 
 .title {
@@ -16,14 +13,24 @@ hr {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
     line-height: 35px;
 
-    color: #ED5C5F;
+    color: black;
+}
+
+p {
+    text-align: center;
+    color: black;
+}
+
+
+.bg {
+    margin-top: 5%;
 }
 
 .mb-3 {
-    background: #57B0BD;
+    /* background: #57B0BD; */
+    margin-top: 5%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -37,7 +44,7 @@ hr {
 }
 
 .pwd {
-    margin-top: 10px;
+    margin-top: 5%;
 }
 
 /* .mx-4 {
@@ -64,6 +71,17 @@ hr {
 
 }
 
+.py-4 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 56px;
+    text-align: center;
+
+    color: #57B0BD;
+}
+
 .body {
     /* position: fixed; */
     width: 100%;
@@ -71,13 +89,25 @@ hr {
     left: 0px;
     top: 30%;
 
-    background: #F7FEFF;
+    /* background: #F7FEFF; */
 }
 
 .content {
-    float: none;
+    /* float: none; */
     margin: 0 auto;
     margin-top: 5%;
+}
+
+.img-logo {
+    width: 15%;
+    height: 15%;
+}
+
+.logo {
+    padding-left: 46%;
+    /* background-color: black; */
+    height: 50%;
+    margin-bottom: 2%;
 }
 
 body {

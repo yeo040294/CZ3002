@@ -6,6 +6,7 @@ export class AssignResult extends Component {
     
     render() {
         let data = this.props.patient
+        console.log(data)
         return (
             <div>
                 <Navbar/> 
@@ -25,7 +26,7 @@ export class AssignResult extends Component {
 }
 
 const mapStateToProps = state => ({
-    patient: state.patient.questions
+    patient: state.patient.questionDisplay
 });
 
 export default connect(mapStateToProps) (AssignResult);

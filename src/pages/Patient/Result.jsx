@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { MDBContainer } from 'mdbreact';
+import { MDBContainer, MDBCol, MDBRow } from 'mdbreact';
 import Navbar from '../../components/Patient/Navbar';
+import Footer from '../../components/share/Footer';
 import ResultTable from '../../components/Patient/PatientResult/ResultTable';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchResults } from '../../Redux/Actions/QuestionAction';
 import Cookies from 'js-cookie';
+import '../../styling/patient_home.css'
 
 class Result extends Component {
     componentDidMount() {
@@ -24,14 +26,23 @@ class Result extends Component {
     // }
     render() {
         return (
-            <div>
+            <div id="container">
                 <Navbar />
-                <MDBContainer>
-                <h3>Patient result page</h3>
-                <hr/>
-                { this.props.data &&  <ResultTable results={this.props.data.results}  />  }
+                <div id="header">
+                    <MDBCol md="12" className="header">
+                         <p class="h1">Game Results</p>
+                    </MDBCol>
+                </div>
+                <div id="body">
+                    <MDBContainer fluid>
+                        <h3 className="body-text">My Results</h3>
+                        <hr/>
+                        { this.props.data &&  <ResultTable results={this.props.data.results}  />  }
 
-                </MDBContainer>
+                    </MDBContainer>
+                </div>
+                <hr/>
+                <Footer />
             </div>
         )
     }

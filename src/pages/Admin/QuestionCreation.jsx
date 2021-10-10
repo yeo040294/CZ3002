@@ -71,7 +71,6 @@ class QuestionCreation extends Component {
                 </div>
                 <Footer />
             </div>
-            
         )
     }
 }

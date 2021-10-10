@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { createAcc } from '../../Redux/Actions/UsersAction';
 import Cookies from 'js-cookie'
 import '../../styling/index.css';
-import '../../styling/admin_create.css';
+import '../../styling/admin_createqn.css';
 
 class AccountCreation extends Component {
     state = {

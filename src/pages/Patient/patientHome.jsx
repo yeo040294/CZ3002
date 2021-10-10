@@ -8,9 +8,10 @@ import { fetchDifficulty, startGame, addQuestionList } from '../../Redux/Actions
 import { fetchQuestion } from '../../Redux/Actions/QuestionAction';
 import Cookies from 'js-cookie'
 import '../../styling/index.css'
-import '../../styling/home.css'
+import '../../styling/patient_home.css'
 import AssignmentList from '../../components/Patient/AssignmentList'
-import '../../styling/footer.css';
+import notify from '../../assets/notify.svg'
+import loading from '../../assets/loading.svg'
 
 class patientHome extends Component {
     constructor(props) {
@@ -48,59 +49,88 @@ class patientHome extends Component {
         console.log(assignments)
         if (this.state.isLoading) {
             return ( 
-                <div>
-                    <div className="spinner-border" role="status">
-                        <span className="sr-only">Loading...</span>
-                    </div>
-                    <p> Please wait, we are fetching the questions for you </p>
+                <div className="content-loading">
+                    <MDBRow>
+                        <MDBCol>
+                            <div class="img-content">
+                                <img src={loading} className="card-img-top" alt="img_Account"/>
+                            </div>
+                        </MDBCol>
+                    </MDBRow>
+                    {/* <hr/> */}
+                    <MDBRow>
+                        <MDBCol md="1" className="spinner">
+                            <div className="spinner-border" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                        </MDBCol>
+                        <MDBCol md="4">
+                            <p className="loading-text"> Please wait, we are fetching the questions for you </p>
+                        </MDBCol>
+                    </MDBRow>
                 </div>
             )
         }
         else if (assignments === undefined){
             return (
-                <div>
-                <Navbar />
-                <MDBContainer fluid>
-                    <div className="body">
-                    <MDBRow>
-                        <MDBCol  className="content" md="8">
-                            <MDBCard>
-                                <MDBCardBody>
-                                <p className="h2 font-weight-bold">There is no assignment for you</p>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </MDBCol>
-                    </MDBRow>
-                    </div>
-                </MDBContainer>
+                <div id="container">
+                    <Navbar />
+                        <div id="header">
+                            <MDBCol md="12" className="header">
+                                <p class="h1">Home</p>
+                            </MDBCol>
+                        </div>
+                        <div id="body">
+                            <MDBContainer fluid>
+                                <MDBRow>
+                                    <MDBCol  className="content" md="8">
+                                        <MDBCard className="card-content">
+                                            <MDBCardBody>
+                                                <div class="top-content">
+                                                    <img src={notify} className="card-img-top" alt="img_Account"/>
+                                                </div>
+                                                <p className="h2 font-weight-bold text">There is no assignment for you</p>
+                                            </MDBCardBody>
+                                        </MDBCard>
+                                    </MDBCol>
+                                </MDBRow>
+                            </MDBContainer>
+                        </div>
+                    <Footer />
                 </div>
             )
         }
         else {
         return (
-            <div className="page-container">
-            <div className="content-wrapper">
+            <div id="container">
                 <Navbar />
-                <MDBContainer fluid>
-                    <div className="body">
-                    <MDBRow>
-                        <MDBCol  className="content" md="8">
-                            <MDBCard>
-                                <MDBCardBody>
-                                <p className="h2 font-weight-bold">The doctor has assigned you the following assignments</p>
-                                <br></br>
-                                <p className="h4 font-weight-bold">ASSIGNMENT LIST :</p>
-                                {assignments && assignments.map(assignment => {
-                                    return (
-                                      <AssignmentList assignment={assignment} submit = {this.handleSubmit}/>
-                                    )
-                                })}
-                                </MDBCardBody>
-                            </MDBCard>
-                        </MDBCol>
-                    </MDBRow>
-                    </div>
-                </MDBContainer>
+                <div id="header">
+                    <MDBCol md="12" className="header">
+                         <p class="h1">Home</p>
+                    </MDBCol>
+                </div>
+                <div id="body">
+                    <MDBContainer fluid>
+                        <MDBRow>
+                            <MDBCol  className="content" md="8">
+                                <MDBCard className="card-content">
+                                    <MDBCardBody>
+                                    <p className="h2 font-weight-bold">The doctor has assigned you the following assignments</p>
+                                    <br></br>
+                                    <p className="h4 font-weight-bold">ASSIGNMENT LIST :</p>
+                                    {assignments && assignments.map(assignment => {
+                                        return (
+                                        <AssignmentList assignment={assignment} submit = {this.handleSubmit}/>
+                                        )
+                                    })}
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
+                </div>
+                <hr/>
+                <Footer />                            
             </div> 
         )
         }

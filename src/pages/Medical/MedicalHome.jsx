@@ -9,6 +9,7 @@ import Footer from '../../components/share/Footer'
 import PatientList from '../../components/Medical/PatientList';
 import Cookies from 'js-cookie';
 import { assignUserid } from '../../Redux/Actions/PatientAction';
+import '../../styling/medical_home.css';
 
 
 class MedicalHome extends Component {
@@ -28,13 +29,23 @@ class MedicalHome extends Component {
         let result = this.props.display.users
         console.log(result)
         return (
-            <div>
+            <div id="container">
                 <Navbar />
-                <MDBContainer>
-                    Medical home page (with patient list)
+                <div id="header">
+                    <MDBCol md="12" className="header">
+                        <p class="h1">Home</p>
+                    </MDBCol>
+                </div>
+                <div id="body">
+                    <MDBContainer fluid>
+                        <h3 className="body-text">Patient List</h3>
+                        {/* Medical home page (with patient list) */}
 
-                    {result !== undefined && <PatientList data={result} assign={this.assign} view={this.view} />}
-                </MDBContainer>
+                        {result !== undefined && <PatientList data={result} assign={this.assign} view={this.view} />}
+                    </MDBContainer>
+                </div>
+                <hr/>
+                <Footer />
             </div>
         )
     }

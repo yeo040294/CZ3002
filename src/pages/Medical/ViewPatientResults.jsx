@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { MDBContainer } from 'mdbreact';
+import { MDBContainer, MDBCol, MDBRow } from 'mdbreact';
 import Navbar from '../../components/Medical/Navbar';
 import ResultTable from '../../components/Patient/PatientResult/ResultTable';
 import PropTypes from 'prop-types';
 import Cookies from 'js-cookie';
 import { connect } from 'react-redux';
 import {fetchResults} from '../../Redux/Actions/QuestionAction';
+import Footer from '../../components/share/Footer';
 
 class ViewPatientResults extends Component {
     state = {
@@ -25,15 +26,23 @@ class ViewPatientResults extends Component {
     }
     render() {
         return (
-            <div>
+            <div id="container">
                 <Navbar />
-                <MDBContainer>
+                <div id="header">
+                    <MDBCol md="12" className="header">
+                         <p class="h1">Game Results</p>
+                    </MDBCol>
+                </div>
+                <div id="body">
+                    <MDBContainer fluid>
+                        <h3 className="body-text">Patient: {this.state.username}</h3>
+                        <hr />
+                        {this.props.data && <ResultTable results={this.props.data.results} />}
 
-                    <h3>Patient: {this.state.username}</h3>
-                    <hr />
-                    {this.props.data && <ResultTable results={this.props.data.results} />}
-
-                </MDBContainer>
+                    </MDBContainer>
+                </div>
+                <hr/>
+                <Footer/>
             </div>
         )
     }

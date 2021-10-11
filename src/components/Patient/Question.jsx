@@ -79,7 +79,6 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestions, activeQuestion, onS
                 </div>
             </MDBRow>
             <MDBRow id="fifth-content">
-                {/* <button className="button is-link is-medium mt-4" onClick={nextClickHandler}> Next </button> */}
                 <div className="text-center mt-4">
                     <MDBBtn color="#1FB4CA" className="mb-3 btnSubmit" onClick={nextClickHandler} >Next</MDBBtn>
                 </div>

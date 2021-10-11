@@ -27,12 +27,6 @@
     width: auto;
 }
 
-#game-body {
-    /* justify-content: center; */
-    /* background-color: aqua;
-    padding-left: 20%; */
-}
-
 #first-content {
     margin-top: 2%;
     margin-bottom: 2%;
@@ -114,4 +108,55 @@
 .has-text-danger {
    color: #ED5C5F;
    text-align: center;
+}
+
+/*    END   */
+
+#end-body {
+   align-items: center;
+   text-align: center;
+   /* background-color: #33b5e5; */
+}
+
+.end-content {
+   margin: 0 auto;
+}
+
+#end-first-content {
+   margin: 0 auto;
+   /* background-color: black; */
+   width: 45%;
+}
+
+#end-second-content, #end-third-content {
+   margin: 0 auto;
+   /* width: 50%; */
+   justify-content: center;
+}
+
+#end-forth-content{
+   padding-top: 2%;
+   margin: 0 auto;
+   justify-content: center;
+}
+
+.wellDone-img {
+   justify-content: center;
+   width: 45%;
+   /* background-color: red; */
+   margin-bottom: 5%;
+}
+
+/* .font-weight-bold {
+   color: #57B0BD;
+} */
+
+.homebtn {
+   background-color: #57B0BD;
+   color: white;
+}
+
+.homebtn:hover {
+   color: white;
+   background-color: #09abc4;
 }

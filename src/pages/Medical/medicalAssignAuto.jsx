@@ -50,14 +50,23 @@ class medicalAssignAuto extends Component {
     }
     render() {
         return (
-            <div>
-                
-              <Navbar/>
-              <MDBContainer>                 
-                <h1>Difficulty level: {this.props.difficulty}</h1>
-                <MDBBtn onClick={this.autoAssign} color="primary">Auto assign</MDBBtn>
-                {this.props.data && <QuestionList data={this.props.data.questions} submit = {this.handleSubmit}/>}
-              </MDBContainer>
+            <div id="container">
+                <Navbar />
+                <div id="header">
+                    <MDBCol md="12" className="header">
+                        <p class="h1">Assign Task</p>
+                    </MDBCol>
+                </div>
+                <div id="body">
+                    <MDBContainer fluid>                 
+                        <h4>Difficulty level: {this.props.difficulty}</h4>
+                        <MDBBtn onClick={this.autoAssign} color="#ED5C5F" type='button' className='btn-asgn'>Auto assign</MDBBtn>
+                        <hr/>
+                        <h5>Manual Assignment</h5>
+                        <br/>
+                        {this.props.data && <QuestionList data={this.props.data.questions} submit = {this.handleSubmit}/>}
+                    </MDBContainer>
+                </div>
             </div>
         )
     }

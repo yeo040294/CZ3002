@@ -10,7 +10,6 @@ export const LoginForm = ({ onSubmit }) => {
         return (
             <MDBContainer className="bg">  
               {/* <Navbar />   */}
-
               <MDBRow>
                 <MDBCol  className="lForm" md="6">
                   <MDBCard>

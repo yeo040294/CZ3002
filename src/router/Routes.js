@@ -19,6 +19,7 @@ import QuestionCreation from '../pages/Admin/QuestionCreation';
 import AssignResult from '../pages/Medical/AssignResult';
 import Logout from '../pages/Logout';
 import Profile from '../pages/Profile';
+import End from '../components/Patient/End';
 
 
 class Routes extends React.Component {
@@ -32,12 +33,14 @@ class Routes extends React.Component {
         <Route exact path='/admin' component={adminHome} />
         <Route path='/admin/account' component={AccountCreation} />
         <Route path='/admin/upload' component={QuestionCreation} />
+        {/* <Route exact path='/admin/assign/result' component={CreationResult} /> */}
         {/* patient pages */}
         <Route path='/patientGamepage' component={patientGamepage} />
         <Route path='/patientReadypage' component={patientReadypage} />
         <Route path='/patientResultpage' component={patientResultpage} />
         <Route exact path='/patient' component={patientHome} />
         <Route path='/results'  component={Result} />
+        <Route path='/end'  component={End} />
         {/* medical pages */}
         <Route exact path='/:username/:uid/assign' component={medicalAssign} />
         <Route path='/:username/:uid/view' component={medicalView} />

@@ -1,16 +1,17 @@
 import React from 'react';
-import { MDBTable, MDBTableHead, MDBTableBody,MDBBtn } from 'mdbreact';
+import { MDBTable, MDBTableHead, MDBTableBody,MDBBtn, MDBRow, MDBCol } from 'mdbreact';
+import '../../styling/medical_home.css';
 
 export const QuestionList = ({ data, submit }) => {
     let questionList = [];
 
     return (
         <div>
-            <MDBTable >
-                <MDBTableHead>
+            <MDBTable striped>
+                <MDBTableHead className="table-head" color="#00acc1 cyan darken-1" textWhite>
                     <tr>
                         <th>Select</th>
-                        <th>Question number</th>                        
+                        <th>Question No.</th>                        
                         <th>Question image 1</th>
                         <th>Question image 2</th>                        
                     </tr>
@@ -28,15 +29,21 @@ export const QuestionList = ({ data, submit }) => {
                                     onChange={(e) => questionList.push(x.questionid.toString())}
                                     /></td>                              
                                 <td>{x.questionid}</td>
-                                <td><img src={img_src1}/></td> 
-                                <td><img src={img_src2}/></td> 
+                                <td><img className="qn-img" src={img_src1}/></td> 
+                                <td><img className="qn-img" src={img_src2}/></td> 
 
                             </tr>
                         )
                     })}
-                    <MDBBtn size="sm" color="blue" onClick={() => submit(questionList)} > Assign </MDBBtn>
+
+                
                 </MDBTableBody>
             </MDBTable>
+            <MDBRow className='d-flex mb-4 btnTask'>
+                <div className='text-center col-md-12'>
+                    <MDBBtn color="#ED5C5F" type='button' id="task-cnfrm" className='btn-asgn float-end' onClick={() => submit(questionList)} > Assign </MDBBtn>
+                </div>
+            </MDBRow>
         </div>
     )
 }

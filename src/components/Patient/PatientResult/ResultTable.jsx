@@ -8,7 +8,7 @@ const ResultTable = ({results}) => {
     return (
         <div>
             {/* scrollY */}
-            <MDBTable hover>
+            <MDBTable striped>
                 <MDBTableHead className="table-head" color="#00acc1 cyan darken-1" textWhite>
                     <tr>
                         <th>Assignment ID</th>

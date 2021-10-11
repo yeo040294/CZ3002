@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from '../../components/Medical/Navbar'
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
+import Footer from '../../components/share/Footer'
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { assignPatient, assignDifficulty } from '../../Redux/Actions/PatientAction';
@@ -65,29 +66,46 @@ class medicalAssign extends Component {
 
     render() {
         return (
-            <div>
+            <div id="container">
                 <Navbar />
-                <MDBContainer>
-                    <MDBCol md="6">
-                        <form>
-                            <p className="h3 text-center mb-4">Assign Task for Patient</p>
-                            <div className="grey-text">
-                                <h5>Difficulty</h5>
-                                <select className="browser-default custom-select" value={this.state.difficulty} onChange={this.handleDifficultyChange}>
-                                    <option value="Eady" >Easy</option>
-                                    <option value="Medium" >Medium</option>
-                                    <option value="Hard">Hard</option>
-                                </select>
-                                <br />
-                                <br />
-                                <MDBBtn onClick={this.AssignPatient} color="primary">Confirm</MDBBtn>
-                                <MDBBtn color="primary">Back</MDBBtn>
-                            </div>
-                        </form>
+                <div id="header">
+                    <MDBCol md="12" className="header">
+                        <p class="h1">Assign Task</p>
                     </MDBCol>
-                    <MDBRow>
-                    </MDBRow>
-                </MDBContainer>
+                </div>
+                <div id="body">
+                    <MDBContainer fluid>
+                        <MDBRow>
+                            <MDBCol  className="content" md="8">
+                                <MDBCard className="card-content">
+                                    <form>
+                                        <p className="h4 mb-4 text-left body-header">Assign Task for Patient</p>
+                                        <div className="grey-text">
+                                            <p className="h5 mb-4 text-left content-text">Difficulty: </p>
+                                            <MDBRow id="select-content">
+                                                <select className="browser-default custom-select" value={this.state.difficulty} onChange={this.handleDifficultyChange}>
+                                                    <option value="Eady" >Easy</option>
+                                                    <option value="Medium" >Medium</option>
+                                                    <option value="Hard">Hard</option>
+                                                </select>
+                                            </MDBRow>
+                                            <br />
+                                            <MDBRow className='d-flex mb-4 btnContent'>
+                                                <div className='text-center col-md-12 taskBtn'>
+                                                    <MDBBtn color="#ED5C5F" type='button' id="task-asgn" className='btn-asgn' onClick={this.AssignPatient}>Confirm</MDBBtn>
+                                                    {/* <MDBBtn color="#ED5C5F" type='button' className='btn-asgn'>Back</MDBBtn> */}
+                                                    <a href="/medical" id="task-back" class="btn homebtn"> Back </a>
+                                                </div>
+                                            </MDBRow>
+                                        </div>
+                                    </form>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
+                </div>
+                <hr/>
+                <Footer />
             </div>
         )
     }

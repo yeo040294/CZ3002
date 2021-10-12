@@ -15,7 +15,7 @@ const CreateQues = ({ onSubmit }) => {
         <div>
             {/* <MDBCol md="12"> */}
                 <MDBRow className="content-first">
-                    <h6>Question:</h6>
+                    <h6>Question Picture 1:</h6>
                     {/* <br /> */}
                     <div className="content-pic">
                         <PicUpload picUpload={x => setPicture1(x)} />
@@ -23,7 +23,7 @@ const CreateQues = ({ onSubmit }) => {
                     <br /><br />
                 </MDBRow>
                 <MDBRow className="content-second">
-                    <h6>Answer:</h6>
+                    <h6>Question Picture 2:</h6>
                     {/* <br /> */}
                     <div className="content-pic-2">
                         <PicUpload picUpload={x => setPicture2(x)} />

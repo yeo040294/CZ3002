@@ -12,7 +12,6 @@ import adminHome from '../pages/Admin/Home';
 import medicalHome from '../pages/Medical/MedicalHome';
 import medicalView from '../pages/Medical/ViewPatientResults';
 import AccountCreation from '../pages/Admin/AccountCreation';
-import UploadQuestion from '../pages/Admin/UploadQuestion';
 import medicalAssign from '../pages/Medical/medicalAssign';
 import medicalAssignAuto from '../pages/Medical/medicalAssignAuto';
 import QuestionCreation from '../pages/Admin/QuestionCreation';

@@ -17,13 +17,13 @@ class Home extends Component {
       let role = Cookies.get('role')
       let sessionid = Cookies.get('sessionid')
       if (sessionid) {
-          if (role == 0) {
+          if (role == '0') {
             this.props.history.push('/patient')
           }
-          else if (role == 1){
+          else if (role == '1'){
             this.props.history.push('/medical')
           }
-          else if (role == 2){
+          else if (role == '2'){
             this.props.history.push('/admin')
           }
         }
@@ -37,13 +37,13 @@ class Home extends Component {
     componentDidUpdate(prevProps){
       if(this.props.result.status == 'success'){
           let role = Cookies.get('role')
-          if (role == 0) {
+          if (role == '0') {
             this.props.history.push('/patient')
           }
-          else if (role == 1){
+          else if (role == '1'){
             this.props.history.push('/medical')
           }
-          else if (role == 2){
+          else if (role == '2'){
             this.props.history.push('/admin')
           }
         } 

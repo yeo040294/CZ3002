@@ -134,6 +134,7 @@ class patientHome extends Component {
                 <hr/>
                 <Footer />                            
             </div> 
+            </div>
         )
         }
     }

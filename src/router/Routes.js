@@ -20,6 +20,7 @@ import AssignResult from '../pages/Medical/AssignResult';
 import Logout from '../pages/Logout';
 import Profile from '../pages/Profile';
 import End from '../components/Patient/End';
+import CreateResult from '../pages/Admin/CreateResult';
 
 
 class Routes extends React.Component {
@@ -33,7 +34,7 @@ class Routes extends React.Component {
         <Route exact path='/admin' component={adminHome} />
         <Route path='/admin/account' component={AccountCreation} />
         <Route path='/admin/upload' component={QuestionCreation} />
-        {/* <Route exact path='/admin/assign/result' component={CreationResult} /> */}
+        <Route exact path='/admin/assign/result' component={CreateResult} />
         {/* patient pages */}
         <Route path='/patientGamepage' component={patientGamepage} />
         <Route path='/patientReadypage' component={patientReadypage} />

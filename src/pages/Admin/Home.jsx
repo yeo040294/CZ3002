@@ -16,9 +16,9 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div id="container">
+            <div id="admin-container">
                 <Navbar />
-                <div id="body">
+                <div id="admin-body">
                     <MDBContainer fluid>
                         {/* <div> */}
                         <MDBRow>
@@ -26,7 +26,7 @@ export default class Login extends Component {
                                 <p class="h1">Home</p>
                             </MDBCol>
                         </MDBRow>
-                        <MDBRow md="12" className="content-body">
+                        <MDBRow md="12" id="admin-content-body">
                             <div class="col-md-6 accountBody">
                                 {/* <p>Create Account</p> */}
                                 <MDBRow>

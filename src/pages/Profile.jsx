@@ -73,7 +73,7 @@ class Profile extends Component {
         return (
             <div>
                 <MDBContainer>
-                    {<Navbar />}
+                    {<Navbar displayname={this.props.data.displayname}/>}
                     <MDBRow>
                         <MDBCol>
                             <h3>Edit profile</h3>

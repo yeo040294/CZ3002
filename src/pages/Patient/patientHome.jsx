@@ -12,6 +12,7 @@ import '../../styling/patient_home.css'
 import AssignmentList from '../../components/Patient/AssignmentList'
 import notify from '../../assets/notify.svg'
 import loading from '../../assets/loading.svg'
+import {fetchUserInfo} from '../../Redux/Actions/UsersAction';
 
 class patientHome extends Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class patientHome extends Component {
         let sessionID = Cookies.get('sessionid')
         let userID = Cookies.get('userid')
         this.props.fetchDifficulty(sessionID, userID)
+        this.props.fetchUserInfo(sessionID, userID)
     }
 
     handleSubmit = (questionList, assignmentid) => {
@@ -74,7 +76,7 @@ class patientHome extends Component {
         else if (assignments === undefined){
             return (
                 <div id="container">
-                    <Navbar />
+                    <Navbar displayname={this.props.data.displayname}/>
                         <div id="header">
                             <MDBCol md="12" className="header">
                                 <p class="h1">Home</p>
@@ -103,7 +105,7 @@ class patientHome extends Component {
         else {
         return (
             <div id="container">
-                <Navbar />
+                <Navbar displayname={this.props.data.displayname}/>
                 <div id="header">
                     <MDBCol md="12" className="header">
                          <p class="h1">Home</p>
@@ -143,5 +145,6 @@ patientHome.propTypes = {
 
 const mapStateToProps = (state, ownProps) => ({
     difficulty: state.patient.display,
+    data: state.user.data
 });
-export default connect(mapStateToProps, { fetchDifficulty, startGame, addQuestionList, fetchQuestion })(patientHome)
+export default connect(mapStateToProps, { fetchDifficulty, startGame, addQuestionList, fetchQuestion, fetchUserInfo})(patientHome)

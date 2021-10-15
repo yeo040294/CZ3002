@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
 import Navbar from './Navbar';
 import PicUpload from '../share/PicUpload';
+import '../../styling/admin_create.css';
 import '../../styling/admin_createqn.css';
 import '../../styling/index.css';
 

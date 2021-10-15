@@ -6,6 +6,7 @@ import '../../styling/index.css';
 import '../../styling/admin_home.css';
 import accountIcon from '../../assets/accountIcon.svg';
 import gameIcon from '../../assets/gameIcon.svg';
+import {fetchUserInfo} from '../../Redux/Actions/UsersAction';
 
 export default class Login extends Component {
 
@@ -17,7 +18,7 @@ export default class Login extends Component {
     render() {
         return (
             <div id="admin-container">
-                <Navbar />
+                <Navbar displayname="Admin"/>
                 <div id="admin-body">
                     <MDBContainer fluid>
                         {/* <div> */}

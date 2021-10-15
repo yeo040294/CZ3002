@@ -1,0 +1,39 @@
+.profile-container {
+    margin:0 auto;
+}
+
+#profile-row {
+    /* background-color: aquamarine; */
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.profile-name-row {
+    background-color: brown;
+}
+
+.img-profile {
+    width: 60%;
+    height: 60%;
+    margin: 0 auto;
+}
+
+.profile-name {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pf-btm {
+    margin-top: 2%;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.pf-top {
+    color:#57B0BD;
+    margin-bottom: 2%;
+}
+
+#edit-content {
+    margin-top: 2%;
+}

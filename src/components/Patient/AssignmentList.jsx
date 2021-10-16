@@ -19,10 +19,9 @@ const AssignmentList = ({assignment, submit}) => {
                 <MDBCard style={{ width: "100vh", marginTop: "10%", marginLeft: "35%" }}>
                     <MDBCardHeader className="content-asgn">Assignment No. {assignment.assignmentid}</MDBCardHeader>
                     <MDBCardBody>
-                        <MDBCardTitle>{assignment.questions}</MDBCardTitle>
+                        <MDBCardTitle>The Questions ID are: {assignment.questions}</MDBCardTitle>
                         <MDBCardText>
-                            With supporting text below as a natural lead-in to additional
-                            content.
+                            Result will be computed after the end of the run
                         </MDBCardText>
                     </MDBCardBody>
                     <MDBRow className='d-flex align-items-center mb-4'>

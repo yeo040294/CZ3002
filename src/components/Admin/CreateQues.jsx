@@ -9,8 +9,8 @@ import '../../styling/index.css';
 const CreateQues = ({ onSubmit }) => {
     const [difficultylevel, setDifficulty] = useState("Select difficulty");
     const [identical, setIdentical] = useState('Yes');
-    const [picture1, setPicture1] = useState('')
-    const [picture2, setPicture2] = useState('')
+    const [picture1, setPicture1] = useState('null')
+    const [picture2, setPicture2] = useState('null')
 
     return (
         <div>
@@ -20,22 +20,24 @@ const CreateQues = ({ onSubmit }) => {
                     {/* <br /> */}
                     <div className="content-pic">
                         <PicUpload picUpload={x => setPicture1(x)} />
-                    <div>
-                        <MDBCard style={{ width: "22rem" }}>
-                        <MDBCardImage className="img-fluid" src={[picture1]} waves />
-                           
-                        </MDBCard>
-                    </div>
-                       
+                        <div>
+                            <MDBCard style={{ width: "22rem" }}>
+                                <MDBCardImage className="img-fluid" src={[picture1]} waves />
+                            </MDBCard>
+                        </div>
                     </div>
                     <br /><br />
                 </MDBRow>
                 <MDBRow className="content-second">
                     <h6>Question Picture 2:</h6>
                     {/* <br /> */}
-                    <div className="content-pic-2">
+                    <div className="content-pic">
                         <PicUpload picUpload={x => setPicture2(x)} />
-                        <MDBCardImage className="img-fluid" src={[picture2]} waves />
+                        <div>
+                            <MDBCard style={{ width: "22rem" }}>
+                                <MDBCardImage className="img-fluid" src={[picture2]} waves />
+                            </MDBCard>
+                        </div>
                     </div>
                     <br />
                 </MDBRow>

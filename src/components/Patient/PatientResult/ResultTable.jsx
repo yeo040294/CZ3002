@@ -23,7 +23,7 @@ const ResultTable = ({results}) => {
                         return (
                             <tr key={x.resultid}>
                                 <td>{x.resultid}</td>
-                                <td>{"null"}</td>
+                                <td>{"null"}</td> {/*Should print difficulty lvl*/}
                                 <td>{`${x.qnscorrect}/${x.qnsanswered}`}</td>
                                 <td>{x.attemptdatetime}</td>
                                 <td>{x.completiontime === null ? "null" : x.completiontime}</td>

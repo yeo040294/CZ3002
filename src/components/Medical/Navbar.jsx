@@ -51,7 +51,7 @@ class Navbar extends Component {
               <MDBNavItem>
                 <MDBDropdown>
                   <MDBDropdownToggle nav caret>
-                    <MDBIcon icon="user" /> {"Profile"}
+                    <MDBIcon icon="user" /> {"Medical Staff"}
                   </MDBDropdownToggle>
                   <MDBDropdownMenu className="dropdown-default">
                     <MDBDropdownItem href="/profile">Profile</MDBDropdownItem>

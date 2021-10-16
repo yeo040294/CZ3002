@@ -76,7 +76,7 @@ class patientHome extends Component {
         else if (assignments === undefined){
             return (
                 <div id="container">
-                    <Navbar />
+                    <Navbar displayname={this.props.data.displayname}/>
                         <div id="header">
                             <MDBCol md="12" className="header">
                                 <p class="h1">Home</p>

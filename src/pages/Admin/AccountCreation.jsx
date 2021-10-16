@@ -35,14 +35,14 @@ class AccountCreation extends Component {
     }
     componentDidUpdate(prevProps){
         if(this.props.result.status == 'success')
-            this.props.history.push('/admin')
+            this.props.history.push('/admin/assign/result')
     }
 
     render() {
         return (
-            <div id="container">
+            <div id="admin-container">
                 <Navbar />
-                <div id="body">
+                <div id="admin-body">
                     <MDBContainer fluid>
                         <MDBRow>
                             <MDBCol  className="lForm" md="6">

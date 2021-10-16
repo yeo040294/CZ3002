@@ -10,6 +10,7 @@ import PatientList from '../../components/Medical/PatientList';
 import Cookies from 'js-cookie';
 import { assignUserid } from '../../Redux/Actions/PatientAction';
 import '../../styling/medical_home.css';
+import {fetchUserInfo} from '../../Redux/Actions/UsersAction';
 
 
 class MedicalHome extends Component {

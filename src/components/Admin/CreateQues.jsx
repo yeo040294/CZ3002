@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
+import {MDBCard, MDBCardBody,  MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBInput, MDBCardImage, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
 import Navbar from './Navbar';
 import PicUpload from '../share/PicUpload';
 import '../../styling/admin_create.css';
@@ -20,6 +20,13 @@ const CreateQues = ({ onSubmit }) => {
                     {/* <br /> */}
                     <div className="content-pic">
                         <PicUpload picUpload={x => setPicture1(x)} />
+                    <div>
+                        <MDBCard style={{ width: "22rem" }}>
+                        <MDBCardImage className="img-fluid" src={[picture1]} waves />
+                           
+                        </MDBCard>
+                    </div>
+                       
                     </div>
                     <br /><br />
                 </MDBRow>
@@ -28,6 +35,7 @@ const CreateQues = ({ onSubmit }) => {
                     {/* <br /> */}
                     <div className="content-pic-2">
                         <PicUpload picUpload={x => setPicture2(x)} />
+                        <MDBCardImage className="img-fluid" src={[picture2]} waves />
                     </div>
                     <br />
                 </MDBRow>

@@ -36,6 +36,7 @@ class QuestionCreation extends Component {
     
     onSubmit = (difficultylevel, image1, image2, identical) => {
         if (image1.includes("no file chosen") || difficultylevel.includes("Select")) { alert("Please ensure that there are no empty inputs.") }
+        else {
         let sessionID = Cookies.get('sessionid')
         let form = {
             sessionid: sessionID,
@@ -47,6 +48,7 @@ class QuestionCreation extends Component {
         this.props.createQuestion(form);
         this.props.updateQuestion(form);
         console.log(this.onSubmit)
+    }
         
     }
 

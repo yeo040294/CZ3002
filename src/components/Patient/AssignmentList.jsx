@@ -12,6 +12,10 @@ import '../../styling/patient_home.css'
 const AssignmentList = ({assignment, submit}) => {
     // let questionArray = assignment.questions.split("")
     let questionArray = JSON.parse(assignment.questions)
+
+    var qnString = assignment.questions
+    var qnArray = qnString.split(",").length
+
     return (
         <MDBContainer >
         <MDBRow>
@@ -19,9 +23,11 @@ const AssignmentList = ({assignment, submit}) => {
                 <MDBCard style={{ width: "100vh", marginTop: "10%", marginLeft: "35%" }}>
                     <MDBCardHeader className="content-asgn">Assignment No. {assignment.assignmentid}</MDBCardHeader>
                     <MDBCardBody>
-                        <MDBCardTitle>The Questions ID are: {assignment.questions}</MDBCardTitle>
+                        <MDBCardTitle>Number of questions: {qnArray}</MDBCardTitle>
                         <MDBCardText>
+                            <br/>
                             Result will be computed after the end of the run
+                            <br/>
                         </MDBCardText>
                     </MDBCardBody>
                     <MDBRow className='d-flex align-items-center mb-4'>

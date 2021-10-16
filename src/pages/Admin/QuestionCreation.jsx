@@ -35,7 +35,7 @@ class QuestionCreation extends Component {
     }
     
     onSubmit = (difficultylevel, image1, image2, identical) => {
-        if (image1.includes("no file chosen") || difficultylevel.includes("Select")) { alert("Please ensure that there are no empty inputs.") }
+        if (image1.includes('null') || image2.includes('null') || difficultylevel.includes("Select")) { alert("Please ensure that there are no empty inputs.") }
         else {
         let sessionID = Cookies.get('sessionid')
         let form = {
@@ -63,7 +63,7 @@ class QuestionCreation extends Component {
                 <div id="admin-body">
                     <MDBContainer fluid>
                         <MDBRow>
-                            <MDBCol className="lForm" md="8">
+                            <MDBCol className="lForm" md="10">
                                 <MDBCard>
                                     <MDBCardBody>
                                         <p className="h3 text-center py-4">Upload Question</p>

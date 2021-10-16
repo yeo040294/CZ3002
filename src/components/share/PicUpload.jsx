@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MDBInputGroup, MDBBtn } from 'mdbreact';
+import { MDBInputGroup, MDBBtn, MDBCardImage } from 'mdbreact';
 import '../../styling/index.css'
 
 export default class PicUpload extends Component {
@@ -48,6 +48,7 @@ export default class PicUpload extends Component {
                             <label className="custom-file-label" htmlFor="inputGroupFile01">
                                 Choose file
                             </label>
+                            
                         </div>
                     }
                     containerClassName="mb-3"

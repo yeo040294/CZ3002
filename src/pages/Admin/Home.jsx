@@ -19,50 +19,51 @@ export default class Login extends Component {
         return (
             <div id="admin-container">
                 <Navbar displayname="Admin"/>
-                <div id="admin-body">
-                    <MDBContainer fluid>
-                        {/* <div> */}
-                        <MDBRow>
-                            <MDBCol md="12" className="header">
-                                <p class="h1">Home</p>
-                            </MDBCol>
-                        </MDBRow>
-                        <MDBRow md="12" id="admin-content-body">
-                            <div class="col-md-6 accountBody">
-                                {/* <p>Create Account</p> */}
-                                <MDBRow>
+                <MDBContainer fluid>
+                    <div id="admin-body">
+                        <div id="admin-header">
+                            <MDBRow md="12">
+                                <MDBCol md="12" class="header">
+                                    <p class="h1">Home</p>
+                                </MDBCol>
+                            </MDBRow>
+                        </div>
+                        <div class="accountBody">                       
+                            <MDBRow md="12">
+                                <MDBCol>
                                     <div class="left-content">
                                         <img src={accountIcon} className="card-img-top" alt="img_Account"/>
                                     </div>
-                                </MDBRow>
-                                <MDBRow>
+                                </MDBCol>
+                            </MDBRow>
+                            <MDBRow md="12">
+                                <MDBCol>
                                     <div class="left-btn">
                                         <MDBBtn color="#ED5C5F" className="btnAccount" id="account" onClick={this.navigate} >
                                         <MDBIcon icon="magic" className="mr-1" size="lg" /> Create Account
                                         </MDBBtn>
                                     </div>
-                                </MDBRow>
-                                {/* <img src={accountIcon} className="card-img-top" alt="img_Account"/> */}
-                            </div>
-                            <div class="col-md-6 questionBody">
-                                {/* <p>Create Question</p> */}
-                                <MDBRow>
-                                    <div class="right-content">
-                                        <img src={gameIcon} class="card-img-top" alt="img_Account"/>
-                                    </div>
-                                </MDBRow>
-                                <MDBRow>
-                                    <div class="right-btn">
-                                        <MDBBtn color="#ED5C5F" className="btnUpload" id="upload" onClick={this.navigate}>
-                                        <MDBIcon icon="magic" className="mr-1" size="lg" /> Upload Question
-                                        </MDBBtn>
-                                    </div>
-                                </MDBRow>
-                            </div>
-                        </MDBRow>
-                        
-                    </MDBContainer>
-                </div>
+                                </MDBCol>
+                            </MDBRow>
+                        </div>
+                        <div class="questionBody">
+                            {/* <p>Create Question</p> */}
+                            <MDBRow>
+                                <div class="right-content">
+                                    <img src={gameIcon} class="card-img-left" alt="img_Account"/>
+                                </div>
+                            </MDBRow>
+                            <MDBRow>
+                                <div class="right-btn">
+                                    <MDBBtn color="#ED5C5F" className="btnUpload" id="upload" onClick={this.navigate}>
+                                    <MDBIcon icon="magic" className="mr-1" size="lg" /> Upload Question
+                                    </MDBBtn>
+                                </div>
+                            </MDBRow>
+                        </div>
+                    </div>
+                </MDBContainer>
+                <hr/>
                 <Footer />
             </div>
         )

@@ -7,7 +7,7 @@ import CreateQues from '../../components/Admin/CreateQues';
 import { updateQuestion, createQuestion } from '../../Redux/Actions/QuestionAction';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import '../../styling/admin_create.css';
+import '../../styling/admin_createqn.css';
 import '../../styling/index.css';
 
 
@@ -58,12 +58,12 @@ class QuestionCreation extends Component {
     }
     render() {
         return (
-            <div id="admin-container">
+            <div id="admin-qr-container">
                 <Navbar />
-                <div id="admin-body">
+                <div id="admin-qr-body">
                     <MDBContainer fluid>
                         <MDBRow>
-                            <MDBCol className="lForm" md="10">
+                            <MDBCol id="admin-qr-form" md="10">
                                 <MDBCard>
                                     <MDBCardBody>
                                         <p className="h3 text-center py-4">Upload Question</p>

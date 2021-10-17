@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { createAcc } from '../../Redux/Actions/UsersAction';
 import Cookies from 'js-cookie'
 import '../../styling/index.css';
-import '../../styling/admin_createqn.css';
+import '../../styling/admin_create.css';
 
 class AccountCreation extends Component {
     state = {
@@ -40,12 +40,12 @@ class AccountCreation extends Component {
 
     render() {
         return (
-            <div id="admin-container">
+            <div id="admin-cr-container">
                 <Navbar />
-                <div id="admin-body">
+                <div id="admin-cr-body">
                     <MDBContainer fluid>
                         <MDBRow>
-                            <MDBCol  className="lForm" md="6">
+                            <MDBCol  id="admin-cr-form" md="6">
                                 <MDBCard>
                                 <MDBCardBody className="mx-4">
                                     <h2 className="h4 text-center py-4">Account Creation</h2>    
@@ -56,6 +56,7 @@ class AccountCreation extends Component {
                         </MDBRow>
                     </MDBContainer>
                 </div>
+                <hr/>
                 <Footer />
             </div>
         )

@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { MDBInputGroup, MDBInput, MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBRow, MDBBtn } from 'mdbreact';
 import '../../styling/admin_create.css';
-// import '../../styling/index.css';
 
 const AccountForm = ({onSubmit}) => {
     const [name, setName] = useState('');
@@ -30,11 +29,12 @@ const AccountForm = ({onSubmit}) => {
                 </MDBDropdown>
             </MDBRow>
             <MDBRow className="content-btn">
-                <div className="text-center mt-4">
+                <div className="text-center mt-4" id="admin-cr-btn1">
                     <MDBBtn color="#1FB4CA" className="mb-3 btnSubmit" onClick={() => onSubmit(name, username,password,usertype)} >Submit</MDBBtn>
-                </div>
-                <div className="text-center mt-4">
                     <MDBBtn className="mb-3 btnClear" color="#ED5C5F" onClick={() => {setName(''); setUsername('');setPassword(''); setUsertype('Select User Type')}} >Clear</MDBBtn>
+                </div>
+                <div className="text-center mt-4" id="admin-cr-btn2">
+                    {/* <MDBBtn className="mb-3 btnClear" color="#ED5C5F" onClick={() => {setName(''); setUsername('');setPassword(''); setUsertype('Select User Type')}} >Clear</MDBBtn> */}
                 </div>
             </MDBRow>
         </div>

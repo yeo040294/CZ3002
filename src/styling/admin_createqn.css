@@ -1,5 +1,9 @@
 /*Create Question/Question Creation*/
 
+img[src='null'] {
+    display: none;
+}
+
 .content-qnc {
     padding-top: 5%;
 }
@@ -18,6 +22,7 @@
     width: 80%;
     margin-left: 2%;
     margin-top: -5%;
+    /* margin-right: 2%; */
 }
 
 .content-pic-2 {
@@ -50,8 +55,6 @@ h6 {
     margin-top: 5%;
     position: relative;
     margin-left: 1%;
-    /* padding-left: 4.5%; */
-    /* background-color: #1FB4CA; */
 }
 
 .content-forth {
@@ -60,19 +63,16 @@ h6 {
 }
 
 .content-btn {
-    /* margin-left: 55%; */
-    /* padding-bottom: 5%; */
     margin-top: -5%;
     margin-right: 2%;
-    /* background-color: black; */
-    /* width: 100%; */
 }
 
 .btnCreate {
+    float: right;
     background-color: #1FB4CA;
     color: white;
-    margin-left: 100%;
-    margin-left: 55%;
+    /* margin-left: 100%; */
+    margin-left: 15%;
     /* padding-bottom: 5%; */
 }
 
@@ -92,7 +92,8 @@ h6 {
 }
 
 .containerBtn {
-    padding-left: 40%;
+    float: left;
+    width: 100%;
     /* background-color: blue; */
 }
 

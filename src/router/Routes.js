@@ -4,8 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 
 import patientGamepage from '../pages/Patient/patientGamepage';
-import patientReadypage from '../pages/Patient/patientReadypage';
-import patientResultpage from '../pages/Patient/patientResultpage';
 import patientHome from '../pages/Patient/patientHome';
 import Result from '../pages/Patient/Result';
 import adminHome from '../pages/Admin/Home';
@@ -36,8 +34,6 @@ class Routes extends React.Component {
         <Route exact path='/admin/assign/result' component={CreateResult} />
         {/* patient pages */}
         <Route path='/patientGamepage' component={patientGamepage} />
-        <Route path='/patientReadypage' component={patientReadypage} />
-        <Route path='/patientResultpage' component={patientResultpage} />
         <Route exact path='/patient' component={patientHome} />
         <Route path='/results'  component={Result} />
         <Route path='/end'  component={End} />

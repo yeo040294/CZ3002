@@ -1,5 +1,6 @@
 const initState = {
-    data: []
+    data: [],
+    result: []
 };
 
 const UserReducer = (state = initState, action) => {
@@ -27,7 +28,7 @@ const UserReducer = (state = initState, action) => {
         case 'CHANGE_PASSWORD':
             return {
                 ...state,
-                data: action.payload
+                result: action.payload
             }
         case 'LOG_IN':
             return {

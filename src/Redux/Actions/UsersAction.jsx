@@ -90,7 +90,7 @@ export const changePassword = (sessionid, oldpassword, newpassword) => dispatch 
         "oldpassword": oldpassword,
         "newpassword": newpassword
         }
-    fetch("http://"+ server + '/backend/user/update/displayname', {
+    fetch("http://"+ server + '/backend/user/update/password', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

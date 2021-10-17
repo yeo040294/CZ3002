@@ -62,11 +62,26 @@ class Profile extends Component {
             this.setState({
                 errorPassword: 'Please enter a valid password!'
             })
-        } else {
+        } else if (this.state.new_password === this.state.old_password) {
+            this.setState({
+                errorPassword: 'New password must be different from current password!'
+            })
+        }
+        else {
             let sessionid = Cookies.get('sessionid')
-            this.props.changePassword(sessionid, this.state.old_password, this.state.new_password)        
-            alert('Password changed successfully!')
-            location.reload() 
+            this.props.changePassword(sessionid, this.state.old_password, this.state.new_password)                
+        }
+    }
+
+    componentDidUpdate(prevProps){
+        console.log(this.props.result)
+        if(this.props.result.status == 'error:invalid password') {
+            alert('Wrong password!')
+            this.props.result.status = []
+        } else if (this.props.result.status == 'success'){
+            alert('Password changed successfully')
+            this.props.result.status = []
+            location.reload()
         }
     }
 
@@ -131,6 +146,7 @@ class Profile extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    data: state.user.data
+    data: state.user.data,
+    result: state.user.result
 });
 export default connect(mapStateToProps, { fetchUserInfo, changeDisplayname, changePassword })(Profile)

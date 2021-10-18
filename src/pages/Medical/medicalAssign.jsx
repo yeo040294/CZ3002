@@ -84,7 +84,7 @@ class medicalAssign extends Component {
                                             <p className="h5 mb-4 text-left content-text">Difficulty: </p>
                                             <MDBRow id="select-content">
                                                 <select className="browser-default custom-select" value={this.state.difficulty} onChange={this.handleDifficultyChange}>
-                                                    <option value="Eady" >Easy</option>
+                                                    <option value="Easy" >Easy</option>
                                                     <option value="Medium" >Medium</option>
                                                     <option value="Hard">Hard</option>
                                                 </select>

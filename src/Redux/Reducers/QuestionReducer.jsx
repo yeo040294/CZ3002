@@ -1,7 +1,8 @@
 const initState = {
     questions: [],
     results: [],
-    questionDetail: []
+    questionDetail: [],
+    question: []
 };
 
 const QuestionReducer = (state = initState, action) => {

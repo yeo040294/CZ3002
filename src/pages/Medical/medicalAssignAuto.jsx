@@ -13,25 +13,32 @@ class medicalAssignAuto extends Component {
     state = {
         difficulty:0
     }
-    componentDidMount() {        
-        if (this.props.difficulty == "Medium"){
+    componentDidMount() {     
+        let difficultyLevel = 0  
+        if (this.props.difficulty === "Medium"){
+            difficultyLevel = 1
             this.setState({
                 difficulty: 1
             })
         }
-        else if (this.props.difficulty == "Hard"){
+        else if (this.props.difficulty === "Hard"){
+            difficultyLevel = 2
             this.setState({
                 difficulty: 2
-            })        
+            })
         }
-        this.props.fetchAllQuestion(this.state.difficulty, Cookies.get("userid"), Cookies.get("sessionid"),); //0 for easy, 1 for medium, 3 for hard
+        this.props.fetchAllQuestion(difficultyLevel, Cookies.get("userid"), Cookies.get("sessionid"),); //0 for easy, 1 for medium, 3 for hard
     }
 
     handleSubmit = (questionList) => {
         let sessionid = Cookies.get('sessionid')
-        this.props.assignQuestionList(questionList)
-        this.props.assignPatient(this.props.uuid, questionList, sessionid, this.state.difficulty);
-        this.props.history.push("/medical/assign/result") 
+        if (questionList.length === 0) {
+            alert('Pleasse select a question')
+        } else {
+            this.props.assignQuestionList(questionList)
+            this.props.assignPatient(this.props.uuid, questionList, sessionid, this.state.difficulty);
+            this.props.history.push("/medical/assign/result")
+        } 
     }
 
     autoAssign = () => {
@@ -49,6 +56,7 @@ class medicalAssignAuto extends Component {
         this.props.history.push("/medical/assign/result")
     }
     render() {
+        console.log(this.props.data)
         return (
             <div id="container">
                 <Navbar />

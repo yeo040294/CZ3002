@@ -6,11 +6,15 @@ import ResultTable from '../../components/Patient/PatientResult/ResultTable';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchResults } from '../../Redux/Actions/QuestionAction';
+import {fetchUserInfo} from '../../Redux/Actions/UsersAction';
 import Cookies from 'js-cookie';
 import '../../styling/patient_home.css'
 
 class Result extends Component {
     componentDidMount() {
+        let sessionid = Cookies.get('sessionid')
+        let userid = Cookies.get('userid')
+        this.props.fetchUserInfo(sessionid, userid)
         // var d = new Date();
         // d.toLocaleString();
         // let results = this.state.results;
@@ -25,9 +29,10 @@ class Result extends Component {
     //     }
     // }
     render() {
+        console.log(this.props.data)
         return (
             <div id="container">
-                <Navbar />
+                <Navbar displayname={this.props.user.displayname}/>
                 <div id="header">
                     <MDBCol md="12" className="header">
                          <p class="h1">Game Results</p>
@@ -53,6 +58,7 @@ Result.propTypes = {
 
 const mapStateToProps = (state, ownProps) => ({
     data: state.quest.results,
+    user: state.user.data,
 });
 
-export default connect(mapStateToProps, { fetchResults })(Result)
+export default connect(mapStateToProps, { fetchResults, fetchUserInfo })(Result)

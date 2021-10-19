@@ -26,20 +26,22 @@ class ViewPatientResults extends Component {
     }
     render() {
         return (
-            <div id="container">
+            <div id="medical-container">
                 <Navbar />
-                <div id="header">
-                    <MDBCol md="12" className="header">
-                         <p class="h1">Game Results</p>
-                    </MDBCol>
-                </div>
-                <div id="body">
-                    <MDBContainer fluid>
-                        <h3 className="body-text">Patient: {this.state.username}</h3>
-                        <hr />
-                        {this.props.data && <ResultTable results={this.props.data.results} />}
+                <div id="medical-content">
+                    <div id="medical-header">
+                        <MDBCol md="12" className="medical-header">
+                            <p class="h1">Game Results</p>
+                        </MDBCol>
+                    </div>
+                    <div id="medical-body">
+                        <MDBContainer fluid>
+                            <h3 className="body-text">Patient: {this.state.username}</h3>
+                            <hr />
+                            {this.props.data && <ResultTable results={this.props.data.results} />}
 
-                    </MDBContainer>
+                        </MDBContainer>
+                    </div>
                 </div>
                 <hr/>
                 <Footer/>

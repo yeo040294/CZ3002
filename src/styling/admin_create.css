@@ -1,60 +1,60 @@
-.header {
-    position: absolute;
-    width: 334px;
-    height: 56px;
-    left: 534px;
-    top: 100px;
-    
+body {
+    background-image: url('../assets/Background.png');
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 56px;
-    text-align: center;
-    
-    color: #1FB4CA;
-
+    background-color: #F7FEFF;
 }
 
-#body {
-    padding:10px;
-    padding-bottom: 20vh;   /* Height of the footer */
-    margin-bottom: -5%;
- }
-
-.content {
-    margin-bottom: 5%;
-    overflow:auto;
+/*AccountCreation.jsx*/
+#admin-cr-container {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.content-row1 {
-    margin-left: 1%;
+#admin-cr-body {
+    width: 100%;
+    height: auto;
+    margin-top: -50px;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    padding-bottom: 20vh;
 }
 
-.content-dropDown {
-    margin-left:5%;
+#admin-cr-form {
+    float: none;
+    margin: 0 auto;
 }
 
-p {
-    margin-top: 1%;
-}
+/*AccountForm*/
 
 .content-btn {
     padding-top: 5%;
     padding-left: 55%;
     margin-bottom: 5%;
-    /* background-color: black; */
+    margin: 0 auto;
     margin-right: 5%;
     width: 100%;
 }
 
-.btnSubmit {
-    background-color: #1FB4CA;
+.btnSubmit:hover {
     color: white;
 }
 
-.mb-3:hover {
-    /* background-color: #1FB4CA; */
+.btnClear:hover {
+    color: white;
+}
+
+.btnSubmit {
+    background-color: #1FB4CA;
     color: white;
 }
 
@@ -63,6 +63,114 @@ p {
     color: white;
 }
 
-body {
-    overflow: scrollable;
+@media screen and (max-width: 750px) {
+    /*AccountCreation.jsx*/
+    #admin-cr-container {
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #1FB4CA; */
+    }
+    
+    #admin-cr-body {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        align-items: center;
+        position: relative;
+        padding-bottom: 20vh;
+        background-image: url('../assets/Background.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        /* background-color: #771fca; */
+    }
+    
+    #admin-cr-form {
+        float: none;
+        margin: 0 auto;
+    }
+
+    /*AccountForm*/
+
+    .content-btn {
+        height: 150px;
+        padding-top: 5%;
+        padding-left: 40%;
+        margin-bottom: 5%;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #admin-cr-btn1 {
+        clear:both;
+        margin-bottom: 20px;
+        margin-left: 115px;
+    }
+
+    .btnSubmit {
+        float: left;
+    }
+    
+    .btnClear {
+        float: right;
+    }
 }
+
+@media screen and (max-width: 550px) {
+    /*AccountCreation.jsx*/
+    #admin-cr-container {
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #1FB4CA; */
+    }
+    
+    #admin-cr-body {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        align-items: center;
+        position: relative;
+        padding-bottom: 20vh;
+        background-image: url('../assets/Background.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        /* background-color: #771fca; */
+    }
+    
+    #admin-cr-form {
+        float: none;
+        margin: 0 auto;
+    }
+
+    /*AccountForm*/
+
+    .content-btn {
+        height: 150px;
+        padding-top: 5%;
+        padding-left: 15%;
+        margin-bottom: 5%;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #admin-cr-btn1 {
+        clear:both;
+        margin-bottom: 20px;
+        margin-left: 9%;
+    }
+
+    .btnSubmit {
+        float: left;
+    }
+    
+    .btnClear {
+        float: right;
+    }
+} 

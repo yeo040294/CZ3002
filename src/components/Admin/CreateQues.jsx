@@ -8,7 +8,7 @@ import '../../styling/index.css';
 
 const CreateQues = ({ onSubmit }) => {
     const [difficultylevel, setDifficulty] = useState("Select difficulty");
-    const [identical, setIdentical] = useState('1');
+    const [identical, setIdentical] = useState('Yes');
     const [picture1, setPicture1] = useState('null')
     const [picture2, setPicture2] = useState('null')
 
@@ -49,9 +49,9 @@ const CreateQues = ({ onSubmit }) => {
                                 {difficultylevel}
                             </MDBDropdownToggle>
                             <MDBDropdownMenu basic onClick={e => setDifficulty(e.target.value)} >
-                                <MDBDropdownItem value={'0'}>Easy</MDBDropdownItem>
-                                <MDBDropdownItem value={'1'}>Medium</MDBDropdownItem>
-                                <MDBDropdownItem value={'2'}> Hard</MDBDropdownItem>
+                                <MDBDropdownItem value={'Easy'}>Easy</MDBDropdownItem>
+                                <MDBDropdownItem value={'Medium'}>Medium</MDBDropdownItem>
+                                <MDBDropdownItem value={'Hard'}> Hard</MDBDropdownItem>
                             </MDBDropdownMenu>
                         </MDBDropdown>
                     {/* </MDBCol> */}
@@ -64,8 +64,8 @@ const CreateQues = ({ onSubmit }) => {
                                 {identical}
                             </MDBDropdownToggle>
                             <MDBDropdownMenu basic onClick={e => setIdentical(e.target.value)}>
-                                <MDBDropdownItem value='1'>Yes</MDBDropdownItem>
-                                <MDBDropdownItem value='0'>No</MDBDropdownItem>
+                                <MDBDropdownItem value='Yes'>Yes</MDBDropdownItem>
+                                <MDBDropdownItem value='No'>No</MDBDropdownItem>
                             </MDBDropdownMenu>
                         </MDBDropdown>
                       {/* </MDBCol> */}

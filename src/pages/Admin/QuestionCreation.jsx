@@ -7,7 +7,7 @@ import CreateQues from '../../components/Admin/CreateQues';
 import { updateQuestion, createQuestion } from '../../Redux/Actions/QuestionAction';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import '../../styling/admin_create.css';
+import '../../styling/admin_createqn.css';
 import '../../styling/index.css';
 
 
@@ -37,6 +37,21 @@ class QuestionCreation extends Component {
     onSubmit = (difficultylevel, image1, image2, identical) => {
         if (image1.includes('null') || image2.includes('null') || difficultylevel.includes("Select")) { alert("Please ensure that there are no empty inputs.") }
         else {
+
+            if (difficultylevel == "Easy") {
+                difficultylevel = '0'
+            } else if (difficultylevel == "Medium") {
+                difficultylevel = '1'
+            } else if (difficultylevel == "Hard") {
+                difficultylevel = '2'
+            }
+
+            if (identical == "Yes") {
+                identical = '1'
+            } else if (answer == "No") {
+                identical = '0'
+            }
+
             let sessionID = Cookies.get('sessionid')
             this.setState({ answer: identical, difficulty: difficultylevel, image1: image1, image2: image2 })
             let form = {
@@ -67,12 +82,12 @@ class QuestionCreation extends Component {
     }
     render() {
         return (
-            <div id="admin-container">
+            <div id="admin-qr-container">
                 <Navbar />
-                <div id="admin-body">
+                <div id="admin-qr-body">
                     <MDBContainer fluid>
                         <MDBRow>
-                            <MDBCol className="lForm" md="10">
+                            <MDBCol id="admin-qr-form" md="10">
                                 <MDBCard>
                                     <MDBCardBody>
                                         <p className="h3 text-center py-4">Upload Question</p>

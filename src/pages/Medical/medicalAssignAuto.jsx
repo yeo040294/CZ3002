@@ -8,6 +8,9 @@ import { fetchAllQuestion } from '../../Redux/Actions/QuestionAction'
 import { assignPatient, assignQuestionList} from '../../Redux/Actions/PatientAction'
 import { QuestionList } from '../../components/Medical/QuestionList';
 import Cookies from 'js-cookie';
+import Footer from '../../components/share/Footer';
+import '../../styling/medical_assign.css'
+
 
 class medicalAssignAuto extends Component {
     state = {
@@ -58,23 +61,26 @@ class medicalAssignAuto extends Component {
     render() {
         console.log(this.props.data)
         return (
-            <div id="container">
+            <div id="medical-assign-container">
                 <Navbar />
-                <div id="header">
-                    <MDBCol md="12" className="header">
-                        <p class="h1">Assign Task</p>
-                    </MDBCol>
+                <div id="medical-assign-content">
+                    <div id="medical-assign-header">
+                        <MDBCol md="12" className="medical-assign-header">
+                            <p class="h1">Assign Task</p>
+                        </MDBCol>
+                    </div>
+                    <div id="medical-assign-body">
+                        <MDBContainer fluid>                 
+                            <h4>Difficulty level: {this.props.difficulty}</h4>
+                            <MDBBtn onClick={this.autoAssign} color="#ED5C5F" type='button' className='btn-asgn'>Auto assign</MDBBtn>
+                            <hr/>
+                            <h5>Manual Assignment</h5>
+                            <br/>
+                            {this.props.data && <QuestionList data={this.props.data.questions} submit = {this.handleSubmit}/>}
+                        </MDBContainer>
+                    </div>
                 </div>
-                <div id="body">
-                    <MDBContainer fluid>                 
-                        <h4>Difficulty level: {this.props.difficulty}</h4>
-                        <MDBBtn onClick={this.autoAssign} color="#ED5C5F" type='button' className='btn-asgn'>Auto assign</MDBBtn>
-                        <hr/>
-                        <h5>Manual Assignment</h5>
-                        <br/>
-                        {this.props.data && <QuestionList data={this.props.data.questions} submit = {this.handleSubmit}/>}
-                    </MDBContainer>
-                </div>
+                <Footer/>
             </div>
         )
     }

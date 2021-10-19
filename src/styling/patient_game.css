@@ -1,31 +1,47 @@
-#body {
-    padding:10px;
-    padding-bottom: 20vh;   /* Height of the footer */
-    height: 80%;
-    background-color: #F7FEFF;
+#game-container {
+   position: relative;
+   /* background-color: aqua; */
+   width: 100%;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+}
+
+#game-content {
+   align-items: center;
+   padding-bottom: 20vh;   /* Height of the footer */
+   height: inherit;
+   width: inherit;
+   margin-bottom: -5%;
+}
+
+#game-main-body {
+   height: auto;
+   width: inherit;
+   padding-top: 20px;
+   background-color: #ebf7fa;
+   margin-bottom: -6%;
+   margin-top: 5%;
  }
 
- #container {
-    min-height:100%;
-    position: relative;
-    /* background-color: aqua; */
-    width: 100%;
-    height: 100%;
- }
-
- #header {
-    width: 100%;
-    height: 20vh;
-    /* align-self: center; */
-    width: auto;
+ #game-header {
+   background-image: url('../assets/Background.png');
+   width: 100%;
+   height: 120px;
+   margin: 0 auto;
+   background-color: #131718;
+   padding-top: 2%;
+   margin-bottom: 4%;
  }
 
  .game-header {
     margin-top: 2%;
-    margin-top: 3%;
-    /* background-color: black; */
+    margin-bottom: 4%;
     width: auto;
+    height: inherit;
 }
+/*Question.jsx*/
 
 #first-content {
     margin-top: 2%;
@@ -79,10 +95,6 @@
    margin-left: 5%;
 }
 
-/* div:focus {
-   background: indigo;
-} */
-
 .col-step {
    padding: 1rem;
    background-color: #33b5e5;
@@ -108,10 +120,10 @@
 .has-text-danger {
    color: #ED5C5F;
    text-align: center;
+   font-weight: bold;
 }
 
 /*    END   */
-
 #end-body {
    align-items: center;
    text-align: center;
@@ -159,4 +171,175 @@
 .homebtn:hover {
    color: white;
    background-color: #09abc4;
+}
+
+
+@media screen and (max-width: 750px) {
+   #game-container {
+      position: relative;
+      /* background-color: aqua; */
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+   }
+   
+   #game-content {
+      align-items: center;
+      padding-bottom: 20vh;   /* Height of the footer */
+      height: auto;
+      width: 100%;
+      margin-bottom: -50%;
+   }
+   
+   #game-main-body {
+      height: auto;
+      width: inherit;
+      padding-top: 20px;
+      background-color: #ebf7fa;
+      margin-bottom: -15%;
+      margin-top: 5%;
+    }
+   
+    #game-header {
+      width: 100%;
+      height: 120px;
+      margin: 0 auto;
+      padding-top: 2%;
+      margin-bottom: 5%;
+    }
+   
+    .game-header {
+       margin-top: 2%;
+       margin-top: 3%;
+       /* background-color: black; */
+       width: auto;
+   }
+   /*Question.jsx*/
+   
+   #first-content {
+       margin-top: 2%;
+       margin-bottom: 2%;
+       /* margin-bottom: 2%; */
+       margin-left: 2%;
+       /* width: 50%; */
+       justify-content: center;
+   }
+   
+   #second-content {
+      margin-left: 2%;
+      justify-content: center;
+   }
+   
+   #third-content {
+      margin-top: 2%;
+      margin-bottom: 10%;
+      margin-left: 2%;
+      /* background-color: aqua; */
+      justify-content: center;
+   }
+   
+   #forth-content {
+      margin-left: 13%;
+   }
+   
+   #fifth-content {
+      justify-content: right;
+      margin-right: 10%;
+   }
+
+   .left-img {
+      margin-bottom: 5%;
+   }
+   
+   .game-img {
+      width:50%;
+      margin: 0 auto;
+   }
+   
+   .radio-content {
+      width: 50vh;
+      height: 6vh;
+      left: 487px;
+      top: 735px;
+   
+      background: #ccd4d5;
+      border-radius: 50px;
+      margin-bottom: 5%;
+   }
+   
+   .radio-tab {
+      margin-top: 2%;
+      margin-left: 5%;
+   }
+   
+   
+   #error-content {
+      width: 30%;
+      margin-left: 12%;
+      margin-bottom: 5%;
+      margin-top: -5%;
+   }
+   
+   .has-text-danger {
+      color: #ED5C5F;
+      text-align: center;
+      font-weight: bold;
+   }
+}
+
+@media screen and (max-width: 550px) {
+   #game-content {
+      align-items: center;
+      padding-bottom: 20vh;   /* Height of the footer */
+      height: auto;
+      width: 100%;
+      margin-bottom: 2%;
+   }
+   /*Question.jsx*/
+   
+   #first-content {
+       margin-top: 2%;
+       margin-bottom: 2%;
+       /* margin-bottom: 2%; */
+       margin-left: 2%;
+       /* width: 50%; */
+       justify-content: center;
+   }
+   
+   #second-content {
+      margin-left: 2%;
+      justify-content: center;
+   }
+   
+   #third-content {
+      margin-top: 2%;
+      margin-bottom: 10%;
+      margin-left: 2%;
+      /* background-color: aqua; */
+      justify-content: center;
+   }
+
+   #error-content {
+      width: 100%;
+      margin-left: 12%;
+      margin-bottom: 5%;
+      margin-top: -5%;
+   }
+   
+   .has-text-danger {
+      color: #ED5C5F;
+      text-align: center;
+      font-weight: bold;
+   }
+
+   .gameBtn {
+      margin-left: -10%;
+      width: 250px;
+   }
+
+   .end-text {
+      font-size: 20px;
+   }
 }

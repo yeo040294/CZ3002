@@ -90,54 +90,56 @@ class Profile extends Component {
         let Navbar = role === '0' ? patientNav : role === '1' ? staffNav : adminNav;
         const {displayname, old_password, new_password} = this.state
         return (
-            <div id="container" class="profile-container">
+            <div id="profile-container">
                 {<Navbar displayname={this.props.data.displayname}/>}
-                <div id="header">
-                    <MDBCol md="12" className="header">
-                        <p class="h1">Edit profile</p>
-                    </MDBCol>
-                </div>
-                <div id="body">
-                <MDBContainer fluid>
-                    <MDBRow>
-                        <MDBCol md="4">
-                            <MDBRow id="profile-row">
-                                {/* <div id="profile-row"> */}
-                                <img src={profileAvatar} className="img-profile" alt="img-profile"/>
-                                {/* </div> */}
-                            </MDBRow>
-                            <MDBRow class="profile-name-row">
-                                <h2 class="profile-name pf-top">{this.props.data.username}</h2>
-                            </MDBRow>
-                            <MDBRow class="profile-name-row">
-                                <h4 class="profile-name pf-btm">{this.props.data.displayname}</h4>
-                            </MDBRow>
+                <div id="profile-content">
+                    <div id="profile-header">
+                        <MDBCol md="12" className="profile-header">
+                            <p class="h1 profile-header-text">Edit Profile</p>
                         </MDBCol>
-                        <MDBCol md="7" id="edit-content">
-                            <h3>Profile</h3>
-                            <hr/>
-                            {/* <MDBRow> */}
-                            {/* Change displayname */}
-                            <MDBInput label="Display name" name="displayname" icon="address-card" value={displayname} onChange={this.handleChange}/>
+                    </div>
+                    <div id="profile-body">
+                        <MDBContainer fluid>
+                            <MDBRow>
+                                <MDBCol md="4">
+                                    <MDBRow id="profile-row">
+                                        {/* <div id="profile-row"> */}
+                                        <img src={profileAvatar} className="img-profile" alt="img-profile"/>
+                                        {/* </div> */}
+                                    </MDBRow>
+                                    <MDBRow class="profile-name-row">
+                                        <h2 class="profile-name pf-top">{this.props.data.username}</h2>
+                                    </MDBRow>
+                                    <MDBRow class="profile-name-row">
+                                        <h4 class="profile-name pf-btm">{this.props.data.displayname}</h4>
+                                    </MDBRow>
+                                </MDBCol>
+                                <MDBCol md="7" id="edit-content">
+                                    <h3>Profile</h3>
+                                    <hr/>
+                                    {/* <MDBRow> */}
+                                    {/* Change displayname */}
+                                    <MDBInput label="Display name" name="displayname" icon="address-card" value={displayname} onChange={this.handleChange}/>
 
-                            <MDBBtn onClick={this.changeDisplayname}> Change display name </MDBBtn>
-                            {this.state.errorDisplayname && <div className="has-text-danger"> {this.state.errorDisplayname} </div>}
-                            <br/>
-                            {/* </MDBRow> */}
-                            {/* <MDBRow> */}
-                            {/* Show username */}
-                            {/* <MDBInput label="Username" icon="user-circle" value={this.props.data.username} /> */}
-                            
-                            {/* Change password */}
-                            <MDBInput type="password" label="Enter current password" name="old_password" value={old_password} onChange={this.handleChange} icon="unlock-alt" />
-                            <MDBInput type="password" label="Enter new password" name="new_password" value={new_password} onChange={this.handleChange} icon="unlock-alt" />
-                            <MDBBtn onClick={this.changePassword}> Change password </MDBBtn>
-                            {this.state.errorPassword && <div className="has-text-danger"> {this.state.errorPassword} </div>}
-                            {/* </MDBRow> */}
-                        </MDBCol>
-                    </MDBRow>
-                </MDBContainer>
-                </div>
+                                    <MDBBtn onClick={this.changeDisplayname}> Change display name </MDBBtn>
+                                    {this.state.errorDisplayname && <div className="has-text-danger"> {this.state.errorDisplayname} </div>}
+                                    <br/>
+                                    {/* </MDBRow> */}
+                                    {/* <MDBRow> */}
+                                    {/* Show username */}
+                                    {/* <MDBInput label="Username" icon="user-circle" value={this.props.data.username} /> */}
+                                    
+                                    {/* Change password */}
+                                    <MDBInput type="password" label="Enter current password" name="old_password" value={old_password} onChange={this.handleChange} icon="unlock-alt" />
+                                    <MDBInput type="password" label="Enter new password" name="new_password" value={new_password} onChange={this.handleChange} icon="unlock-alt" />
+                                    <MDBBtn onClick={this.changePassword}> Change password </MDBBtn>
+                                    {this.state.errorPassword && <div className="has-text-danger"> {this.state.errorPassword} </div>}
+                                    {/* </MDBRow> */}
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBContainer>
+                        </div>
+                    </div>
                 <hr/>
                 <Footer />
             </div>

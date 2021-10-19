@@ -51,46 +51,57 @@ class patientHome extends Component {
         console.log(assignments)
         if (this.state.isLoading) {
             return ( 
-                <div className="content-loading">
-                    <MDBRow>
-                        <MDBCol>
-                            <div class="img-content">
-                                <img src={loading} className="card-img-top" alt="img_Account"/>
+                <div id="patient-container">
+                    <Navbar displayname={this.props.data.displayname}/>
+                    <div id="patient-content">
+                        <div id="patient-header">
+                                <MDBCol md="12" className="patient-header">
+                                    <p class="h1 patient-header-text">Home</p>
+                                </MDBCol>
                             </div>
-                        </MDBCol>
-                    </MDBRow>
-                    {/* <hr/> */}
-                    <MDBRow>
-                        <MDBCol md="1" className="spinner">
-                            <div className="spinner-border" role="status">
-                                <span className="sr-only">Loading...</span>
+                            <div id="patient-body">
+                                <MDBContainer fluid>
+                                    <MDBRow>
+                                        <MDBCol className="content" md="6">
+                                            <MDBCard className="card-content">
+                                                <div className="spinner-border" role="status">
+                                                    <span className="sr-only">Loading...</span>
+                                                </div>
+                                                <div id="patient-card-img">
+                                                    <img src={loading} class="loading-card-img-top" alt="img_Account"/>
+                                                </div>
+                                                <MDBCardBody>
+                                                    <p className="h2 font-weight-bold text"> Please wait, we are fetching the questions for you </p>
+                                                </MDBCardBody>
+                                            </MDBCard>
+                                        </MDBCol>
+                                    </MDBRow>
+                                </MDBContainer>
                             </div>
-                        </MDBCol>
-                        <MDBCol md="4">
-                            <p className="loading-text"> Please wait, we are fetching the questions for you </p>
-                        </MDBCol>
-                    </MDBRow>
+                    </div>
+                    <Footer />
                 </div>
             )
         }
         else if (assignments === undefined){
             return (
-                <div id="container">
+                <div id="patient-container">
                     <Navbar displayname={this.props.data.displayname}/>
-                        <div id="header">
-                            <MDBCol md="12" className="header">
-                                <p class="h1">Home</p>
-                            </MDBCol>
+                    <div id="patient-content">
+                        <div id="patient-header">
+                                <MDBCol md="12" className="patient-header">
+                                    <p class="h1 patient-header-text">Home</p>
+                                </MDBCol>
                         </div>
-                        <div id="body">
+                        <div id="patient-body">
                             <MDBContainer fluid>
                                 <MDBRow>
                                     <MDBCol  className="content" md="8">
                                         <MDBCard className="card-content">
+                                            <div class="patient-card-img">
+                                                <img src={notify} class="patient-card-img-top" alt="img_Account"/>
+                                            </div>
                                             <MDBCardBody>
-                                                <div class="top-content">
-                                                    <img src={notify} className="card-img-top" alt="img_Account"/>
-                                                </div>
                                                 <p className="h2 font-weight-bold text">There is no assignment for you</p>
                                             </MDBCardBody>
                                         </MDBCard>
@@ -98,42 +109,44 @@ class patientHome extends Component {
                                 </MDBRow>
                             </MDBContainer>
                         </div>
+                    </div>
                     <Footer />
                 </div>
             )
         }
         else {
         return (
-            <div id="container">
+            <div id="patient-container">
                 <Navbar displayname={this.props.data.displayname}/>
-                <div id="header">
-                    <MDBCol md="12" className="header">
-                         <p class="h1">Home</p>
-                    </MDBCol>
+                <div id="patient-content">
+                    <div id="patient-header">
+                        <MDBCol md="12" className="patient-header">
+                            <p class="h1 patient-header-text">Home</p>
+                        </MDBCol>
+                    </div>
+                    <div id="patient-body">
+                        <MDBContainer fluid>
+                            <MDBRow>
+                                <MDBCol  className="content" md="8">
+                                    <MDBCard className="card-content">
+                                        <MDBCardBody>
+                                            <p className="h2 font-weight-bold">The doctor has assigned you the following assignments</p>
+                                            <br></br>
+                                            <p className="h4 font-weight-bold">ASSIGNMENT LIST :</p>
+                                            {assignments && assignments.map(assignment => {
+                                                return (
+                                                <AssignmentList assignment={assignment} submit = {this.handleSubmit}/>
+                                                )
+                                            })}
+                                        </MDBCardBody>
+                                    </MDBCard>
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBContainer>
+                    </div>
                 </div>
-                <div id="body">
-                    <MDBContainer fluid>
-                        <MDBRow>
-                            <MDBCol  className="content" md="8">
-                                <MDBCard className="card-content">
-                                    <MDBCardBody>
-                                    <p className="h2 font-weight-bold">The doctor has assigned you the following assignments</p>
-                                    <br></br>
-                                    <p className="h4 font-weight-bold">ASSIGNMENT LIST :</p>
-                                    {assignments && assignments.map(assignment => {
-                                        return (
-                                        <AssignmentList assignment={assignment} submit = {this.handleSubmit}/>
-                                        )
-                                    })}
-                                    </MDBCardBody>
-                                </MDBCard>
-                            </MDBCol>
-                        </MDBRow>
-                    </MDBContainer>
-                </div>
-                <hr/>
                 <Footer />                            
-            </div> 
+            </div>  
         )
         }
     }

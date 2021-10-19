@@ -30,20 +30,22 @@ class MedicalHome extends Component {
         let result = this.props.display.users
         console.log(result)
         return (
-            <div id="container">
+            <div id="medical-container">
                 <Navbar />
-                <div id="header">
-                    <MDBCol md="12" className="header">
-                        <p class="h1">Home</p>
-                    </MDBCol>
-                </div>
-                <div id="body">
-                    <MDBContainer fluid>
-                        <h3 className="body-text">Patient List</h3>
-                        {/* Medical home page (with patient list) */}
+                <div id="medical-content">
+                    <div id="medical-header">
+                        <MDBCol md="12" className="medical-header">
+                            <p class="h1">Home</p>
+                        </MDBCol>
+                    </div>
+                    <div id="medical-body">
+                        <MDBContainer fluid>
+                            <h3 className="body-text">Patient List</h3>
+                            {/* Medical home page (with patient list) */}
 
-                        {result !== undefined && <PatientList data={result} assign={this.assign} view={this.view} />}
-                    </MDBContainer>
+                            {result !== undefined && <PatientList data={result} assign={this.assign} view={this.view} />}
+                        </MDBContainer>
+                    </div>
                 </div>
                 <hr/>
                 <Footer />

@@ -11,7 +11,7 @@ export class AssignResult extends Component {
         let data = this.props.patient
         console.log(data)
         return (
-            <div id="container">
+            <div id="success-container">
                 <div className="content-results">
                     <MDBRow id="first-content-results">
                         <MDBCol>

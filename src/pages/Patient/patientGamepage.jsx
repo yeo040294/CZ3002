@@ -29,19 +29,21 @@ class patientGamepage extends Component {
         let sessionid = Cookies.get('sessionid')
         let assignment = this.props.assignments[0]
         return (
-            <div id="container">
-            <Navbar displayname={this.props.data.displayname}/>
-                <div id="header">
-                    <MDBCol md="12" className="game-header">
-                        <p class="h1">Welcome to the game!</p>
-                    </MDBCol>
-                </div>
-                <div id="body">
-                    <MDBContainer fluid>
-                    <App questionData = {this.props.question.questions} questionList={this.props.questionList}
-                        sessionid={sessionid} assignmentid={assignment.assignmentid} anstoken={assignment.anstoken} />
-                    <br/>
-                    </MDBContainer>
+            <div id="game-container">
+                <Navbar displayname={this.props.data.displayname}/>
+                <div id="game-content">
+                    <div id="game-header">
+                        <MDBCol md="12" className="game-header">
+                            <p class="h1">Welcome to the game!</p>
+                        </MDBCol>
+                    </div>
+                    <div id="game-main-body">
+                        <MDBContainer fluid>
+                        <App questionData = {this.props.question.questions} questionList={this.props.questionList}
+                            sessionid={sessionid} assignmentid={assignment.assignmentid} anstoken={assignment.anstoken} />
+                        <br/>
+                        </MDBContainer>
+                    </div>
                 </div>
                 <hr/>
                 <Footer />

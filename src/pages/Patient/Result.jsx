@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { fetchResults } from '../../Redux/Actions/QuestionAction';
 import {fetchUserInfo} from '../../Redux/Actions/UsersAction';
 import Cookies from 'js-cookie';
-import '../../styling/patient_home.css'
+import '../../styling/patient_results.css'
 
 class Result extends Component {
     componentDidMount() {
@@ -31,20 +31,22 @@ class Result extends Component {
     render() {
         console.log(this.props.data)
         return (
-            <div id="container">
+            <div id="patient-result-container">
                 <Navbar displayname={this.props.user.displayname}/>
-                <div id="header">
-                    <MDBCol md="12" className="header">
-                         <p class="h1">Game Results</p>
-                    </MDBCol>
-                </div>
-                <div id="body">
-                    <MDBContainer fluid>
-                        <h3 className="body-text">My Results</h3>
-                        <hr/>
-                        { this.props.data &&  <ResultTable results={this.props.data.results}  />  }
+                <div id="patient-result-content">
+                    <div id="patient-result-header">
+                        <MDBCol md="12" className="patient-result-text">
+                            <p class="h1">Game Results</p>
+                        </MDBCol>
+                    </div>
+                    <div id="patient-result-body">
+                        <MDBContainer fluid>
+                            <h3 className="body-text">My Results</h3>
+                            <hr/>
+                            { this.props.data &&  <ResultTable results={this.props.data.results}  />  }
 
-                    </MDBContainer>
+                        </MDBContainer>
+                    </div>
                 </div>
                 <hr/>
                 <Footer />

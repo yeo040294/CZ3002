@@ -8,9 +8,11 @@
  }
 
  #admin-header {
+    /* background-image: url('../assets/Background.png'); */
     margin: 0 auto;
-    margin-top: -50px;
     grid-area: header;
+    width: 100%;
+    height: 120px;
 }
 
 #admin-body {
@@ -21,9 +23,16 @@
     grid-template-rows: 50px 550px;
     grid-template-areas: "header header" "account question";
     align-items: center;
-    grid-gap: 5px;
+    grid-gap: 15px;
     padding: 0 100px;
     position: relative;
+    
+ }
+
+ #admin-content {
+     height: 100%;
+     width: 100%;
+     margin-bottom: -15%;
  }
 
 .h1 {
@@ -48,9 +57,9 @@
     padding: 30px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
-    margin-top: -100px;
     justify-content: center;
     justify-items: center;
+    margin-top: -15%;
 
     grid-area: account;
 }
@@ -66,7 +75,7 @@
     padding: 30px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
-    margin-top: -100px;
+    margin-top: -15%;
 
     grid-area: question;
 }
@@ -124,15 +133,15 @@
 
 @media screen and (max-width: 750px) {
     #admin-container {
-        max-width: 750px;
-        height: 1000px;
-        padding-bottom: 100px;
+        width: 100%;
+        height:100%;
+        padding-bottom: 20vh;
+        margin-bottom: 15%;
      }
     
      #admin-header {
         margin: 0 auto;
         grid-area: header;
-        background-color: #1FB4CA;
     }
     
     #admin-body {
@@ -143,7 +152,15 @@
         grid-gap: 5px;
         padding: 0 100px;
         position: relative;
+        margin-bottom: -15%;
      }
+
+     #admin-content {
+        height: auto;
+        width: auto;
+        margin-bottom: -45%;
+        margin-top: 10%;
+    }
     
     .h1 {
         font-family: Roboto;
@@ -158,15 +175,13 @@
     
     .accountBody{
         margin: 0 auto;
-        margin-top: -100px;
-        background-color: #1FB4CA;
-    
+        margin-top: -15%;
         grid-area: account;
     }
     
     .questionBody{
         margin: 0 auto;
-        margin-top: -100px;
+        margin-top: -25%;
     
         grid-area: question;
     }
@@ -217,7 +232,7 @@
     
     .right-btn {
         position: absolute;
-        right: 260px;
+        right: 200px;
         align-items: center;
         margin-top: 80px;
     }
@@ -225,19 +240,106 @@
 
 @media screen and (max-width: 550px) {
     #admin-container {
-        background-color: red;
+        width: auto;
+        height:auto;
+        padding-bottom: 100px;
+     }
+    
+     #admin-header {
+        margin: 0 auto;
+        grid-area: header;
     }
-
-    #admin-header {
-        
-    }
-
+    
     #admin-body {
         grid-template-columns: 1fr;
-        padding: 0 20px;
-    }
+        grid-template-rows: 50px 500px 500px;
+        grid-template-areas: "header" "account"  "question";
+        align-items: center;
+        grid-gap: 5px;
+        padding: 0 100px;
+        position: relative;
+     }
 
-    .accountBody {
-       
+     #admin-content {
+        height: auto;
+        width: auto;
+        margin-bottom: -20%;
+        margin-top: 10%;
+    }
+    
+    .h1 {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 56px;
+        text-align: center;
+        margin: 0 auto;
+        
+        color: #1FB4CA;
+    }
+    
+    .accountBody{
+        margin-right: 75%;
+        margin-top: -15%;
+
+        grid-area: account;
+    }
+    
+    .questionBody{
+        margin: 0 auto;
+        margin-top: -25%;
+    
+        grid-area: question;
+    }
+    
+    .btnUpload, .btnAccount{
+        background: #ED5C5F;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: white;
+        width: 237px;
+        height: 61px;
+    }
+    
+    .btnUpload:hover, .btnAccount:hover {
+        color: white;
+    }
+    
+    .left-content {
+        margin-right: 32px;
+        margin-bottom: 50px;
+        margin-top: -50px;
+    }
+    
+    .right-content {
+        margin-right: 100px;
+        margin-bottom: 50px;
+        margin-top: -50px;
+    }
+    
+    .card-img-top {
+        width: 80%;
+        justify-self: center;
+        margin-top: -30px;
+        float:right;
+    }
+    
+    .card-img-left {
+        width: 80%;
+        justify-self: center;
+        float:right;
+    }
+    
+    .left-btn {
+        position: absolute;
+        right: 85px;
+        align-items: center;
+        margin-top: 80px;
+    }
+    
+    .right-btn {
+        position: absolute;
+        right: 200px;
+        align-items: center;
+        margin-top: 80px;
     }
 }

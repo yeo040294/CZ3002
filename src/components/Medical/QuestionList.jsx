@@ -40,7 +40,7 @@ export const QuestionList = ({ data, submit }) => {
                 </MDBTableBody>
             </MDBTable>
             <MDBRow className='d-flex mb-4 btnTask'>
-                <div className='text-center col-md-12'>
+                <div className='text-center col-md-12 medical-manual-assgn'>
                     <MDBBtn color="#ED5C5F" type='button' id="task-cnfrm" className='btn-asgn float-end' onClick={() => submit(questionList)} > Assign </MDBBtn>
                 </div>
             </MDBRow>

@@ -49,9 +49,11 @@ const ResultTable = ({results}) => {
                     })}
                 </MDBTableBody>
             </MDBTable>
-            <h4> Total questions answered: {totalQuestion} </h4>
-            <h4> Total correct answers: {totalCorrect} </h4>
-            <h4> Accuracy: {percentageCorrect}% </h4>
+            <hr/>
+            <h4 class="results-text"> Total questions answered: {totalQuestion} </h4>
+            <h4 class="results-text"> Total correct answers: {totalCorrect} </h4>
+            <h4 class="results-text"> Accuracy: {percentageCorrect}% </h4>
+            <hr/>
         </div>
     )
 }

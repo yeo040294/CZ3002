@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { assignPatient, assignDifficulty } from '../../Redux/Actions/PatientAction';
 import Cookies from 'js-cookie'
+import '../../styling/medical_assign.css'
 
 class medicalAssign extends Component {
     state = {
@@ -66,43 +67,47 @@ class medicalAssign extends Component {
 
     render() {
         return (
-            <div id="container">
+            <div id="medical-assign-container">
                 <Navbar />
-                <div id="header">
-                    <MDBCol md="12" className="header">
-                        <p class="h1">Assign Task</p>
-                    </MDBCol>
-                </div>
-                <div id="body">
-                    <MDBContainer fluid>
-                        <MDBRow>
-                            <MDBCol  className="content" md="8">
-                                <MDBCard className="card-content">
-                                    <form>
-                                        <p className="h4 mb-4 text-left body-header">Assign Task for Patient</p>
-                                        <div className="grey-text">
-                                            <p className="h5 mb-4 text-left content-text">Difficulty: </p>
-                                            <MDBRow id="select-content">
-                                                <select className="browser-default custom-select" value={this.state.difficulty} onChange={this.handleDifficultyChange}>
-                                                    <option value="Easy" >Easy</option>
-                                                    <option value="Medium" >Medium</option>
-                                                    <option value="Hard">Hard</option>
-                                                </select>
-                                            </MDBRow>
-                                            <br />
-                                            <MDBRow className='d-flex mb-4 btnContent'>
-                                                <div className='text-center col-md-12 taskBtn'>
-                                                    <MDBBtn color="#ED5C5F" type='button' id="task-asgn" className='btn-asgn' onClick={this.AssignPatient}>Confirm</MDBBtn>
-                                                    {/* <MDBBtn color="#ED5C5F" type='button' className='btn-asgn'>Back</MDBBtn> */}
-                                                    <a href="/medical" id="task-back" class="btn homebtn"> Back </a>
-                                                </div>
-                                            </MDBRow>
-                                        </div>
-                                    </form>
-                                </MDBCard>
-                            </MDBCol>
-                        </MDBRow>
-                    </MDBContainer>
+                <div id="medical-assign-content">
+                    <div id="medical-assign-header">
+                        <MDBCol md="12" className="medical-assign-header">
+                            <p class="h1">Assign Task</p>
+                        </MDBCol>
+                    </div>
+                    <div id="medical-assign-body">
+                        <MDBContainer fluid>
+                            <MDBRow>
+                                <MDBCol  className="content" md="8">
+                                    <MDBCard className="card-content">
+                                        <form>
+                                            <p className="h4 mb-4 text-left body-header">Assign Task for Patient</p>
+                                            <div className="grey-text">
+                                                <p className="h5 mb-4 text-left content-text">Difficulty: </p>
+                                                <MDBRow id="select-content">
+                                                    <select className="browser-default custom-select" value={this.state.difficulty} onChange={this.handleDifficultyChange}>
+                                                        <option value="Easy" >Easy</option>
+                                                        <option value="Medium" >Medium</option>
+                                                        <option value="Hard">Hard</option>
+                                                    </select>
+                                                </MDBRow>
+                                                <br />
+                                                <MDBRow className='d-flex mb-4 btnContent'>
+                                                    <div className='text-center taskBtn1'>
+                                                        <MDBBtn color="#ED5C5F" type='button' id="task-asgn" className='btn-asgn medical-assign-btn' onClick={this.AssignPatient}>Confirm</MDBBtn>
+                                                        {/* <MDBBtn color="#ED5C5F" type='button' className='btn-asgn'>Back</MDBBtn> */}
+                                                    </div>
+                                                    <div className='text-center taskBtn2'>
+                                                        <a href="/medical" id="task-back" class="btn homebtn medical-home-btn"> Back </a>
+                                                    </div>
+                                                </MDBRow>
+                                            </div>
+                                        </form>
+                                    </MDBCard>
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBContainer>
+                    </div>
                 </div>
                 <hr/>
                 <Footer />

@@ -1,0 +1,170 @@
+/*Medical Assign*/
+
+#medical-assign-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+ }
+
+#medical-assign-content {
+    align-items: center;
+    padding-bottom: 20vh;   /* Height of the footer */
+    height: inherit;
+    width: inherit;
+}
+
+#medical-assign-body {
+    height: inherit;
+    width: inherit;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #ebf7fa;
+    margin-bottom: -10%;
+ }
+
+ #medical-assign-header {
+    background-image: url('../assets/Background.png');
+    width: 100%;
+    height: 120px;
+    margin: 0 auto;
+    background-color: #131718;
+    padding-top: 2%;
+ }
+
+ .medical-assign-header {
+    margin-top: 1%;
+ }
+
+.body-header{
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.content-text {
+    margin-left: 5%;
+    font-style: normal;
+}
+
+.custom-select {
+    width: 80%;
+}
+
+#select-content {
+    margin-left: 5%;
+}
+
+/* #task-asgn {
+    float: center;
+    margin-left: 50%;
+}
+
+#task-back {
+    float: right;
+    margin-right: 5%;
+    margin-left: -15%;
+} */
+
+.taskBtn1 {
+    margin-left: 65%;
+}
+
+/*  QuestionList */
+
+.qn-img {
+    width: 75%;
+    border: 3px solid rgb(208, 207, 207);
+}
+
+.form-check-input {
+    margin-left: 2%;
+}
+
+#task-cnfrm {
+    float: right;
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 750px) {
+    /*Medical Assign*/
+
+    #medical-assign-content {
+        margin-bottom: -25%;
+    }
+
+    #medical-assign-body {
+        margin-bottom: -20%;
+    }
+
+    .medical-assign-header {
+        margin-top: 1%;
+    }
+
+    .body-header{
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+
+    .content-text {
+        margin-left: 5%;
+        font-style: normal;
+    }
+
+    .custom-select {
+        width: 80%;
+    }
+
+    #select-content {
+        margin-left: 5%;
+    }
+
+    .taskBtn1 {
+        margin-left: 55%;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    /*Medical Assign*/
+
+    #medical-assign-content {
+        margin-bottom: -2%;
+    }
+
+    #medical-assign-body {
+        margin-bottom: -10%;
+    }
+
+    .medical-assign-header {
+        margin-top: 1%;
+    }
+
+    .body-header{
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+
+    .content-text {
+        margin-left: 5%;
+        font-style: normal;
+    }
+
+    .custom-select {
+        width: 80%;
+    }
+
+    #select-content {
+        margin-left: 5%;
+    }
+
+    .taskBtn1 {
+        margin-left: 20.5%;
+    }
+
+    /*  QuestionList */
+    .medical-manual-assgn {
+        margin-right: 30%;
+    }
+}

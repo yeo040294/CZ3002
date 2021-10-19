@@ -37,6 +37,21 @@ class QuestionCreation extends Component {
     onSubmit = (difficultylevel, image1, image2, identical) => {
         if (image1.includes('null') || image2.includes('null') || difficultylevel.includes("Select")) { alert("Please ensure that there are no empty inputs.") }
         else {
+
+            if (difficultylevel == "Easy") {
+                difficultylevel = '0'
+            } else if (difficultylevel == "Medium") {
+                difficultylevel = '1'
+            } else if (difficultylevel == "Hard") {
+                difficultylevel = '2'
+            }
+
+            if (identical == "Yes") {
+                identical = '1'
+            } else if (answer == "No") {
+                identical = '0'
+            }
+
             let sessionID = Cookies.get('sessionid')
             this.setState({ answer: identical, difficulty: difficultylevel, image1: image1, image2: image2 })
             let form = {

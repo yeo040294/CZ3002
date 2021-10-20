@@ -48,7 +48,7 @@ class QuestionCreation extends Component {
 
             if (identical == "Yes") {
                 identical = '1'
-            } else if (answer == "No") {
+            } else if (identical == "No") {
                 identical = '0'
             }
 
